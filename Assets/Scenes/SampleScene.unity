@@ -1332,8 +1332,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 100, y: 100}
-  m_SizeDelta: {x: 500, y: 400}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 800, y: 600}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &791342967
 MonoBehaviour:
@@ -1370,10 +1370,10 @@ MonoBehaviour:
   backgroundImage: {fileID: 654944471}
   joystickRT: {fileID: 489989298}
   backgroundRT: {fileID: 654944470}
-  isStatic: 0
+  isStatic: 1
   borderSize: 5.85
   smoothReturn: 1
-  smoothFactor: 7
+  smoothFactor: 18.5
   joystickImageColor:
     serializedVersion: 2
     rgba: 2785017855
@@ -1518,6 +1518,7 @@ MonoBehaviour:
   skinRun: {fileID: 0}
   skinAttack: {fileID: 0}
   joystickMove: {fileID: 791342967}
+  joystickShoot: {fileID: 1208268481}
   speed: 10
 --- !u!50 &1145881000
 Rigidbody2D:
@@ -1659,8 +1660,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -100, y: 100}
-  m_SizeDelta: {x: 500, y: 400}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 800, y: 600}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &1208268481
 MonoBehaviour:
@@ -1697,9 +1698,9 @@ MonoBehaviour:
   backgroundImage: {fileID: 1818150234}
   joystickRT: {fileID: 1105242911}
   backgroundRT: {fileID: 1818150233}
-  isStatic: 0
+  isStatic: 1
   borderSize: 5.85
-  smoothReturn: 1
+  smoothReturn: 0
   smoothFactor: 7
   joystickImageColor:
     serializedVersion: 2
