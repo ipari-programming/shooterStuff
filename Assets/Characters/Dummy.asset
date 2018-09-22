@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3460eb5ebbc6464bab8b8270b98e3ad, type: 3}
+  m_Name: Dummy
+  m_EditorClassIdentifier: 
+  name: 
+  skinIdle: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  skinRun: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  skinAttack: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  bullet: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  health: 1
+  speed: 10
+  damage: 1
+  isWeaponRay: 0
+  theme: {fileID: 0}
