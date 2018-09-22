@@ -10,6 +10,7 @@ public class Player : MonoBehaviour {
     public Sprite skinAttack;
 
     public TCKJoystick joystickMove;
+    public TCKJoystick joystickShoot;
 
     public float speed = 10f;
 
@@ -23,12 +24,27 @@ public class Player : MonoBehaviour {
         sr = GetComponent<SpriteRenderer>();
     }
 
-    void Update () {
-        float moveH = joystickMove.axisX.value;
-        float moveV = joystickMove.axisY.value;
+    void FixedUpdate ()
+    {
+        // Movement
+        Vector2 move;
+        move.x = joystickMove.axisX.value;
+        move.y = joystickMove.axisY.value;
+        move *= speed * 10;
 
-        rb.AddForce(new Vector2(moveH * speed * 10, moveV * speed * 10));
+        rb.AddForce(move);
 
-        sr.sprite = moveH + moveV == 0 ? skinIdle : skinRun;
+        sr.sprite = move.x + move.y == 0 ? skinIdle : skinRun;
+
+        // Aiming and shooting
+        Vector2 aim;
+        aim.x = joystickShoot.axisX.value;
+        aim.y = joystickShoot.axisY.value;
+        bool isAiming = aim != Vector2.zero;
+
+        // Rotation
+        if (move != Vector2.zero || isAiming) transform.rotation = Quaternion.LookRotation(isAiming ? aim : move, Vector3.forward);
+
+        transform.rotation = new Quaternion(transform.rotation.x, transform.rotation.y, 0, 0);
     }
 }
