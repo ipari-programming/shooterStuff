@@ -11,6 +11,8 @@ public class PlayerInspector : Editor {
 
         player.joystickMove = (TCKJoystick)EditorGUILayout.ObjectField("Joystick Move", player.joystickMove, typeof(TCKJoystick), true);
         player.joystickShoot = (TCKJoystick)EditorGUILayout.ObjectField("Joystick Shoot", player.joystickShoot, typeof(TCKJoystick), true);
+
+        player.bulletPrefab = (GameObject)EditorGUILayout.ObjectField("Bullet prefab", player.bulletPrefab, typeof(GameObject), false);
     }
 
 }

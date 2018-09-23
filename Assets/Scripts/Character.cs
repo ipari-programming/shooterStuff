@@ -15,8 +15,11 @@ public class Character : ScriptableObject {
     public int health;
     public int speed;
     public int damage;
+    public int weaponRange;
 
     public bool isWeaponRay;
+
+    public Vector2 shootingOffset;
 
     public AudioClip theme;
 }

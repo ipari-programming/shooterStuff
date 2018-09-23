@@ -5,14 +5,22 @@ using TouchControlsKit;
 
 public class Player : MonoBehaviour {
     
-    public Sprite skinIdle;
-    public Sprite skinRun;
-    public Sprite skinAttack;
-
     public TCKJoystick joystickMove;
     public TCKJoystick joystickShoot;
 
-    public float speed = 10f;
+    public GameObject bulletPrefab;
+
+    public Sprite skinIdle;
+    public Sprite skinRun;
+    public Sprite skinAttack;
+    public Sprite bullet;
+
+    public int speed = 10;
+    public int weaponRange;
+
+    public Vector3 shootingOffset;
+
+    public bool isWeaponRay;
 
     Rigidbody2D rb;
 
@@ -42,9 +50,44 @@ public class Player : MonoBehaviour {
         aim.y = joystickShoot.axisY.value;
         bool isAiming = aim != Vector2.zero;
 
+        if (isAiming) StartCoroutine(Shoot());
+
         // Rotation
         if (move != Vector2.zero || isAiming) transform.rotation = Quaternion.LookRotation(isAiming ? aim : move, Vector3.forward);
 
         transform.rotation = new Quaternion(transform.rotation.x, transform.rotation.y, 0, 0);
+    }
+
+    IEnumerator Shoot()
+    {
+        sr.sprite = skinAttack;
+
+        Debug.Log(Mathf.Round(transform.rotation.eulerAngles.z) + " SIN: " + Mathf.Sin(transform.rotation.eulerAngles.z) + " COS: " + Mathf.Cos(transform.rotation.eulerAngles.z));
+
+        float x = transform.position.x + shootingOffset.x * Mathf.Sin(transform.rotation.eulerAngles.z * (Mathf.PI / 180));
+        float y = transform.position.y + shootingOffset.y * Mathf.Cos(transform.rotation.eulerAngles.z * (Mathf.PI / 180));
+
+        if (isWeaponRay)
+        {
+            
+            RaycastHit2D hit = Physics2D.Raycast(new Vector2(x, y), transform.up, weaponRange);
+            
+            if (hit)
+            {
+                
+            }
+
+            yield return new WaitForSeconds(.2f);
+        }
+        else
+        {
+            GameObject bulletEffect = Instantiate(bulletPrefab, new Vector2(x, y), transform.rotation);
+
+            yield return new WaitForSeconds(weaponRange);
+
+            Destroy(bulletEffect);
+        }
+
+        sr.sprite = skinIdle;
     }
 }
