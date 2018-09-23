@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3460eb5ebbc6464bab8b8270b98e3ad, type: 3}
   m_Name: Dummy
   m_EditorClassIdentifier: 
-  name: 
+  name: Dummy
   skinIdle: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   skinRun: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   skinAttack: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
