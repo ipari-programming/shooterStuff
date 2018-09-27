@@ -19,7 +19,7 @@ MonoBehaviour:
   health: 1
   speed: 10
   damage: 1
-  weaponRange: 1
-  isWeaponRay: 0
-  shootingOffset: {x: 0, y: 1}
+  weaponRange: 5.27
+  isWeaponRay: 1
+  shootingOffset: {x: 1, y: 0}
   theme: {fileID: 0}

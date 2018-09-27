@@ -16,7 +16,8 @@ public class Player : MonoBehaviour {
     public Sprite bullet;
 
     public int speed = 10;
-    public int weaponRange;
+
+    public float weaponRange;
 
     public Vector3 shootingOffset;
 
@@ -58,36 +59,42 @@ public class Player : MonoBehaviour {
         transform.rotation = new Quaternion(transform.rotation.x, transform.rotation.y, 0, 0);
     }
 
+    bool isBulletOut = false;
     IEnumerator Shoot()
     {
-        sr.sprite = skinAttack;
-
-        Debug.Log(Mathf.Round(transform.rotation.eulerAngles.z) + " SIN: " + Mathf.Sin(transform.rotation.eulerAngles.z) + " COS: " + Mathf.Cos(transform.rotation.eulerAngles.z));
-
-        float x = transform.position.x + shootingOffset.x * Mathf.Sin(transform.rotation.eulerAngles.z * (Mathf.PI / 180));
-        float y = transform.position.y + shootingOffset.y * Mathf.Cos(transform.rotation.eulerAngles.z * (Mathf.PI / 180));
-
-        if (isWeaponRay)
+        if (!isBulletOut)
         {
             
-            RaycastHit2D hit = Physics2D.Raycast(new Vector2(x, y), transform.up, weaponRange);
-            
-            if (hit)
+            float x = transform.position.x + shootingOffset.x * Mathf.Sin((transform.rotation.eulerAngles.z + shootingOffset.y) * (Mathf.PI / 180));
+            float y = transform.position.y + shootingOffset.x * Mathf.Cos((transform.rotation.eulerAngles.z + shootingOffset.y) * (Mathf.PI / 180));
+
+            if (isWeaponRay)
             {
-                
+                RaycastHit2D hit = Physics2D.Raycast(new Vector2(x, y), transform.up, weaponRange);
+
+                if (hit)
+                {
+
+                }
+
+                isBulletOut = true;
+                yield return new WaitForSeconds(1 / weaponRange);
+                isBulletOut = false;
+            }
+            else
+            {
+                isBulletOut = true;
+                GameObject bulletEffect = Instantiate(bulletPrefab, new Vector2(x, y), transform.rotation);
+                bulletEffect.GetComponent<SpriteRenderer>().sprite = bullet;
+
+                yield return new WaitForSeconds(weaponRange / 10f);
+
+                Destroy(bulletEffect);
+                isBulletOut = false;
             }
 
-            yield return new WaitForSeconds(.2f);
-        }
-        else
-        {
-            GameObject bulletEffect = Instantiate(bulletPrefab, new Vector2(x, y), transform.rotation);
-
-            yield return new WaitForSeconds(weaponRange);
-
-            Destroy(bulletEffect);
         }
 
-        sr.sprite = skinIdle;
+        sr.sprite = isBulletOut ? skinAttack : skinIdle;
     }
 }
