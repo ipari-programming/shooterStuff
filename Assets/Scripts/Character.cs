@@ -13,10 +13,11 @@ public class Character : ScriptableObject {
     public Sprite bullet;
 
     public int health;
-    public int speed;
     public int damage;
 
+    public float speed;
     public float weaponRange;
+    public float bulletSpeed;
 
     public bool isWeaponRay;
 

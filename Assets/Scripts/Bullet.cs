@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour {
 
-    public float speed;
+    public bool isRay;
 
-	void Start () {
-        GetComponent<Rigidbody2D>().AddForce(transform.up * speed);
-	}
+    void Update()
+    {
+        if (!isRay)
+        {
+            // TODO Damage enemy
+        }
+    }
+
 }

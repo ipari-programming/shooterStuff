@@ -7,7 +7,7 @@ public class Player : MonoBehaviour {
     
     public TCKJoystick joystickMove;
     public TCKJoystick joystickShoot;
-
+    
     public GameObject bulletPrefab;
 
     public Sprite skinIdle;
@@ -15,9 +15,12 @@ public class Player : MonoBehaviour {
     public Sprite skinAttack;
     public Sprite bullet;
 
-    public int speed = 10;
+    public int health;
+    public int damage;
 
+    public float speed = 10;
     public float weaponRange;
+    public float bulletSpeed;
 
     public Vector3 shootingOffset;
 
@@ -68,24 +71,35 @@ public class Player : MonoBehaviour {
             float x = transform.position.x + shootingOffset.x * Mathf.Sin((transform.rotation.eulerAngles.z + shootingOffset.y) * (Mathf.PI / 180));
             float y = transform.position.y + shootingOffset.x * Mathf.Cos((transform.rotation.eulerAngles.z + shootingOffset.y) * (Mathf.PI / 180));
 
+            GameObject bulletEffect = Instantiate(bulletPrefab, new Vector2(x, y), transform.rotation);
+            bulletEffect.GetComponent<SpriteRenderer>().sprite = bullet;
+            bulletEffect.GetComponent<Bullet>().isRay = isWeaponRay;
+
             if (isWeaponRay)
             {
                 RaycastHit2D hit = Physics2D.Raycast(new Vector2(x, y), transform.up, weaponRange);
 
                 if (hit)
                 {
-
+                    // TODO Damage enemy
                 }
 
                 isBulletOut = true;
-                yield return new WaitForSeconds(1 / weaponRange);
+                bulletEffect.GetComponent<Rigidbody2D>().AddForce(bulletEffect.transform.up * bulletSpeed);
+
+                yield return new WaitForSeconds(1 / weaponRange / 2);
+                
+                bulletEffect.GetComponent<Rigidbody2D>().AddForce(-bulletEffect.transform.up * bulletSpeed * 2);
+
+                yield return new WaitForSeconds(1 / weaponRange / 2);
+
+                Destroy(bulletEffect);
                 isBulletOut = false;
             }
             else
             {
                 isBulletOut = true;
-                GameObject bulletEffect = Instantiate(bulletPrefab, new Vector2(x, y), transform.rotation);
-                bulletEffect.GetComponent<SpriteRenderer>().sprite = bullet;
+                bulletEffect.GetComponent<Rigidbody2D>().AddForce(bulletEffect.transform.up * bulletSpeed);
 
                 yield return new WaitForSeconds(weaponRange / 10f);
 

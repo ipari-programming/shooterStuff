@@ -22,8 +22,9 @@ public class CharacterDisplay : MonoBehaviour {
         p.skinAttack = character.skinAttack;
         p.bullet = character.bullet;
 
-        p.weaponRange = character.weaponRange;
         p.speed = character.speed;
+        p.weaponRange = character.weaponRange;
+        p.bulletSpeed = character.bulletSpeed;
 
         p.isWeaponRay = character.isWeaponRay;
 
