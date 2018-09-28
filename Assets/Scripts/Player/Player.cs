@@ -42,6 +42,12 @@ public class Player : MonoBehaviour {
         Vector2 move;
         move.x = joystickMove.axisX.value;
         move.y = joystickMove.axisY.value;
+
+        #region Debug from PC
+        move.x = move.x == 0 ? Input.GetAxis("Horizontal") : move.x;
+        move.y = move.y == 0 ? Input.GetAxis("Vertical") : move.y;
+        #endregion
+
         move *= speed * 10;
 
         rb.AddForce(move);

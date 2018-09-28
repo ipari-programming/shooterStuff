@@ -11,9 +11,11 @@ public class CharacterDisplay : MonoBehaviour {
 	void Start ()
     {
         p = GetComponent<Player>();
-	}
+
+        ChangeCharacter();
+    }
 	
-    public void Update()
+    public void ChangeCharacter()
     {
         p.name = character.name;
 
