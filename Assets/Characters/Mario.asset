@@ -17,9 +17,10 @@ MonoBehaviour:
   skinAttack: {fileID: 0}
   bullet: {fileID: 21300000, guid: c8aa6d8254cddc948aa0cb5c336f9834, type: 3}
   health: 3
-  speed: 15
   damage: 2
+  speed: 15
   weaponRange: 1
+  bulletSpeed: 10
   isWeaponRay: 0
   shootingOffset: {x: 1, y: 0}
   theme: {fileID: 0}
