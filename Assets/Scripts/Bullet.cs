@@ -5,13 +5,21 @@ using UnityEngine;
 public class Bullet : MonoBehaviour {
 
     public bool isRay;
+    public int damage;
 
-    void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!isRay)
+        if(!isRay)
         {
-            // TODO Damage enemy
+            Enemy enemy = collision.transform.GetComponent<Enemy>();
+            if (enemy)
+            {
+                enemy.DealDamage(damage);
+            }
+            Destroy(transform.gameObject);
         }
     }
+
+
 
 }

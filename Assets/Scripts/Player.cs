@@ -74,6 +74,7 @@ public class Player : MonoBehaviour {
             GameObject bulletEffect = Instantiate(bulletPrefab, new Vector2(x, y), transform.rotation);
             bulletEffect.GetComponent<SpriteRenderer>().sprite = bullet;
             bulletEffect.GetComponent<Bullet>().isRay = isWeaponRay;
+            bulletEffect.GetComponent<Bullet>().damage = damage;
 
             if (isWeaponRay)
             {
@@ -81,7 +82,11 @@ public class Player : MonoBehaviour {
 
                 if (hit)
                 {
-                    // TODO Damage enemy
+                    Enemy enemy = hit.transform.GetComponent<Enemy>();
+                    if (enemy)
+                    {
+                        enemy.DealDamage(damage); 
+                    }
                 }
 
                 isBulletOut = true;

@@ -26,6 +26,9 @@ public class CharacterDisplay : MonoBehaviour {
         p.weaponRange = character.weaponRange;
         p.bulletSpeed = character.bulletSpeed;
 
+        p.damage = character.damage;
+        p.health = character.health;
+
         p.isWeaponRay = character.isWeaponRay;
 
         p.shootingOffset = character.shootingOffset;
