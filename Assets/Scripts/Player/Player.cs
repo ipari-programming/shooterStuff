@@ -15,6 +15,7 @@ public class Player : MonoBehaviour {
     public Sprite skinAttack;
     public Sprite bullet;
 
+    public int maxHealth;
     public int health;
     public int damage;
 
@@ -29,7 +30,7 @@ public class Player : MonoBehaviour {
     Rigidbody2D rb;
 
     SpriteRenderer sr;
-
+    
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -68,6 +69,7 @@ public class Player : MonoBehaviour {
         transform.rotation = new Quaternion(transform.rotation.x, transform.rotation.y, 0, 0);
     }
 
+    #region Shooting
     bool isBulletOut = false;
     IEnumerator Shoot()
     {
@@ -121,5 +123,29 @@ public class Player : MonoBehaviour {
         }
 
         sr.sprite = isBulletOut ? skinAttack : skinIdle;
+    }
+    #endregion
+
+    public void Heal(int amount)
+    {
+        if (health + amount > maxHealth) health = maxHealth;
+        else health += amount;
+    }
+
+    public bool DealDamage(int amount)
+    {
+        health -= amount;
+        if (health <= 0)
+        {
+            Die();
+            return true;
+        }
+        return false;
+    }
+
+    public void Die()
+    {
+        Debug.Log("Player dead.");
+        Destroy(gameObject);
     }
 }

@@ -8,16 +8,20 @@ public class Enemy : MonoBehaviour {
     public int damage;
     public float speed;
 
-    public void DealDamage(int dealeddamage)
+    public bool DealDamage(int amount)
     {
-        health -= dealeddamage;
+        health -= amount;
         if (health <= 0)
+        {
             Die();
+            return true;
+        }
+        return false;
     }
 
     public void Die()
     {
-        Destroy(transform.gameObject);
+        Destroy(gameObject);
     }
 
 

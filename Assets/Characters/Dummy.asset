@@ -16,9 +16,10 @@ MonoBehaviour:
   skinRun: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   skinAttack: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   bullet: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  maxHealth: 10
   health: 1
   damage: 1
-  speed: 10
+  speed: 5
   weaponRange: 5.27
   bulletSpeed: 10
   isWeaponRay: 1

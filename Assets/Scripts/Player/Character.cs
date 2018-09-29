@@ -12,6 +12,7 @@ public class Character : ScriptableObject {
     public Sprite skinAttack;
     public Sprite bullet;
 
+    public int maxHealth;
     public int health;
     public int damage;
 
