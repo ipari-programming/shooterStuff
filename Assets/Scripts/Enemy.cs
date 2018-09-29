@@ -13,7 +13,6 @@ public class Enemy : MonoBehaviour {
         health -= dealeddamage;
         if (health <= 0)
             Die();
-        Debug.Log(dealeddamage + " " + health);
     }
 
     public void Die()
