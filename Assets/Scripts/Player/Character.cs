@@ -12,10 +12,9 @@ public class Character : ScriptableObject {
     public Sprite skinAttack;
     public Sprite bullet;
 
-    public int maxHealth;
-    public int health;
-    public int damage;
-
+    public float maxHealth;
+    public float health;
+    public float damage;
     public float speed;
     public float weaponRange;
     public float bulletSpeed;
@@ -23,6 +22,8 @@ public class Character : ScriptableObject {
     public bool isWeaponRay;
 
     public Vector2 shootingOffset;
+
+    public Color mainColor;
 
     public AudioClip theme;
 }

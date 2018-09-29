@@ -24,4 +24,5 @@ MonoBehaviour:
   bulletSpeed: 80
   isWeaponRay: 1
   shootingOffset: {x: 0.6, y: 0}
+  mainColor: {r: 0, g: 0.5019608, b: 1, a: 1}
   theme: {fileID: 0}

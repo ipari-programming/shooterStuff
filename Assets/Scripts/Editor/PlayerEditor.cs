@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using UnityEditor;
 using TouchControlsKit;
 
@@ -8,6 +9,9 @@ public class PlayerInspector : Editor {
     public override void OnInspectorGUI()
     {
         Player player = (Player)target;
+
+        player.healthBar = (GameObject)EditorGUILayout.ObjectField("Health bar", player.healthBar, typeof(GameObject), true);
+        player.healthBarFill = (GameObject)EditorGUILayout.ObjectField("Health bar filler", player.healthBarFill, typeof(GameObject), true);
 
         player.joystickMove = (TCKJoystick)EditorGUILayout.ObjectField("Joystick Move", player.joystickMove, typeof(TCKJoystick), true);
         player.joystickShoot = (TCKJoystick)EditorGUILayout.ObjectField("Joystick Shoot", player.joystickShoot, typeof(TCKJoystick), true);

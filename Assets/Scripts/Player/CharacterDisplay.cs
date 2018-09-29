@@ -27,7 +27,6 @@ public class CharacterDisplay : MonoBehaviour {
         p.speed = character.speed;
         p.weaponRange = character.weaponRange;
         p.bulletSpeed = character.bulletSpeed;
-
         p.maxHealth = character.maxHealth;
         p.health = character.health;
         p.damage = character.damage;
@@ -35,6 +34,8 @@ public class CharacterDisplay : MonoBehaviour {
         p.isWeaponRay = character.isWeaponRay;
 
         p.shootingOffset = character.shootingOffset;
+
+        p.mainColor = character.mainColor;
     }
 
 }

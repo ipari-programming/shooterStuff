@@ -1,10 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TouchControlsKit;
 
 public class Player : MonoBehaviour {
-    
+
+    public GameObject healthBar;
+    public GameObject healthBarFill;
+
     public TCKJoystick joystickMove;
     public TCKJoystick joystickShoot;
     
@@ -15,10 +19,9 @@ public class Player : MonoBehaviour {
     public Sprite skinAttack;
     public Sprite bullet;
 
-    public int maxHealth;
-    public int health;
-    public int damage;
-
+    public float maxHealth;
+    public float health;
+    public float damage;
     public float speed = 10;
     public float weaponRange;
     public float bulletSpeed;
@@ -27,14 +30,19 @@ public class Player : MonoBehaviour {
 
     public bool isWeaponRay;
 
+    public Color mainColor;
+
     Rigidbody2D rb;
 
     SpriteRenderer sr;
-    
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+
+        healthBarFill.GetComponent<Image>().color = mainColor;
+        healthBarFill.GetComponent<RectTransform>().SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, health / maxHealth * healthBar.GetComponent<RectTransform>().sizeDelta.x);
     }
 
     void FixedUpdate ()
@@ -130,13 +138,16 @@ public class Player : MonoBehaviour {
     {
         if (health + amount > maxHealth) health = maxHealth;
         else health += amount;
-        Debug.Log("+health =" + health);
+
+        healthBarFill.GetComponent<RectTransform>().SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, health / maxHealth * healthBar.GetComponent<RectTransform>().sizeDelta.x);
     }
 
     public bool DealDamage(int amount)
     {
         health -= amount;
-        Debug.Log("-health =" + health);
+
+        healthBarFill.GetComponent<RectTransform>().SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, health / maxHealth * healthBar.GetComponent<RectTransform>().sizeDelta.x);
+
         if (health <= 0)
         {
             Die();
