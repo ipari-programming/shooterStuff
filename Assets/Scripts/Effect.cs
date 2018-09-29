@@ -15,15 +15,12 @@ public class Effect : ScriptableObject {
     public int heal = 0;
     public float accelerate = 1;
 
-    float initialSpeed;
-
     public float Duration { get { return duration; } }
 
     public IEnumerator StartEffect(Player player)
     {
         duration = maxDuration;
-
-        initialSpeed = player.speed;
+        
         player.speed *= accelerate;
 
         do
@@ -42,8 +39,6 @@ public class Effect : ScriptableObject {
     public void Reverse(Player player)
     {
         duration = 0;
-
-        player.speed = initialSpeed;
     }
 
 }

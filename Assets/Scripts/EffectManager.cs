@@ -9,6 +9,8 @@ public class EffectManager : MonoBehaviour {
     [SerializeField()]
     List<Effect> effects;
 
+    float initialSpeed = 0;
+
     void Update()
     {
         if (effects != null && effects.Count > 0)
@@ -21,6 +23,11 @@ public class EffectManager : MonoBehaviour {
                     break;
                 }
             }
+        }
+        else
+        {
+            if (initialSpeed == 0) initialSpeed = player.speed;
+            player.speed = initialSpeed;
         }
     }
 
