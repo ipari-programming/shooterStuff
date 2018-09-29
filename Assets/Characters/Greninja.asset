@@ -14,10 +14,10 @@ MonoBehaviour:
   name: Greninja
   skinIdle: {fileID: 21300000, guid: f09608a36af75af4aa0416bc5d4d1c52, type: 3}
   skinRun: {fileID: 21300000, guid: 60b62c0fb9ff21644ab9f8ac00f580ca, type: 3}
-  skinAttack: {fileID: 21300000, guid: f09608a36af75af4aa0416bc5d4d1c52, type: 3}
+  skinAttack: {fileID: 21300000, guid: f06b7117a6f2b8d4ca3fc1f623682253, type: 3}
   bullet: {fileID: 21300000, guid: 8fb6ed2a77823d64fbf9c2021c1905a9, type: 3}
   maxHealth: 10
-  health: 3
+  health: 5
   damage: 5
   speed: 10
   weaponRange: 5
