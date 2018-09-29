@@ -130,11 +130,13 @@ public class Player : MonoBehaviour {
     {
         if (health + amount > maxHealth) health = maxHealth;
         else health += amount;
+        Debug.Log("+health =" + health);
     }
 
     public bool DealDamage(int amount)
     {
         health -= amount;
+        Debug.Log("-health =" + health);
         if (health <= 0)
         {
             Die();

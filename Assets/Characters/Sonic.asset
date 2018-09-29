@@ -20,7 +20,7 @@ MonoBehaviour:
   health: 2
   damage: 3
   speed: 20
-  weaponRange: 3
+  weaponRange: 5
   bulletSpeed: 80
   isWeaponRay: 1
   shootingOffset: {x: 0.6, y: 0}

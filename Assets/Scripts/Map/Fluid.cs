@@ -15,12 +15,14 @@ public class Fluid : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        effectManager.ApplyEffect(fluidEffect);
+        if (collision.GetComponent<Player>())
+            effectManager.ApplyEffect(fluidEffect);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        effectManager.ClearEffect(fluidEffect);
+        if (collision.GetComponent<Player>())
+            effectManager.ClearEffect(fluidEffect);
     }
 
 }
