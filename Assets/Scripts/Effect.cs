@@ -12,7 +12,7 @@ public class Effect : ScriptableObject {
 
     float duration;
 
-    public int heal = 0;
+    public float heal = 0;
     public float accelerate = 1;
 
     public float Duration { get { return duration; } }

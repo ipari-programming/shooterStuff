@@ -134,7 +134,7 @@ public class Player : MonoBehaviour {
     }
     #endregion
 
-    public void Heal(int amount)
+    public void Heal(float amount)
     {
         if (health + amount > maxHealth) health = maxHealth;
         else health += amount;
@@ -142,7 +142,7 @@ public class Player : MonoBehaviour {
         healthBarFill.GetComponent<RectTransform>().SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, health / maxHealth * healthBar.GetComponent<RectTransform>().sizeDelta.x);
     }
 
-    public bool DealDamage(int amount)
+    public bool DealDamage(float amount)
     {
         health -= amount;
 
