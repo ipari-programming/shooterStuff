@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Cinemachine;
 using TouchControlsKit;
 
 public class Player : MonoBehaviour {
+
+    public CinemachineVirtualCamera cam;
 
     public GameObject healthBar;
     public GameObject healthBarFill;
@@ -134,6 +137,7 @@ public class Player : MonoBehaviour {
     }
     #endregion
 
+    #region Health stuff
     public void Heal(float amount)
     {
         if (health + amount > maxHealth) health = maxHealth;
@@ -156,9 +160,23 @@ public class Player : MonoBehaviour {
         return false;
     }
 
-    public void Die()
+    void Die()
     {
         Debug.Log("Player dead.");
         Destroy(gameObject);
+    }
+    #endregion
+
+    public IEnumerator Teleport(Transform destination)
+    {
+        cam.Follow = null;
+
+        transform.position = destination.position;
+
+        cam.transform.position = new Vector3(destination.position.x, destination.position.y, -10);
+
+        yield return new WaitForSeconds(.1f);
+
+        cam.Follow = transform;
     }
 }

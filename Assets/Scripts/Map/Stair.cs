@@ -22,7 +22,7 @@ public class Stair : MonoBehaviour {
             button.onClick.RemoveAllListeners();
             button.onClick.AddListener(() =>
             {
-                player.transform.position = destination.position;
+                StartCoroutine(player.Teleport(destination));
             });
         }
     }
