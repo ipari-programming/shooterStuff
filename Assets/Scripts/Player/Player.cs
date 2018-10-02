@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Cinemachine;
-using TouchControlsKit;
 
 public class Player : MonoBehaviour {
 
@@ -11,11 +10,11 @@ public class Player : MonoBehaviour {
 
     public GameObject healthBar;
     public GameObject healthBarFill;
-
-    public TCKJoystick joystickMove;
-    public TCKJoystick joystickShoot;
     
     public GameObject bulletPrefab;
+
+    public Joystick joystickMove;
+    public Joystick joystickShoot;
 
     public Sprite skinIdle;
     public Sprite skinRun;
@@ -52,8 +51,8 @@ public class Player : MonoBehaviour {
     {
         // Movement
         Vector2 move;
-        move.x = joystickMove.axisX.value;
-        move.y = joystickMove.axisY.value;
+        move.x = joystickMove.Horizontal;
+        move.y = joystickMove.Vertical;
 
         #region Debug from PC
         move.x = move.x == 0 ? Input.GetAxis("Horizontal") : move.x;
@@ -68,11 +67,11 @@ public class Player : MonoBehaviour {
 
         // Aiming and shooting
         Vector2 aim;
-        aim.x = joystickShoot.axisX.value;
-        aim.y = joystickShoot.axisY.value;
+        aim.x = joystickShoot.Horizontal;
+        aim.y = joystickShoot.Vertical;
         bool isAiming = aim != Vector2.zero;
 
-        if (isAiming) StartCoroutine(Shoot());
+        if (isAiming && (Mathf.Abs(aim.x) > .5f || Mathf.Abs(aim.y) > .5f)) StartCoroutine(Shoot());
 
         // Rotation
         if (move != Vector2.zero || isAiming) transform.rotation = Quaternion.LookRotation(isAiming ? aim : move, Vector3.forward);

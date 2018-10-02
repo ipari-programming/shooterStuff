@@ -16,7 +16,7 @@ public class Bullet : MonoBehaviour {
             {
                 enemy.DealDamage(damage);
             }
-            Destroy(transform.gameObject);
+            if (!collision.isTrigger) Destroy(transform.gameObject);
         }
     }
 
