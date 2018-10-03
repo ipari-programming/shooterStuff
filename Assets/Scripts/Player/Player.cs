@@ -47,7 +47,7 @@ public class Player : MonoBehaviour {
         healthBarFill.GetComponent<RectTransform>().SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, health / maxHealth * healthBar.GetComponent<RectTransform>().sizeDelta.x);
     }
 
-    void Update ()
+    void FixedUpdate ()
     {
         // Movement
         Vector2 move;
@@ -58,6 +58,8 @@ public class Player : MonoBehaviour {
         move.x = move.x == 0 ? Input.GetAxis("Horizontal") : move.x;
         move.y = move.y == 0 ? Input.GetAxis("Vertical") : move.y;
         #endregion
+
+        Debug.Log(Time.deltaTime);
 
         move *= speed * 10;
 

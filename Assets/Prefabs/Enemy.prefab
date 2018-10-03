@@ -90,11 +90,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 5
-  damage: 0.1
+  damage: 0.5
   viewDistance: 8
   stopDistance: 0.7
   speed: 5
-  meleeSpeed: 1
+  meleeSpeed: 2
 --- !u!212 &212211664786216622
 SpriteRenderer:
   m_ObjectHideFlags: 1
