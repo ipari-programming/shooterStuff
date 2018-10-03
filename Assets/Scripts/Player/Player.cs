@@ -47,7 +47,7 @@ public class Player : MonoBehaviour {
         healthBarFill.GetComponent<RectTransform>().SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, health / maxHealth * healthBar.GetComponent<RectTransform>().sizeDelta.x);
     }
 
-    void FixedUpdate ()
+    void Update ()
     {
         // Movement
         Vector2 move;

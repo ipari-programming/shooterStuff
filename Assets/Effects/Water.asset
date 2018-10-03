@@ -13,6 +13,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Water
   maxDuration: 99999
-  applyRate: 0.05
-  heal: 0.05
+  applyRate: 0.02
+  heal: 0.04
   accelerate: 0.5
