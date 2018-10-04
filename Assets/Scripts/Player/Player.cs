@@ -59,8 +59,6 @@ public class Player : MonoBehaviour {
         move.y = move.y == 0 ? Input.GetAxis("Vertical") : move.y;
         #endregion
 
-        Debug.Log(Time.deltaTime);
-
         move *= speed * 10;
 
         rb.AddForce(move);
@@ -124,7 +122,7 @@ public class Player : MonoBehaviour {
             else
             {
                 isBulletOut = true;
-                bulletEffect.GetComponent<Rigidbody2D>().AddForce(bulletEffect.transform.up * bulletSpeed);
+                bulletEffect.GetComponent<Rigidbody2D>().AddForce(((Vector2)bulletEffect.transform.up + rb.velocity.normalized) * bulletSpeed);
 
                 yield return new WaitForSeconds(weaponRange / 10f);
 
