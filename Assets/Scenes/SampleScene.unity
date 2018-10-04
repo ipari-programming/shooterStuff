@@ -981,20 +981,6 @@ Prefab:
       propertyPath: m_Name
       value: Enemy (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 212211664786216622, guid: b196b2ab0361ec54892d753bf54d7dd5,
-        type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 1f294e403361f5e48aee85624b79645c,
-        type: 3}
-    - target: {fileID: 4479320074664414, guid: b196b2ab0361ec54892d753bf54d7dd5, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4479320074664414, guid: b196b2ab0361ec54892d753bf54d7dd5, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b196b2ab0361ec54892d753bf54d7dd5, type: 2}
   m_IsPrefabAsset: 0
@@ -1817,20 +1803,6 @@ Prefab:
       propertyPath: m_Name
       value: Enemy (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 4479320074664414, guid: b196b2ab0361ec54892d753bf54d7dd5, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4479320074664414, guid: b196b2ab0361ec54892d753bf54d7dd5, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 212211664786216622, guid: b196b2ab0361ec54892d753bf54d7dd5,
-        type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 1f294e403361f5e48aee85624b79645c,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b196b2ab0361ec54892d753bf54d7dd5, type: 2}
   m_IsPrefabAsset: 0
@@ -14312,20 +14284,6 @@ Prefab:
     - target: {fileID: 4479320074664414, guid: b196b2ab0361ec54892d753bf54d7dd5, type: 2}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 212211664786216622, guid: b196b2ab0361ec54892d753bf54d7dd5,
-        type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 1f294e403361f5e48aee85624b79645c,
-        type: 3}
-    - target: {fileID: 4479320074664414, guid: b196b2ab0361ec54892d753bf54d7dd5, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4479320074664414, guid: b196b2ab0361ec54892d753bf54d7dd5, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b196b2ab0361ec54892d753bf54d7dd5, type: 2}
