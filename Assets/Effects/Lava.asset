@@ -14,5 +14,5 @@ MonoBehaviour:
   name: Lava
   maxDuration: 99999
   applyRate: 0.05
-  heal: -0.1
+  heal: -0.5
   accelerate: 0.3
