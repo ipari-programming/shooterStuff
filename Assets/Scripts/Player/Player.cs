@@ -85,18 +85,17 @@ public class Player : MonoBehaviour {
     {
         if (!isBulletOut)
         {
-            
-            float x = transform.position.x + shootingOffset.x * Mathf.Sin((transform.rotation.eulerAngles.z + shootingOffset.y) * (Mathf.PI / 180));
-            float y = transform.position.y + shootingOffset.x * Mathf.Cos((transform.rotation.eulerAngles.z + shootingOffset.y) * (Mathf.PI / 180));
+            GameObject bulletEffect = Instantiate(bulletPrefab, transform.position + shootingOffset, Quaternion.identity);
 
-            GameObject bulletEffect = Instantiate(bulletPrefab, new Vector2(x, y), transform.rotation);
+            bulletEffect.transform.RotateAround(transform.position, Vector3.forward, -transform.rotation.eulerAngles.z);
+
             bulletEffect.GetComponent<SpriteRenderer>().sprite = bullet;
             bulletEffect.GetComponent<Bullet>().isRay = isWeaponRay;
             bulletEffect.GetComponent<Bullet>().damage = damage;
 
             if (isWeaponRay)
             {
-                RaycastHit2D hit = Physics2D.Raycast(new Vector2(x, y), transform.up, weaponRange);
+                RaycastHit2D hit = Physics2D.Raycast(bulletEffect.transform.position, transform.up, weaponRange);
 
                 if (hit)
                 {
@@ -122,7 +121,7 @@ public class Player : MonoBehaviour {
             else
             {
                 isBulletOut = true;
-                bulletEffect.GetComponent<Rigidbody2D>().AddForce(((Vector2)bulletEffect.transform.up + rb.velocity.normalized) * bulletSpeed);
+                bulletEffect.GetComponent<Rigidbody2D>().AddForce(((Vector2)bulletEffect.transform.up + rb.velocity.normalized / 3) * bulletSpeed);
 
                 yield return new WaitForSeconds(weaponRange / 10f);
 

@@ -20,9 +20,9 @@ MonoBehaviour:
   health: 1
   damage: 1
   speed: 5
-  weaponRange: 5.27
-  bulletSpeed: 10
+  weaponRange: 8
+  bulletSpeed: 12
   isWeaponRay: 1
-  shootingOffset: {x: 0.6, y: 0}
+  shootingOffset: {x: 0, y: 0.4}
   mainColor: {r: 0, g: 0, b: 0, a: 1}
   theme: {fileID: 0}
