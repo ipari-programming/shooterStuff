@@ -17,11 +17,12 @@ public class MenuManager : MonoBehaviour {
 
     public Character[] characters;
 
-    int characterID = 0;
+    int characterID;
 
 	void Start ()
     {
-        SelectCharacter(PlayerPrefs.GetInt("last-player", 0));
+        characterID = PlayerPrefs.GetInt("last-player", 0);
+        SelectCharacter(characterID);
 
         buttonRight.onClick.AddListener(() =>
         {
