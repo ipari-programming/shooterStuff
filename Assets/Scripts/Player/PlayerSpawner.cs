@@ -10,7 +10,13 @@ public class PlayerSpawner : MonoBehaviour
 
     void Start()
     {
-        player.GetComponent<CharacterDisplay>().character = characters[PlayerPrefs.GetInt("last-player", 0)];
+        int id = 0;
+        foreach (Character item in characters)
+        {
+            if (PlayerPrefs.GetString("last-player", "Mario") != item.name)
+                id++;
+        }
+        player.GetComponent<CharacterDisplay>().character = characters[id];
         player.GetComponent<CharacterDisplay>().ChangeCharacter();
     }
 }

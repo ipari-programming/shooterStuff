@@ -16,38 +16,77 @@ public class MenuManager : MonoBehaviour {
     public Button buttonLeft;
 
     public Character[] characters;
+    public Character selectedCharacter;
 
-    int characterID;
+    string characterName;
+    int characterID = 0;
 
 	void Start ()
     {
-        characterID = PlayerPrefs.GetInt("last-player", 0);
-        SelectCharacter(characterID);
+        characterName = PlayerPrefs.GetString("last-player", "Mario");
+        SelectCharacter(characterName);
 
         buttonRight.onClick.AddListener(() =>
         {
-            if (characterID < characters.Length - 1) characterID++;
-            SelectCharacter(characterID);
+            SelectNextCharacter();
         });
         buttonLeft.onClick.AddListener(() =>
         {
-            if (characterID > 0) characterID--;
-            SelectCharacter(characterID);
+            SelectPrevCharacter();
         });
     }
 
-    void SelectCharacter(int id)
+    void SelectCharacter(string name)
     {
-        header.color = characters[id].mainColor;
-        title.text = characters[id].name;
+        int id = 0;
+        foreach (Character item in characters)
+        {
+            if (name == item.name)
+            {
+                header.color = item.mainColor;
+                title.text = item.name;
+                characterID = id;
+                characterDisplay.sprite = item.skinIdle;
+                selectedCharacter = characters[characterID];
+                GetComponent<MenuAudioManager>().StartMusic();
+            }
+            else
+                id++;
+        }
+    }
 
-        characterDisplay.sprite = characters[id].skinIdle;
+    void SelectPrevCharacter()
+    {
+        if (characterID > 0)
+        {
+            characterID--;
+            header.color = characters[characterID].mainColor;
+            title.text = characters[characterID].name;
+            characterDisplay.sprite = characters[characterID].skinIdle;
+            characterName = characters[characterID].name;
+            selectedCharacter = characters[characterID];
+            GetComponent<MenuAudioManager>().StartMusic();
+        }
+    }
+
+    void SelectNextCharacter()
+    {
+        if (characterID < characters.Length - 1)
+        {
+            characterID++;
+            header.color = characters[characterID].mainColor;
+            title.text = characters[characterID].name;
+            characterDisplay.sprite = characters[characterID].skinIdle;
+            characterName = characters[characterID].name;
+            selectedCharacter = characters[characterID];
+            GetComponent<MenuAudioManager>().StartMusic();
+        }
     }
 
     public void StartGame()
     {
-        PlayerPrefs.SetInt("last-player", characterID);
-
+        PlayerPrefs.SetString("last-player", characterName);
+        GetComponent<MenuAudioManager>().StopMusic();
         SceneManager.LoadScene(1);
     }
 }
