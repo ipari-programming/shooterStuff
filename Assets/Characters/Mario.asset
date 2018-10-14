@@ -25,4 +25,4 @@ MonoBehaviour:
   isWeaponRay: 0
   shootingOffset: {x: 0, y: 0.4}
   mainColor: {r: 1, g: 0, b: 0, a: 1}
-  theme: {fileID: 0}
+  theme: {fileID: 8300000, guid: b9b16e6f59e2fc74196724432abec4fb, type: 3}
