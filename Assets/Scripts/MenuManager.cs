@@ -21,66 +21,69 @@ public class MenuManager : MonoBehaviour {
     string characterName;
     int characterID = 0;
 
+    MenuAudioManager menuAudioManager;
+
 	void Start ()
     {
+        menuAudioManager = GetComponent<MenuAudioManager>();
+
         characterName = PlayerPrefs.GetString("last-player", "Mario");
-        SelectCharacter(characterName);
+        FindCharacterByName(characterName);
 
         buttonRight.onClick.AddListener(() =>
         {
-            SelectNextCharacter();
+            FindNextCharacter();
         });
         buttonLeft.onClick.AddListener(() =>
         {
-            SelectPrevCharacter();
+            FindPrevCharacter();
         });
     }
 
-    void SelectCharacter(string name)
+    void FindCharacterByName(string name)
     {
         int id = 0;
         foreach (Character item in characters)
         {
             if (name == item.name)
             {
-                header.color = item.mainColor;
-                title.text = item.name;
                 characterID = id;
-                characterDisplay.sprite = item.skinIdle;
-                selectedCharacter = characters[characterID];
-                GetComponent<MenuAudioManager>().StartMusic();
+                StartCoroutine(SelectCharacter(characters[characterID]));
             }
             else
                 id++;
         }
     }
 
-    void SelectPrevCharacter()
+    void FindPrevCharacter()
     {
         if (characterID > 0)
         {
             characterID--;
-            header.color = characters[characterID].mainColor;
-            title.text = characters[characterID].name;
-            characterDisplay.sprite = characters[characterID].skinIdle;
-            characterName = characters[characterID].name;
-            selectedCharacter = characters[characterID];
-            GetComponent<MenuAudioManager>().StartMusic();
+            StartCoroutine(SelectCharacter(characters[characterID]));
         }
     }
 
-    void SelectNextCharacter()
+    void FindNextCharacter()
     {
         if (characterID < characters.Length - 1)
         {
             characterID++;
-            header.color = characters[characterID].mainColor;
-            title.text = characters[characterID].name;
-            characterDisplay.sprite = characters[characterID].skinIdle;
-            characterName = characters[characterID].name;
-            selectedCharacter = characters[characterID];
-            GetComponent<MenuAudioManager>().StartMusic();
+            StartCoroutine(SelectCharacter(characters[characterID]));
         }
+    }
+
+    IEnumerator SelectCharacter(Character character)
+    {
+        header.color = character.mainColor;
+        title.text = character.name;
+        characterDisplay.sprite = character.skinIdle;
+        characterName = character.name;
+        selectedCharacter = character;
+
+        yield return null;
+
+        menuAudioManager.StartMusic();
     }
 
     public void StartGame()
