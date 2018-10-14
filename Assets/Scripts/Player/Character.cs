@@ -11,6 +11,7 @@ public class Character : ScriptableObject {
     public Sprite skinRun;
     public Sprite skinAttack;
     public Sprite bullet;
+    public Sprite menuIcon;
 
     public float maxHealth;
     public float health;

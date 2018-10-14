@@ -76,8 +76,10 @@ public class MenuManager : MonoBehaviour {
     IEnumerator SelectCharacter(Character character)
     {
         header.color = character.mainColor;
+        buttonLeft.image.color = character.mainColor;
+        buttonRight.image.color = character.mainColor;
         title.text = character.name;
-        characterDisplay.sprite = character.skinIdle;
+        characterDisplay.sprite = character.menuIcon;
         characterName = character.name;
         selectedCharacter = character;
 
