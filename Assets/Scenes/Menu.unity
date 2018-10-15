@@ -113,6 +113,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &41680206 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1530035476307668, guid: aa8f7560468c8044596fc716a101a26a,
+    type: 2}
+  m_PrefabInternal: {fileID: 809019445}
 --- !u!1 &239232152
 GameObject:
   m_ObjectHideFlags: 0
@@ -287,6 +292,96 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 563622108}
   m_CullTransparentMesh: 0
+--- !u!1 &655817341
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 655817343}
+  - component: {fileID: 655817342}
+  m_Layer: 0
+  m_Name: Spectrum
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &655817342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 655817341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37c5288dfa9efd14da62feee804531cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  muteGroup: {fileID: 24300001, guid: 1d9bfcb87d0ba844e9071a1e60825ede, type: 2}
+  isEnabled: 1
+  sourceType: 0
+  audioSource: {fileID: 1989688134}
+  sampleChannel: 0
+  numSamples: 256
+  windowUsed: 5
+  useLogarithmicFrequency: 1
+  multiplyByFrequency: 1
+  highFrequencyTrim: 1
+  linearSampleStretch: 1
+  barAmount: 32
+  barYScale: 10
+  barMinYScale: 0.01
+  barPrefab: {fileID: 41680206}
+  barXScale: 0.5
+  barXSpacing: -0.5
+  barCurveAngle: 0
+  barXRotation: 0
+  attackDamp: 0.3
+  decayDamp: 0.15
+  useColorGradient: 1
+  colorMin: {r: 0, g: 0, b: 0, a: 0.1254902}
+  colorMax: {r: 0, g: 0, b: 0, a: 0.2509804}
+  colorValueCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  colorAttackDamp: 1
+  colorDecayDamp: 1
+--- !u!4 &655817343
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 655817341}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &724288704
 GameObject:
   m_ObjectHideFlags: 0
@@ -362,6 +457,73 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 724288704}
   m_CullTransparentMesh: 0
+--- !u!1001 &809019445
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4750369932175438, guid: aa8f7560468c8044596fc716a101a26a, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4750369932175438, guid: aa8f7560468c8044596fc716a101a26a, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4750369932175438, guid: aa8f7560468c8044596fc716a101a26a, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4750369932175438, guid: aa8f7560468c8044596fc716a101a26a, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4750369932175438, guid: aa8f7560468c8044596fc716a101a26a, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4750369932175438, guid: aa8f7560468c8044596fc716a101a26a, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4750369932175438, guid: aa8f7560468c8044596fc716a101a26a, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4750369932175438, guid: aa8f7560468c8044596fc716a101a26a, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 212054269881602768, guid: aa8f7560468c8044596fc716a101a26a,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 212054269881602768, guid: aa8f7560468c8044596fc716a101a26a,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 212054269881602768, guid: aa8f7560468c8044596fc716a101a26a,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 212054269881602768, guid: aa8f7560468c8044596fc716a101a26a,
+        type: 2}
+      propertyPath: m_Color.a
+      value: 0.2509804
+      objectReference: {fileID: 0}
+    - target: {fileID: 212054269881602768, guid: aa8f7560468c8044596fc716a101a26a,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: aa8f7560468c8044596fc716a101a26a, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &935960384
 GameObject:
   m_ObjectHideFlags: 0
@@ -1146,6 +1308,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bf52021bc747ba4ebe9ba0e052ff19e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 1948351117}
   header: {fileID: 1631974113}
   title: {fileID: 724288706}
   characterDisplay: {fileID: 1101401324}
@@ -1168,7 +1331,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.131
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0

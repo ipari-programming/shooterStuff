@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour {
 
+    public Camera cam;
+
     public Image header;
     public Text title;
 
@@ -75,13 +77,20 @@ public class MenuManager : MonoBehaviour {
 
     IEnumerator SelectCharacter(Character character)
     {
+        Color darker = new Color(character.mainColor.r / 3, character.mainColor.g / 3, character.mainColor.b / 3);
+        cam.backgroundColor = darker;
+
         header.color = character.mainColor;
         buttonLeft.image.color = character.mainColor;
         buttonRight.image.color = character.mainColor;
+
         title.text = character.name;
         characterDisplay.sprite = character.menuIcon;
         characterName = character.name;
         selectedCharacter = character;
+
+        PlayerPrefs.SetString("last-player", characterName);
+        PlayerPrefs.Save();
 
         yield return null;
 
@@ -90,7 +99,6 @@ public class MenuManager : MonoBehaviour {
 
     public void StartGame()
     {
-        PlayerPrefs.SetString("last-player", characterName);
         GetComponent<MenuAudioManager>().StopMusic();
         SceneManager.LoadScene(1);
     }
