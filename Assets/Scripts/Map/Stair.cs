@@ -7,8 +7,6 @@ public class Stair : MonoBehaviour {
 
     public GameObject buttonObject;
 
-    public Player player;
-
     public Transform destination;
     
     void OnTriggerEnter2D(Collider2D collision)
@@ -22,7 +20,7 @@ public class Stair : MonoBehaviour {
             button.onClick.RemoveAllListeners();
             button.onClick.AddListener(() =>
             {
-                StartCoroutine(player.Teleport(destination));
+                StartCoroutine(collision.GetComponent<Player>().Teleport(destination));
             });
         }
     }

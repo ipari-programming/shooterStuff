@@ -8,7 +8,7 @@ public class CharacterDisplay : MonoBehaviour {
 
     Player p;
 
-	void Start ()
+	void Awake ()
     {
         p = GetComponent<Player>();
 

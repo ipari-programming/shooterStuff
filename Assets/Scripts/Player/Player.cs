@@ -13,6 +13,8 @@ public class Player : MonoBehaviour {
     
     public GameObject bulletPrefab;
 
+    public GameObject buttonRespawn;
+
     public Joystick joystickMove;
     public Joystick joystickShoot;
 
@@ -162,6 +164,7 @@ public class Player : MonoBehaviour {
     {
         Debug.Log("Player dead.");
         Destroy(gameObject);
+        buttonRespawn.SetActive(true);
     }
     #endregion
 

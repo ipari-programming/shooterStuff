@@ -8,13 +8,9 @@ public class Fluid : MonoBehaviour {
 
     EffectManager effectManager;
 
-    void Start()
-    {
-        effectManager = FindObjectOfType<EffectManager>();
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        effectManager = FindObjectOfType<EffectManager>();
         if (collision.GetComponent<Player>())
             effectManager.ApplyEffect(fluidEffect);
     }
