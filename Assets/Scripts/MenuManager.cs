@@ -89,9 +89,6 @@ public class MenuManager : MonoBehaviour {
         characterName = character.name;
         selectedCharacter = character;
 
-        PlayerPrefs.SetString("last-player", characterName);
-        PlayerPrefs.Save();
-
         yield return null;
 
         menuAudioManager.StartMusic();
@@ -99,7 +96,16 @@ public class MenuManager : MonoBehaviour {
 
     public void StartGame()
     {
+        if (PlayerPrefs.GetString("last-player", "Mario") != characterName)
+        {
+            PlayerPrefs.DeleteKey("checkpoint-x");
+            PlayerPrefs.DeleteKey("checkpoint-y");
+            PlayerPrefs.SetString("last-player", characterName);
+            PlayerPrefs.Save();
+        }
+
         GetComponent<MenuAudioManager>().StopMusic();
+
         SceneManager.LoadScene(1);
     }
 }

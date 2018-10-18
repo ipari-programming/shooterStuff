@@ -9,13 +9,8 @@ public class Checkpoint : MonoBehaviour {
 
         if (collision.GetComponent<Player>())
         {
-            PlayerPrefs.SetFloat("x-pos", collision.transform.position.x);
-            PlayerPrefs.SetFloat("y-pos", collision.transform.position.y);
-            /*
-            float x = PlayerPrefs.GetFloat("x-pos");
-            float y = PlayerPrefs.GetFloat("y-pos");
-            Debug.Log(x + " " + y);
-            */
+            PlayerPrefs.SetFloat("checkpoint-x", transform.position.x);
+            PlayerPrefs.SetFloat("checkpoint-y", transform.position.y);
         }
     }
 }

@@ -22,6 +22,24 @@ public class PlayerSpawner : MonoBehaviour
     void Start()
     {
         Spawn();
+    }
+
+    public void Spawn()
+    {
+        Vector2 pos = new Vector2(PlayerPrefs.GetFloat("checkpoint-x", 0), PlayerPrefs.GetFloat("checkpoint-y", 0));
+        currentPlayer = Instantiate(playerPrefab, pos, Quaternion.identity);
+
+        currentPlayer.GetComponent<Player>().buttonRespawn = buttonRespawn;
+        buttonRespawn.SetActive(false);
+
+        currentPlayer.GetComponent<Player>().healthBar = healthBar;
+        currentPlayer.GetComponent<Player>().healthBarFill = healthBarFill;
+        currentPlayer.GetComponent<Player>().joystickMove = joystickMove;
+        currentPlayer.GetComponent<Player>().joystickShoot = joystickShoot;
+
+        currentPlayer.GetComponent<Player>().cam = cam;
+        cam.Follow = currentPlayer.transform;
+
         foreach (Character character in characters)
         {
             if (PlayerPrefs.GetString("last-player", "Mario") == character.name)
@@ -31,19 +49,5 @@ public class PlayerSpawner : MonoBehaviour
                 break;
             }
         }
-    }
-
-    public void Spawn()
-    {
-        Vector2 pos = new Vector2(PlayerPrefs.GetFloat("x-pos", 0), PlayerPrefs.GetFloat("y-pos", 0));
-        currentPlayer = Instantiate(playerPrefab, pos, Quaternion.identity);
-        currentPlayer.GetComponent<Player>().buttonRespawn = buttonRespawn;
-        buttonRespawn.SetActive(false);
-        currentPlayer.GetComponent<Player>().healthBar = healthBar;
-        currentPlayer.GetComponent<Player>().healthBarFill = healthBarFill;
-        currentPlayer.GetComponent<Player>().joystickMove = joystickMove;
-        currentPlayer.GetComponent<Player>().joystickShoot = joystickShoot;
-        currentPlayer.GetComponent<Player>().cam = cam;
-        cam.Follow = currentPlayer.transform;
     }
 }
