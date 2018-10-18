@@ -16,7 +16,7 @@ MonoBehaviour:
   skinRun: {fileID: 21300000, guid: 5dafca5a3f55ea149b738b6a9c8a2135, type: 3}
   skinAttack: {fileID: 21300000, guid: 5dafca5a3f55ea149b738b6a9c8a2135, type: 3}
   bullet: {fileID: 21300000, guid: c8aa6d8254cddc948aa0cb5c336f9834, type: 3}
-  menuIcon: {fileID: 21300000, guid: 1077d3eb7152ef648883e112c01ed715, type: 3}
+  menuIcon: {fileID: 21300000, guid: 3c7aa191e7ba6a94690ff76e7e8a33a7, type: 3}
   maxHealth: 10
   health: 6
   damage: 2

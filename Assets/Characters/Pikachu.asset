@@ -20,7 +20,7 @@ MonoBehaviour:
   maxHealth: 10
   health: 7
   damage: 2
-  speed: 5
+  speed: 8
   weaponRange: 5
   bulletSpeed: 10
   isWeaponRay: 1
