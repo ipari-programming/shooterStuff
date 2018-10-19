@@ -53,17 +53,12 @@ public class Player : MonoBehaviour {
     {
         // Movement
         Vector2 move;
-        move.x = joystickMove.Horizontal;
-        move.y = joystickMove.Vertical;
+        move.x = joystickMove.Horizontal + Input.GetAxis("Horizontal");
+        move.y = joystickMove.Vertical + Input.GetAxis("Vertical");
 
-        #region Debug from PC
-        move.x = move.x == 0 ? Input.GetAxis("Horizontal") : move.x;
-        move.y = move.y == 0 ? Input.GetAxis("Vertical") : move.y;
-        #endregion
+        move *= speed;
 
-        move *= speed * 10;
-
-        rb.AddForce(move);
+        rb.velocity = move;
 
         sr.sprite = move.x + move.y == 0 ? skinIdle : skinRun;
 
