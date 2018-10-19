@@ -16,6 +16,7 @@ public class MenuManager : MonoBehaviour {
 
     public Button buttonRight;
     public Button buttonLeft;
+    public Button buttonStartNew;
 
     public Character[] characters;
     public Character selectedCharacter;
@@ -89,14 +90,16 @@ public class MenuManager : MonoBehaviour {
         characterName = character.name;
         selectedCharacter = character;
 
+        buttonStartNew.gameObject.SetActive(PlayerPrefs.GetString("last-player", "Mario") == characterName);
+
         yield return null;
 
         menuAudioManager.StartMusic();
     }
 
-    public void StartGame()
+    public void StartGame(bool isNew)
     {
-        if (PlayerPrefs.GetString("last-player", "Mario") != characterName)
+        if (PlayerPrefs.GetString("last-player", "Mario") != characterName || isNew)
         {
             PlayerPrefs.DeleteKey("checkpoint-x");
             PlayerPrefs.DeleteKey("checkpoint-y");

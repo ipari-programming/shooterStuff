@@ -56,7 +56,7 @@ public class Player : MonoBehaviour {
         move.x = joystickMove.Horizontal + Input.GetAxis("Horizontal");
         move.y = joystickMove.Vertical + Input.GetAxis("Vertical");
 
-        move *= speed;
+        move *= speed * Time.fixedDeltaTime * 20;
 
         rb.velocity = move;
 
@@ -157,7 +157,6 @@ public class Player : MonoBehaviour {
 
     void Die()
     {
-        Debug.Log("Player dead.");
         Destroy(gameObject);
         buttonRespawn.SetActive(true);
     }
