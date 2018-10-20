@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Dummy
   m_EditorClassIdentifier: 
   name: Dummy
-  runtimeAnimatorController: {fileID: 9100000, guid: 64928f54247666b4e972a92bc03afb76,
+  RTAnimatorController: {fileID: 9100000, guid: 64928f54247666b4e972a92bc03afb76,
     type: 2}
   bullet: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   menuIcon: {fileID: 0}
