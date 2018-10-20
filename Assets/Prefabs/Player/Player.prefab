@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 212509782999780734}
   - component: {fileID: 58669040215675460}
   - component: {fileID: 50425808222582284}
+  - component: {fileID: 95171556366960402}
+  - component: {fileID: 114031604653908558}
   - component: {fileID: 114652921929438266}
   - component: {fileID: 114145258844508756}
   m_Layer: 0
@@ -109,6 +111,46 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.3
+--- !u!95 &95171556366960402
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1197226577372586}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114031604653908558
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1197226577372586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 065d3a8060a649d4890b1e9d7452e848, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  joystickMove: {fileID: 0}
+  joystickShoot: {fileID: 0}
+  speed: 10
+  damage: 0
+  weaponRange: 0
+  bulletSpeed: 0
+  bullet: {fileID: 0}
+  bulletPrefab: {fileID: 1640945420283282, guid: b1019758bbe93984e805c41a57eed842,
+    type: 2}
+  isWeaponRay: 0
+  shootingOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &114145258844508756
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -135,23 +177,9 @@ MonoBehaviour:
   cam: {fileID: 0}
   healthBar: {fileID: 0}
   healthBarFill: {fileID: 0}
-  bulletPrefab: {fileID: 1640945420283282, guid: b1019758bbe93984e805c41a57eed842,
-    type: 2}
   buttonRespawn: {fileID: 0}
-  joystickMove: {fileID: 0}
-  joystickShoot: {fileID: 0}
-  skinIdle: {fileID: 0}
-  skinRun: {fileID: 0}
-  skinAttack: {fileID: 0}
-  bullet: {fileID: 0}
   maxHealth: 0
   health: 0
-  damage: 0
-  speed: 10
-  weaponRange: 0
-  bulletSpeed: 0
-  shootingOffset: {x: 0, y: 0, z: 0}
-  isWeaponRay: 0
   mainColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &114926521303184144
 MonoBehaviour:

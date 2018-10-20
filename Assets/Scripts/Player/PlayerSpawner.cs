@@ -34,11 +34,12 @@ public class PlayerSpawner : MonoBehaviour
 
         currentPlayer.GetComponent<Player>().healthBar = healthBar;
         currentPlayer.GetComponent<Player>().healthBarFill = healthBarFill;
-        currentPlayer.GetComponent<Player>().joystickMove = joystickMove;
-        currentPlayer.GetComponent<Player>().joystickShoot = joystickShoot;
 
         currentPlayer.GetComponent<Player>().cam = cam;
         cam.Follow = currentPlayer.transform;
+
+        currentPlayer.GetComponent<PlayerController>().joystickMove = joystickMove;
+        currentPlayer.GetComponent<PlayerController>().joystickShoot = joystickShoot;
 
         foreach (Character character in characters)
         {

@@ -17,7 +17,7 @@ public class EffectManager : MonoBehaviour {
         {
             foreach (Effect effect in effects)
             {
-                if (effect.Duration <= 0)
+                if (effect.duration <= 0)
                 {
                     ClearEffect(effect);
                     break;
@@ -26,8 +26,8 @@ public class EffectManager : MonoBehaviour {
         }
         else
         {
-            if (initialSpeed == 0) initialSpeed = player.speed;
-            player.speed = initialSpeed;
+            if (initialSpeed == 0) initialSpeed = player.GetComponent<PlayerController>().speed;
+            player.GetComponent<PlayerController>().speed = initialSpeed;
         }
     }
 

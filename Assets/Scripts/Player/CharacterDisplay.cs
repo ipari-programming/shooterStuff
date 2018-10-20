@@ -8,9 +8,15 @@ public class CharacterDisplay : MonoBehaviour {
 
     Player p;
 
+    PlayerController pc;
+
+    Animator a;
+
 	void Awake ()
     {
         p = GetComponent<Player>();
+        pc = GetComponent<PlayerController>();
+        a = GetComponent<Animator>();
 
         ChangeCharacter();
     }
@@ -19,23 +25,23 @@ public class CharacterDisplay : MonoBehaviour {
     {
         p.name = character.name;
 
-        p.skinIdle = character.skinIdle;
-        p.skinRun = character.skinRun;
-        p.skinAttack = character.skinAttack;
-        p.bullet = character.bullet;
-
-        p.speed = character.speed;
-        p.weaponRange = character.weaponRange;
-        p.bulletSpeed = character.bulletSpeed;
         p.maxHealth = character.maxHealth;
         p.health = character.health;
-        p.damage = character.damage;
-
-        p.isWeaponRay = character.isWeaponRay;
-
-        p.shootingOffset = character.shootingOffset;
-
+        
         p.mainColor = character.mainColor;
+
+        pc.speed = character.speed;
+        pc.damage = character.damage;
+        pc.bulletSpeed = character.bulletSpeed;
+        pc.weaponRange = character.weaponRange;
+
+        pc.bullet = character.bullet;
+
+        pc.isWeaponRay = character.isWeaponRay;
+
+        pc.shootingOffset = character.shootingOffset;
+
+        a.runtimeAnimatorController = character.RTAnimatorController;
     }
 
 }

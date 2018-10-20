@@ -7,9 +7,8 @@ public class Character : ScriptableObject {
 
     public new string name;
 
-    public Sprite skinIdle;
-    public Sprite skinRun;
-    public Sprite skinAttack;
+    public RuntimeAnimatorController RTAnimatorController;
+
     public Sprite bullet;
     public Sprite menuIcon;
 

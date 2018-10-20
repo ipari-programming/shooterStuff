@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Name: Pikachu
   m_EditorClassIdentifier: 
   name: Pikachu
-  skinIdle: {fileID: 21300000, guid: f6e648388aa172642a65edf073141236, type: 3}
-  skinRun: {fileID: 21300000, guid: 521b599a40d8a4a4f9faeb71629a7ae4, type: 3}
-  skinAttack: {fileID: 21300000, guid: 9ac358062fd85e742bf66968769e271f, type: 3}
+  runtimeAnimatorController: {fileID: 9100000, guid: 64928f54247666b4e972a92bc03afb76,
+    type: 2}
   bullet: {fileID: 21300000, guid: 7c27df7f21f772b43a5a9c79220d27a4, type: 3}
   menuIcon: {fileID: 21300000, guid: 10aeec0030879b845a12a28447160815, type: 3}
   maxHealth: 10

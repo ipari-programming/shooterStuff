@@ -1,1 +1,3 @@
 last-player
+checkpoint-x
+checkpoint-y

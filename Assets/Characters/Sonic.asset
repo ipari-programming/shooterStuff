@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Name: Sonic
   m_EditorClassIdentifier: 
   name: Sonic
-  skinIdle: {fileID: 21300000, guid: 94727c37c7fcd384fade9c97f2277240, type: 3}
-  skinRun: {fileID: 21300000, guid: 7420cde8cf26db845a8f9f869c0acce5, type: 3}
-  skinAttack: {fileID: 21300000, guid: 7c27df7f21f772b43a5a9c79220d27a4, type: 3}
+  runtimeAnimatorController: {fileID: 9100000, guid: eed18effc431ad44a9844060da15aa30,
+    type: 2}
   bullet: {fileID: 21300000, guid: 7420cde8cf26db845a8f9f869c0acce5, type: 3}
   menuIcon: {fileID: 21300000, guid: 7501759bcb7f4154cb5a2c57a869f988, type: 3}
   maxHealth: 10

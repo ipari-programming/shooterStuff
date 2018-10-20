@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Name: Dummy
   m_EditorClassIdentifier: 
   name: Dummy
-  skinIdle: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  skinRun: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  skinAttack: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  runtimeAnimatorController: {fileID: 9100000, guid: 64928f54247666b4e972a92bc03afb76,
+    type: 2}
   bullet: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   menuIcon: {fileID: 0}
   maxHealth: 10

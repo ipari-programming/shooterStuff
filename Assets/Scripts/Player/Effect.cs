@@ -9,19 +9,16 @@ public class Effect : ScriptableObject {
 
     public float maxDuration;
     public float applyRate;
-
-    float duration;
+    public float duration;
 
     public float heal = 0;
     public float accelerate = 1;
-
-    public float Duration { get { return duration; } }
 
     public IEnumerator StartEffect(Player player)
     {
         duration = maxDuration;
         
-        player.speed *= accelerate;
+        player.GetComponent<PlayerController>().speed *= accelerate;
 
         do
         {
