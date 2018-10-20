@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour {
     public float weaponRange;
     public float bulletSpeed;
 
-    public Sprite bullet;
+    public RuntimeAnimatorController bullet;
 
     public GameObject bulletPrefab;
 
@@ -63,15 +63,16 @@ public class PlayerController : MonoBehaviour {
     bool isBulletOut = false;
     IEnumerator Shoot()
     {
-        animator.SetBool("attack", true);
 
         if (!isBulletOut)
         {
+            animator.SetBool("attack", true);
+
             GameObject bulletEffect = Instantiate(bulletPrefab, transform.position + shootingOffset, Quaternion.identity);
 
             bulletEffect.transform.RotateAround(transform.position, Vector3.forward, -transform.rotation.eulerAngles.z);
 
-            bulletEffect.GetComponent<SpriteRenderer>().sprite = bullet;
+            bulletEffect.GetComponent<Animator>().runtimeAnimatorController = bullet;
             bulletEffect.GetComponent<Bullet>().isRay = isWeaponRay;
             bulletEffect.GetComponent<Bullet>().damage = damage;
 
@@ -99,6 +100,8 @@ public class PlayerController : MonoBehaviour {
 
                 Destroy(bulletEffect);
                 isBulletOut = false;
+
+                animator.SetBool("attack", false);
             }
             else
             {
@@ -109,9 +112,10 @@ public class PlayerController : MonoBehaviour {
 
                 Destroy(bulletEffect);
                 isBulletOut = false;
-            }
 
-            animator.SetBool("attack", false);
+                animator.SetBool("attack", false);
+            }
+            
         }
     }
     #endregion

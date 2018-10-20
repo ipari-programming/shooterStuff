@@ -14,14 +14,14 @@ MonoBehaviour:
   name: Sonic
   RTAnimatorController: {fileID: 9100000, guid: eed18effc431ad44a9844060da15aa30,
     type: 2}
-  bullet: {fileID: 21300000, guid: 7420cde8cf26db845a8f9f869c0acce5, type: 3}
+  bullet: {fileID: 9100000, guid: ab117c0c0ff751f45812a0cd316de49c, type: 2}
   menuIcon: {fileID: 21300000, guid: 7501759bcb7f4154cb5a2c57a869f988, type: 3}
   maxHealth: 10
   health: 5
   damage: 3
   speed: 22
-  weaponRange: 5
-  bulletSpeed: 80
+  weaponRange: 2
+  bulletSpeed: 60
   isWeaponRay: 1
   shootingOffset: {x: 0, y: 0.4}
   mainColor: {r: 0.23529412, g: 0.3372549, b: 0.6392157, a: 1}

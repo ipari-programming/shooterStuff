@@ -8,8 +8,8 @@ public class Character : ScriptableObject {
     public new string name;
 
     public RuntimeAnimatorController RTAnimatorController;
+    public RuntimeAnimatorController bullet;
 
-    public Sprite bullet;
     public Sprite menuIcon;
 
     public float maxHealth;
