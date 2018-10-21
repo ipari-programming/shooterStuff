@@ -20,8 +20,8 @@ MonoBehaviour:
   health: 5
   damage: 3
   speed: 22
-  weaponRange: 2
-  bulletSpeed: 60
+  weaponRange: 3
+  bulletSpeed: 100
   isWeaponRay: 1
   shootingOffset: {x: 0, y: 0.4}
   mainColor: {r: 0.23529412, g: 0.3372549, b: 0.6392157, a: 1}
