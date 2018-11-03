@@ -4,48 +4,99 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour {
 
+    enum AiActivity { none, wander, follow, search, attack }
+
     public float health;
     public float damage;
-    public float viewDistance;
-    public float stopDistance;
     public float speed;
-    public float meleeSpeed;
+    public float range;
+    public float attackSpeed;
 
     Player player;
 
-    float melee = 0;
+    Rigidbody2D rb;
+
+    AiActivity aiActivity = AiActivity.none;
+
+    float cooldownWander = 0;
+    float cooldownAttack = 0;
+
+    Vector3 locationMemory = Vector2.zero;
 
     void Start()
     {
-        player = FindObjectOfType<Player>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
-    void FixedUpdate()
+    void Update()
     {
-        //float angleEnemyPlayer = Mathf.Atan2(transform.position.y - player.transform.position.y, transform.position.x - player.transform.position.x) * 180 / Mathf.PI;
-
-        //float x = transform.position.x + Mathf.Sin((270 - angleEnemyPlayer) * Mathf.PI / 180);
-        //float y = transform.position.y + Mathf.Cos((270 - angleEnemyPlayer) * Mathf.PI / 180);
-
-        //RaycastHit2D hit = Physics2D.Raycast(new Vector2(x, y), Quaternion.Euler(0, 0, angleEnemyPlayer + 180) * Vector2.right, viewDistance);
-
-        //if (hit && hit.transform.GetComponent<Player>() && Vector2.Distance(transform.position, player.transform.position) > stopDistance)
-        //{
-        //    transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed / 100);
-        //}
-
-        melee++;
-
-        if (Vector2.Distance(transform.position, player.transform.position) < stopDistance && melee > 60 / meleeSpeed)
+        switch (aiActivity)
         {
-            Attack();
-            melee = 0;
+            case AiActivity.none:
+
+                locationMemory = Vector2.zero;
+                break;
+
+            case AiActivity.wander:
+                
+                rb.velocity = locationMemory * speed * Time.deltaTime;
+
+                if (cooldownWander <= 0)
+                {
+                    locationMemory = new Vector2(Random.Range(-3, 3), Random.Range(-3, 3));
+
+                    cooldownWander = 20 / speed;
+                }
+                else
+                {
+                    cooldownWander -= Time.deltaTime;
+                }
+
+                break;
+            case AiActivity.follow:
+
+                locationMemory = player.transform.position;
+
+                rb.velocity = locationMemory * speed * Time.deltaTime;
+
+                break;
+            case AiActivity.search:
+
+                break;
+            case AiActivity.attack:
+
+                if (cooldownAttack <= 0)
+                {
+                    // TODO atttack
+                    Debug.Log("attack");
+
+                    cooldownAttack = 1 / attackSpeed;
+                }
+                else
+                {
+                    cooldownAttack -= Time.deltaTime;
+                }
+
+                break;
         }
+
+        DetectPlayer();
     }
 
-    void Attack()
+    void DetectPlayer()
     {
-        player.DealDamage(damage);
+        player = FindObjectOfType<Player>();
+
+        if (player != null)
+        {
+            if (Vector2.Distance(transform.position, player.transform.position) <= range)
+            {
+                aiActivity = AiActivity.attack;
+                return;
+            }
+        }
+
+        aiActivity = AiActivity.wander;
     }
 
     #region Health and death
