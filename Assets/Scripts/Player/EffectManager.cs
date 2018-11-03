@@ -5,9 +5,8 @@ using UnityEngine;
 public class EffectManager : MonoBehaviour {
 
     public Player player;
-
-    [SerializeField()]
-    List<Effect> effects;
+    
+    public List<Effect> effects;
 
     float initialSpeed = 0;
 
@@ -34,7 +33,12 @@ public class EffectManager : MonoBehaviour {
     public void ApplyEffect(Effect effect)
     {
         if (effects == null) effects = new List<Effect>();
-        if (!effects.Contains(effect))
+        if (effects.Contains(effect) && !effect.enableMultiple)
+        {
+            effects[effects.IndexOf(effect)].count++;
+            effects[effects.IndexOf(effect)].ResetDuration();
+        }
+        else
         {
             effects.Add(effect);
             StartCoroutine(effect.StartEffect(player));
@@ -43,8 +47,14 @@ public class EffectManager : MonoBehaviour {
 
     public void ClearEffect(Effect effect)
     {
-        effects.Remove(effect);
-        effect.Reverse(player);
+        if (effects[effects.IndexOf(effect)].count < 2)
+        {
+            effects.Remove(effect);
+        }
+        else
+        {
+            effects[effects.IndexOf(effect)].count--;
+        }
     }
 
 }

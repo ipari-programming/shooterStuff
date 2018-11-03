@@ -11,33 +11,28 @@ public class Enemy : MonoBehaviour {
     public float speed;
     public float meleeSpeed;
 
-    Rigidbody2D rb;
-
     Player player;
-
-    int mode = 0;
 
     float melee = 0;
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
         player = FindObjectOfType<Player>();
     }
 
     void FixedUpdate()
     {
-        float angleEnemyPlayer = Mathf.Atan2(transform.position.y - player.transform.position.y, transform.position.x - player.transform.position.x) * 180 / Mathf.PI;
+        //float angleEnemyPlayer = Mathf.Atan2(transform.position.y - player.transform.position.y, transform.position.x - player.transform.position.x) * 180 / Mathf.PI;
 
-        float x = transform.position.x + Mathf.Sin((270 - angleEnemyPlayer) * Mathf.PI / 180);
-        float y = transform.position.y + Mathf.Cos((270 - angleEnemyPlayer) * Mathf.PI / 180);
+        //float x = transform.position.x + Mathf.Sin((270 - angleEnemyPlayer) * Mathf.PI / 180);
+        //float y = transform.position.y + Mathf.Cos((270 - angleEnemyPlayer) * Mathf.PI / 180);
 
-        RaycastHit2D hit = Physics2D.Raycast(new Vector2(x, y), Quaternion.Euler(0, 0, angleEnemyPlayer + 180) * Vector2.right, viewDistance);
+        //RaycastHit2D hit = Physics2D.Raycast(new Vector2(x, y), Quaternion.Euler(0, 0, angleEnemyPlayer + 180) * Vector2.right, viewDistance);
 
-        if (hit && hit.transform.GetComponent<Player>() && Vector2.Distance(transform.position, player.transform.position) > stopDistance)
-        {
-            transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed / 100);
-        }
+        //if (hit && hit.transform.GetComponent<Player>() && Vector2.Distance(transform.position, player.transform.position) > stopDistance)
+        //{
+        //    transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed / 100);
+        //}
 
         melee++;
 

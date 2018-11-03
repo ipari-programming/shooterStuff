@@ -7,12 +7,16 @@ public class Effect : ScriptableObject {
 
     public new string name;
 
+    public int count = 1;
+
     public float maxDuration;
     public float applyRate;
     public float duration;
 
     public float heal = 0;
     public float accelerate = 1;
+
+    public bool enableMultiple = false;
 
     public IEnumerator StartEffect(Player player)
     {
@@ -33,9 +37,8 @@ public class Effect : ScriptableObject {
 
     }
 
-    public void Reverse(Player player)
+    public void ResetDuration()
     {
-        duration = 0;
+        duration = maxDuration;
     }
-
 }
