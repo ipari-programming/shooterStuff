@@ -1,10 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour {
 
-    enum AiActivity { none, wander, follow, search, attack }
+    enum AiActivity { wander, search, attack }
 
     public float health;
     public float damage;
@@ -16,87 +17,114 @@ public class Enemy : MonoBehaviour {
 
     Rigidbody2D rb;
 
-    AiActivity aiActivity = AiActivity.none;
+    AiActivity aiActivity = AiActivity.wander;
 
-    float cooldownWander = 0;
-    float cooldownAttack = 0;
+    bool isBusy = false;
 
-    Vector3 locationMemory = Vector2.zero;
+    Vector2 playerPos;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        Physics2D.queriesStartInColliders = false;
     }
 
     void Update()
     {
         switch (aiActivity)
         {
-            case AiActivity.none:
-
-                locationMemory = Vector2.zero;
-                break;
-
             case AiActivity.wander:
-                
-                rb.velocity = locationMemory * speed * Time.deltaTime;
 
-                if (cooldownWander <= 0)
-                {
-                    locationMemory = new Vector2(Random.Range(-3, 3), Random.Range(-3, 3));
-
-                    cooldownWander = 20 / speed;
-                }
-                else
-                {
-                    cooldownWander -= Time.deltaTime;
-                }
-
-                break;
-            case AiActivity.follow:
-
-                locationMemory = player.transform.position;
-
-                rb.velocity = locationMemory * speed * Time.deltaTime;
+                Vector2 rdmLocation = new Vector2(
+                    transform.position.x + UnityEngine.Random.Range(-3, 3),
+                    transform.position.y + UnityEngine.Random.Range(-3, 3)
+                );
+                if (!isBusy) StartCoroutine(Goto(rdmLocation, .5f));
 
                 break;
             case AiActivity.search:
 
+                
+
                 break;
             case AiActivity.attack:
 
-                if (cooldownAttack <= 0)
-                {
-                    // TODO atttack
-                    Debug.Log("attack");
-
-                    cooldownAttack = 1 / attackSpeed;
-                }
-                else
-                {
-                    cooldownAttack -= Time.deltaTime;
-                }
+                if (!isBusy) StartCoroutine(Goto(playerPos, 0));
 
                 break;
         }
 
-        DetectPlayer();
+        LookForPlayer();
     }
 
-    void DetectPlayer()
+    void ChangeActivity(AiActivity newActivity, bool force)
     {
-        player = FindObjectOfType<Player>();
-
-        if (player != null)
+        if (force)
         {
-            if (Vector2.Distance(transform.position, player.transform.position) <= range)
-            {
-                aiActivity = AiActivity.attack;
-                return;
-            }
+            StopAllCoroutines();
+            isBusy = false;
         }
 
-        aiActivity = AiActivity.wander;
+        aiActivity = newActivity;
+    }
+
+    IEnumerator Goto(Vector3 destination, float waitAfter)
+    {
+        isBusy = true;
+
+        Vector3 prevPos = transform.position;
+
+        while (Vector3.Distance(transform.position, destination) > .1f)
+        {
+            rb.velocity = (destination - transform.position).normalized * speed * Time.deltaTime * 10;
+            transform.up = Vector3.Lerp(transform.up, rb.velocity, Time.deltaTime * speed);
+
+            yield return null;
+
+            if (prevPos != transform.position) prevPos = transform.position;
+            else break;
+        }
+
+        rb.velocity = Vector2.zero;
+        yield return new WaitForSeconds(waitAfter);
+
+        isBusy = false;
+    }
+
+    void LookForPlayer()
+    {
+        if (player == null) player = FindObjectOfType<Player>();
+        else
+        {
+            for (float i = 0; i <  Mathf.PI; i += Mathf.PI / 16)
+            {
+                float angle = i - (Mathf.PI / 2) - (transform.eulerAngles.z / 180 * Mathf.PI);
+
+                Vector2 dir = new Vector2(Mathf.Sin(angle), Mathf.Cos(angle));
+
+                RaycastHit2D hit = Physics2D.Raycast(transform.position, dir);
+
+                if (hit)
+                {
+                    if (hit.transform == player.transform)
+                    {
+                        Debug.DrawLine(transform.position, hit.point, Color.red);
+
+                        playerPos = player.transform.position;
+
+                        ChangeActivity(AiActivity.attack, true);
+                        
+                        break;
+                    }
+                    else
+                    {
+                        Debug.DrawLine(transform.position, hit.point, Color.green);
+                        ChangeActivity(AiActivity.wander, false);
+                    }
+                }
+            }
+        }
     }
 
     #region Health and death
