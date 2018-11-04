@@ -7,8 +7,6 @@ public class Effect : ScriptableObject {
 
     public new string name;
 
-    public int count = 1;
-
     public float maxDuration;
     public float applyRate;
     public float duration;

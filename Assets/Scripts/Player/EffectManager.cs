@@ -33,9 +33,9 @@ public class EffectManager : MonoBehaviour {
     public void ApplyEffect(Effect effect)
     {
         if (effects == null) effects = new List<Effect>();
+
         if (effects.Contains(effect) && !effect.enableMultiple)
         {
-            effects[effects.IndexOf(effect)].count++;
             effects[effects.IndexOf(effect)].ResetDuration();
         }
         else
@@ -47,14 +47,8 @@ public class EffectManager : MonoBehaviour {
 
     public void ClearEffect(Effect effect)
     {
-        if (effects[effects.IndexOf(effect)].count < 2)
-        {
-            effects.Remove(effect);
-        }
-        else
-        {
-            effects[effects.IndexOf(effect)].count--;
-        }
+        effect.duration = 0;
+        effects.Remove(effect);
     }
 
 }
