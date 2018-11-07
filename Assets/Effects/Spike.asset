@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Spike
   m_EditorClassIdentifier: 
   name: Spike
-  count: 1
+  minDuration: 0.0001
   maxDuration: 0.0001
   applyRate: 1
   duration: -1.9999

@@ -7,6 +7,7 @@ public class Effect : ScriptableObject {
 
     public new string name;
 
+    public float minDuration;
     public float maxDuration;
     public float applyRate;
     public float duration;
@@ -18,7 +19,7 @@ public class Effect : ScriptableObject {
 
     public IEnumerator StartEffect(Player player)
     {
-        duration = maxDuration;
+        duration = Random.Range(minDuration, maxDuration);
         
         player.GetComponent<PlayerController>().speed *= accelerate;
 
@@ -37,6 +38,6 @@ public class Effect : ScriptableObject {
 
     public void ResetDuration()
     {
-        duration = maxDuration;
+        duration = Random.Range(minDuration, maxDuration);
     }
 }

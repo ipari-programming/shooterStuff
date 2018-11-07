@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Name: Lava
   m_EditorClassIdentifier: 
   name: Lava
+  minDuration: 99999
   maxDuration: 99999
   applyRate: 0.05
+  duration: 0
   heal: -0.2
   accelerate: 0.3
+  enableMultiple: 0

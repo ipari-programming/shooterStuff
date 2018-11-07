@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Name: Slowness
   m_EditorClassIdentifier: 
   name: Slowness
+  minDuration: 1
   maxDuration: 10
   applyRate: 10
+  duration: 0
   heal: 0
   accelerate: 0.3
+  enableMultiple: 0

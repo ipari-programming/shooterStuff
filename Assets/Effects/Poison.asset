@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Name: Poison
   m_EditorClassIdentifier: 
   name: Poison
+  minDuration: 1
   maxDuration: 8
   applyRate: 0.1
+  duration: 0
   heal: -0.1
   accelerate: 1
+  enableMultiple: 0
