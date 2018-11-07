@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour {
 
-    enum AiActivity { wander, search, attack }
+    enum AiActivity { wander, attack }
 
     public float health;
     public float damage;
@@ -19,15 +18,20 @@ public class Enemy : MonoBehaviour {
 
     AiActivity aiActivity = AiActivity.wander;
 
-    bool isBusy = false;
+    Vector3 destination;
 
-    Vector2 playerPos;
+    bool positionReached = false;
+    bool crAttack = false;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
 
         Physics2D.queriesStartInColliders = false;
+
+        destination = transform.position;
+
+        StartCoroutine(Go());
     }
 
     void Update()
@@ -37,67 +41,38 @@ public class Enemy : MonoBehaviour {
             case AiActivity.wander:
 
                 Vector2 rdmLocation = new Vector2(
-                    transform.position.x + UnityEngine.Random.Range(-3, 3),
-                    transform.position.y + UnityEngine.Random.Range(-3, 3)
+                    transform.position.x + Random.Range(-3, 3),
+                    transform.position.y + Random.Range(-3, 3)
                 );
-                if (!isBusy) StartCoroutine(Goto(rdmLocation, .5f));
 
-                break;
-            case AiActivity.search:
-
-                
+                if (positionReached)
+                {
+                    destination = rdmLocation;
+                }
 
                 break;
             case AiActivity.attack:
 
-                if (!isBusy) StartCoroutine(Goto(playerPos, 0));
+                destination = player.transform.position;
+
+                if (Vector3.Distance(transform.position, player.transform.position) <= range)
+                {
+                    if (!crAttack) StartCoroutine(Attack());
+                }
 
                 break;
         }
 
         LookForPlayer();
     }
-
-    void ChangeActivity(AiActivity newActivity, bool force)
-    {
-        if (force)
-        {
-            StopAllCoroutines();
-            isBusy = false;
-        }
-
-        aiActivity = newActivity;
-    }
-
-    IEnumerator Goto(Vector3 destination, float waitAfter)
-    {
-        isBusy = true;
-
-        Vector3 prevPos = transform.position;
-
-        while (Vector3.Distance(transform.position, destination) > .1f)
-        {
-            rb.velocity = (destination - transform.position).normalized * speed * Time.deltaTime * 10;
-            transform.up = Vector3.Lerp(transform.up, rb.velocity, Time.deltaTime * speed);
-
-            yield return null;
-
-            if (prevPos != transform.position) prevPos = transform.position;
-            else break;
-        }
-
-        rb.velocity = Vector2.zero;
-        yield return new WaitForSeconds(waitAfter);
-
-        isBusy = false;
-    }
-
+    
+    // TODO need to optimize
     void LookForPlayer()
     {
         if (player == null) player = FindObjectOfType<Player>();
         else
         {
-            for (float i = 0; i <  Mathf.PI; i += Mathf.PI / 16)
+            for (float i = 0; i < Mathf.PI; i += Mathf.PI / 16)
             {
                 float angle = i - (Mathf.PI / 2) - (transform.eulerAngles.z / 180 * Mathf.PI);
 
@@ -111,20 +86,64 @@ public class Enemy : MonoBehaviour {
                     {
                         Debug.DrawLine(transform.position, hit.point, Color.red);
 
-                        playerPos = player.transform.position;
-
                         ChangeActivity(AiActivity.attack, true);
-                        
+
                         break;
                     }
                     else
                     {
                         Debug.DrawLine(transform.position, hit.point, Color.green);
+
                         ChangeActivity(AiActivity.wander, false);
                     }
                 }
             }
         }
+    }
+
+    void ChangeActivity(AiActivity newActivity, bool force)
+    {
+        aiActivity = newActivity;
+    }
+
+    IEnumerator Go()
+    {
+        Vector3 prevPos = transform.position;
+
+        while (true)
+        {
+            rb.velocity = (destination - transform.position).normalized * speed * Time.deltaTime * 10;
+            transform.up = Vector3.Lerp(transform.up, rb.velocity, Time.deltaTime * speed);
+
+            yield return null;
+
+            if (Vector3.Distance(destination, transform.position) < .1f || rb.velocity.magnitude < .1f)
+            {
+                positionReached = true;
+                rb.velocity = Vector2.zero;
+            }
+            else
+            {
+                positionReached = false;
+                prevPos = transform.position;
+            }
+        }
+    }
+
+    IEnumerator Attack()
+    {
+        crAttack = true;
+        
+        while (player != null && Vector3.Distance(transform.position, player.transform.position) <= range)
+        {
+            player.DealDamage(damage);
+
+            yield return new WaitForSeconds(1 / attackSpeed);
+
+            if (player == null) break;
+        }
+        
+        crAttack = false;
     }
 
     #region Health and death
