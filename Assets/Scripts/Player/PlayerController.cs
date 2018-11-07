@@ -30,6 +30,8 @@ public class PlayerController : MonoBehaviour {
         rb = GetComponent<Rigidbody2D>();
 
         animator = GetComponent<Animator>();
+
+        Physics2D.queriesStartInColliders = false;
     }
 
     void FixedUpdate()

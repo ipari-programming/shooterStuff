@@ -23,6 +23,6 @@ MonoBehaviour:
   weaponRange: 8
   bulletSpeed: 12
   isWeaponRay: 1
-  shootingOffset: {x: 0, y: 0.4}
+  shootingOffset: {x: 0, y: 0.2}
   mainColor: {r: 0, g: 0, b: 0, a: 1}
   theme: {fileID: 0}
