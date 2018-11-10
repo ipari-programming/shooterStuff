@@ -26,4 +26,6 @@ public class Character : ScriptableObject {
     public Color mainColor;
 
     public AudioClip theme;
+
+    public string themeLink;
 }

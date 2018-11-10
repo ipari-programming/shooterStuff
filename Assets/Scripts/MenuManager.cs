@@ -111,4 +111,9 @@ public class MenuManager : MonoBehaviour {
 
         SceneManager.LoadScene(1);
     }
+
+    public void OpenYoutubeLink()
+    {
+        Application.OpenURL(selectedCharacter.themeLink);
+    }
 }
