@@ -24,11 +24,11 @@ public class MenuManager : MonoBehaviour {
     string characterName;
     int characterID = 0;
 
-    MenuAudioManager menuAudioManager;
+    AudioManager audioManager;
 
 	void Start ()
     {
-        menuAudioManager = GetComponent<MenuAudioManager>();
+        audioManager = FindObjectOfType<AudioManager>();
 
         characterName = PlayerPrefs.GetString("last-player", "Mario");
         FindCharacterByName(characterName);
@@ -43,6 +43,7 @@ public class MenuManager : MonoBehaviour {
         });
     }
 
+    #region Find character
     void FindCharacterByName(string name)
     {
         int id = 0;
@@ -75,6 +76,7 @@ public class MenuManager : MonoBehaviour {
             StartCoroutine(SelectCharacter(characters[characterID]));
         }
     }
+    #endregion
 
     IEnumerator SelectCharacter(Character character)
     {
@@ -94,7 +96,7 @@ public class MenuManager : MonoBehaviour {
 
         yield return null;
 
-        menuAudioManager.StartMusic();
+        audioManager.StartMusic(selectedCharacter.name);
     }
 
     public void StartGame(bool isNew)
@@ -107,7 +109,7 @@ public class MenuManager : MonoBehaviour {
             PlayerPrefs.Save();
         }
 
-        GetComponent<MenuAudioManager>().StopMusic();
+        audioManager.StopMusic();
 
         SceneManager.LoadScene(1);
     }
