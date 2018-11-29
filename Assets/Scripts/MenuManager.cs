@@ -26,7 +26,7 @@ public class MenuManager : MonoBehaviour {
 
     AudioManager audioManager;
 
-	void Start ()
+    void Start ()
     {
         audioManager = FindObjectOfType<AudioManager>();
 

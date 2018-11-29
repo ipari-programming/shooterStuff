@@ -25,6 +25,14 @@ public class AudioManager : MonoBehaviour {
     public AudioClip[] clipsMusic;
     public AudioClip[] clipsEffect;
 
+    //void Update()
+    //{
+    //    if (FindObjectOfType<SimpleSpectrum>())
+    //    {
+    //        FindObjectOfType<SimpleSpectrum>().audioSource = sourceMusic;
+    //    }
+    //}
+
     #region Music
     public void StartMusic(AudioClip clip)
     {

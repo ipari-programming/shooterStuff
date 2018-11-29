@@ -16,6 +16,8 @@ public class Enemy : MonoBehaviour {
 
     Rigidbody2D rb;
 
+    Animator animator;
+
     AiActivity aiActivity = AiActivity.wander;
 
     Vector3 destination;
@@ -27,6 +29,8 @@ public class Enemy : MonoBehaviour {
     {
         rb = GetComponent<Rigidbody2D>();
 
+        animator = GetComponent<Animator>();
+
         Physics2D.queriesStartInColliders = false;
 
         destination = transform.position;
@@ -36,6 +40,9 @@ public class Enemy : MonoBehaviour {
 
     void Update()
     {
+        animator.SetFloat("speed", rb.velocity.magnitude);
+        animator.SetBool("attack", crAttack);
+
         switch (aiActivity)
         {
             case AiActivity.wander:
