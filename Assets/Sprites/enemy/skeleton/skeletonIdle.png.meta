@@ -1,13 +1,21 @@
 fileFormatVersion: 2
 guid: 1d1f98fff3364664f9826b5a12659d53
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: skeletonIdle_0
-    21300002: skeletonIdle_1
-    21300004: skeletonIdle_2
-    21300006: skeletonIdle_3
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: skeletonIdle_0
+  - first:
+      213: 21300002
+    second: skeletonIdle_1
+  - first:
+      213: 21300004
+    second: skeletonIdle_2
+  - first:
+      213: 21300006
+    second: skeletonIdle_3
   externalObjects: {}
-  serializedVersion: 7
+  serializedVersion: 8
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -49,7 +57,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -114,6 +122,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 2818c239a2c9a6b4a831548cde30e33f
+      internalID: 21300000
       vertices: []
       indices: 
       edges: []
@@ -134,6 +143,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 40d5f364b9cf72246bff4456817c0afe
+      internalID: 21300002
       vertices: []
       indices: 
       edges: []
@@ -154,6 +164,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 4cd59b67b922caf4ba2b5722e0d37b66
+      internalID: 21300004
       vertices: []
       indices: 
       edges: []
@@ -174,6 +185,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: ae9f308616d2e6b4fa595fe1ead95693
+      internalID: 21300006
       vertices: []
       indices: 
       edges: []
@@ -182,10 +194,12 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 7d7f2749267a37b40ae3f270d3ef5830
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
+    secondaryTextures: []
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

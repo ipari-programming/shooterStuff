@@ -1,13 +1,21 @@
 fileFormatVersion: 2
 guid: 9ac358062fd85e742bf66968769e271f
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: pikachuAttack_0
-    21300002: pikachuAttack_1
-    21300004: pikachuAttack_2
-    21300006: pikachuAttack_3
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: pikachuAttack_0
+  - first:
+      213: 21300002
+    second: pikachuAttack_1
+  - first:
+      213: 21300004
+    second: pikachuAttack_2
+  - first:
+      213: 21300006
+    second: pikachuAttack_3
   externalObjects: {}
-  serializedVersion: 7
+  serializedVersion: 8
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -114,6 +122,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 5e71e0e409a89d041a6e836b6ee50fdb
+      internalID: 21300000
       vertices: []
       indices: 
       edges: []
@@ -134,6 +143,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 686350a440c655745b47ccf011e10530
+      internalID: 21300002
       vertices: []
       indices: 
       edges: []
@@ -154,6 +164,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: aa13543ad38031a46bbedcc4c8288305
+      internalID: 21300004
       vertices: []
       indices: 
       edges: []
@@ -174,6 +185,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 60c4cb87ae060ad43bb23a9b693ecc2f
+      internalID: 21300006
       vertices: []
       indices: 
       edges: []
@@ -182,10 +194,12 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 81a1b17a7db7e5d40a3c5dae3b7873da
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
+    secondaryTextures: []
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
