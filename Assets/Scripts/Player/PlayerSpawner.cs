@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Cinemachine;
+// using Cinemachine;
 
 public class PlayerSpawner : MonoBehaviour
 {
@@ -15,7 +15,7 @@ public class PlayerSpawner : MonoBehaviour
 
     public Character[] characters;
 
-    public CinemachineVirtualCamera cam;
+    // public CinemachineVirtualCamera cam;
 
     GameObject currentPlayer;
 
@@ -35,8 +35,8 @@ public class PlayerSpawner : MonoBehaviour
         currentPlayer.GetComponent<Player>().healthBar = healthBar;
         currentPlayer.GetComponent<Player>().healthBarFill = healthBarFill;
 
-        currentPlayer.GetComponent<Player>().cam = cam;
-        cam.Follow = currentPlayer.transform;
+        // currentPlayer.GetComponent<Player>().cam = cam;
+        // cam.Follow = currentPlayer.transform;
 
         currentPlayer.GetComponent<PlayerController>().joystickMove = joystickMove;
         currentPlayer.GetComponent<PlayerController>().joystickShoot = joystickShoot;

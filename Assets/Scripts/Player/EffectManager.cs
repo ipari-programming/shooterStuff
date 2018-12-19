@@ -3,12 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EffectManager : MonoBehaviour {
-
-    public Player player;
     
     public List<Effect> effects;
 
+    PlayerController playerController;
+
     float initialSpeed = 0;
+
+    void Start()
+    {
+        playerController = GetComponentInParent<PlayerController>();
+    }
 
     void Update()
     {
@@ -25,8 +30,8 @@ public class EffectManager : MonoBehaviour {
         }
         else
         {
-            if (initialSpeed == 0) initialSpeed = player.GetComponent<PlayerController>().speed;
-            player.GetComponent<PlayerController>().speed = initialSpeed;
+            if (initialSpeed == 0) initialSpeed = playerController.speed;
+            playerController.GetComponent<PlayerController>().speed = initialSpeed;
         }
     }
 
@@ -41,7 +46,7 @@ public class EffectManager : MonoBehaviour {
         else
         {
             effects.Add(effect);
-            StartCoroutine(effect.StartEffect(player));
+            StartCoroutine(effect.StartEffect(playerController.GetComponent<Player>()));
         }
     }
 

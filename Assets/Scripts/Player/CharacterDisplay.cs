@@ -17,31 +17,33 @@ public class CharacterDisplay : MonoBehaviour {
         p = GetComponent<Player>();
         pc = GetComponent<PlayerController>();
         a = GetComponent<Animator>();
-
-        ChangeCharacter();
     }
 	
     public void ChangeCharacter()
     {
-        p.name = character.name;
+        // Debug.Log("Setting scaracter to " + character.name);
 
-        p.maxHealth = character.maxHealth;
-        p.health = character.health;
-        
-        p.mainColor = character.mainColor;
+        if (character.name != null && character.name.Length > 1)
+        {
+            p.name = character.name;
 
-        pc.speed = character.speed;
-        pc.damage = character.damage;
-        pc.bulletSpeed = character.bulletSpeed;
-        pc.weaponRange = character.weaponRange;
+            p.maxHealth = character.maxHealth;
+            p.health = character.health;
 
-        pc.bullet = character.bullet;
+            p.mainColor = character.mainColor;
 
-        pc.isWeaponRay = character.isWeaponRay;
+            pc.speed = character.speed;
+            pc.damage = character.damage;
+            pc.bulletSpeed = character.bulletSpeed;
+            pc.weaponRange = character.weaponRange;
 
-        pc.shootingOffset = character.shootingOffset;
+            pc.bullet = character.bullet;
 
-        a.runtimeAnimatorController = character.RTAnimatorController;
+            pc.isWeaponRay = character.isWeaponRay;
+
+            pc.shootingOffset = character.shootingOffset;
+
+            a.runtimeAnimatorController = character.RTAnimatorController;
+        }
     }
-
 }

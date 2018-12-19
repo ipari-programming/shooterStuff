@@ -18,7 +18,7 @@ public class Enemy : MonoBehaviour {
 
     Animator animator;
 
-    AiActivity aiActivity = AiActivity.wander;
+    AiActivity aiActivity;
 
     Vector3 destination;
 
@@ -33,6 +33,8 @@ public class Enemy : MonoBehaviour {
 
         Physics2D.queriesStartInColliders = false;
 
+        aiActivity = AiActivity.wander;
+
         destination = transform.position;
 
         StartCoroutine(Go());
@@ -40,6 +42,8 @@ public class Enemy : MonoBehaviour {
 
     void Update()
     {
+        LookForPlayer();
+
         animator.SetFloat("speed", rb.velocity.magnitude);
         animator.SetBool("attack", crAttack);
 
@@ -59,7 +63,7 @@ public class Enemy : MonoBehaviour {
 
                 break;
             case AiActivity.attack:
-
+                
                 destination = player.transform.position;
 
                 if (Vector3.Distance(transform.position, player.transform.position) <= range)
@@ -69,8 +73,6 @@ public class Enemy : MonoBehaviour {
 
                 break;
         }
-
-        LookForPlayer();
     }
     
     // TODO need to optimize
@@ -119,7 +121,9 @@ public class Enemy : MonoBehaviour {
 
         while (true)
         {
-            rb.velocity = (destination - transform.position).normalized * speed * Time.deltaTime * 10;
+            Debug.Log("Velocity: " + rb.velocity + " Destination distance: " + (destination - transform.position));
+
+            rb.velocity = Vector3.Normalize(destination - transform.position) * speed * Time.deltaTime * 10;
             transform.up = Vector3.Lerp(transform.up, rb.velocity, Time.deltaTime * speed);
 
             yield return null;
