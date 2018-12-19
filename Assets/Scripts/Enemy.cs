@@ -121,7 +121,7 @@ public class Enemy : MonoBehaviour {
 
         while (true)
         {
-            Debug.Log("Velocity: " + rb.velocity + " Destination distance: " + (destination - transform.position));
+            //Debug.Log("Velocity: " + rb.velocity + " Destination distance: " + (destination - transform.position));
 
             rb.velocity = Vector3.Normalize(destination - transform.position) * speed * Time.deltaTime * 10;
             transform.up = Vector3.Lerp(transform.up, rb.velocity, Time.deltaTime * speed);
