@@ -3,22 +3,19 @@
 public class CameraFollow : MonoBehaviour
 {
 
-    public Player player;
+    public Camera cam;
 
-    public float smoothSpeed;
+    public float followSpeed;
 
     public Vector3 offset;
 
-    void Update()
+    void LateUpdate()
     {
-        if (player != null)
-        {
-            Vector3 newPosition = player.transform.position + offset;
-            newPosition.z = offset.z;
-            Vector3 smoothedPosition = Vector3.Lerp(transform.position, newPosition, smoothSpeed);
-            smoothedPosition.z = offset.z;
-            transform.position = smoothedPosition;
-        }
+            float smoothSpeed = (GetComponent<CharacterDisplay>().character.speed * followSpeed / 2);
+            //Debug.Log(smoothSpeed);
+            Vector3 newCamPosition = transform.position + offset;
+            Vector3 smoothedCamPosition = Vector3.Lerp(transform.position, newCamPosition, smoothSpeed);
+            cam.transform.position = smoothedCamPosition;
     }
 
 }

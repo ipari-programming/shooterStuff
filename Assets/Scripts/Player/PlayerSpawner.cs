@@ -40,7 +40,7 @@ public class PlayerSpawner : MonoBehaviour
         // currentPlayer.GetComponent<Player>().cam = cam;
         // cam.Follow = currentPlayer.transform;
 
-        cam.GetComponent<CameraFollow>().player = currentPlayer.GetComponent<Player>();
+        currentPlayer.GetComponent<Player>().GetComponent<CameraFollow>().cam = cam;
 
         currentPlayer.GetComponent<PlayerController>().joystickMove = joystickMove;
         currentPlayer.GetComponent<PlayerController>().joystickShoot = joystickShoot;
