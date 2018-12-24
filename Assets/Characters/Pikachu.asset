@@ -4,17 +4,19 @@
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: 11500000, guid: b3460eb5ebbc6464bab8b8270b98e3ad, type: 3}
   m_Name: Pikachu
   m_EditorClassIdentifier: 
   name: Pikachu
   RTAnimatorController: {fileID: 9100000, guid: 9aa84530a4a1c0f4db971b56cd8ffdfe,
     type: 2}
-  bullet: {fileID: 21300000, guid: 7c27df7f21f772b43a5a9c79220d27a4, type: 3}
+  bullet: {fileID: 9100000, guid: 7755b96416cb24a44b55a3881edc58f8, type: 2}
   menuIcon: {fileID: 21300000, guid: 10aeec0030879b845a12a28447160815, type: 3}
   maxHealth: 10
   health: 7
