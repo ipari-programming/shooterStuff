@@ -96,7 +96,8 @@ public class MenuManager : MonoBehaviour {
 
         yield return null;
 
-        audioManager.StartMusic(selectedCharacter.name);
+        audioManager.Loop(true);
+        audioManager.StartTheme(selectedCharacter.name);
     }
 
     public void StartGame(bool isNew)
@@ -109,7 +110,8 @@ public class MenuManager : MonoBehaviour {
             PlayerPrefs.Save();
         }
 
-        audioManager.StopMusic();
+        audioManager.StopTheme();
+        audioManager.Loop(false);
 
         SceneManager.LoadScene(1);
     }

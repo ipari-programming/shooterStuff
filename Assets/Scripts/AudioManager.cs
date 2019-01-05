@@ -22,19 +22,33 @@ public class AudioManager : MonoBehaviour {
 
     [Space]
 
+    public AudioClip[] clipsTheme;
     public AudioClip[] clipsMusic;
     public AudioClip[] clipsEffect;
 
+    [Space]
+
+    public string[] musicClipLinks;
+
     #region Music
+    private void Update()
+    {
+        if (FindObjectOfType<Player>() && !sourceMusic.isPlaying)
+        {
+            int selected = Random.Range(0, clipsMusic.Length);
+            StartMusic(clipsMusic[selected]);
+        }
+    }
+
     public void StartMusic(AudioClip clip)
     {
         sourceMusic.clip = clip;
         sourceMusic.Play();
     }
 
-    public void StartMusic(string clipName)
+    public void StartTheme(string clipName)
     {
-        foreach (AudioClip item in clipsMusic)
+        foreach (AudioClip item in clipsTheme)
         {
             if (item.name.Contains(clipName.ToLower()))
             {
@@ -46,9 +60,15 @@ public class AudioManager : MonoBehaviour {
         if (sourceMusic.clip != null) sourceMusic.Play();
     }
 
-    public void StopMusic()
+    public void StopTheme()
     {
         sourceMusic.Stop();
     }
+
+    public void Loop(bool isOn)
+    {
+        sourceMusic.loop = isOn;
+    }
+
     #endregion
 }
