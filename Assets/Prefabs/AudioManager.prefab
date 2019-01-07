@@ -45,7 +45,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -141,7 +141,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -249,8 +249,14 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 4061ed0000f2f884a9a637fc37aa28b9, type: 3}
   - {fileID: 8300000, guid: 187c46f976ee881478527db35f7c558b, type: 3}
   - {fileID: 8300000, guid: d85f153863f9b6044aaa953286d8664d, type: 3}
+  - {fileID: 8300000, guid: 8a356d31347c13d4a942b20eeb8fc8a3, type: 3}
+  - {fileID: 8300000, guid: 8c5e91615565ff5488e1673ab7c59d8b, type: 3}
+  - {fileID: 8300000, guid: 088c28e4776b4e94d805d81dcef7fba3, type: 3}
   clipsEffect: []
   musicClipLinks:
   - https://www.youtube.com/watch?v=8_22B7GNQqs
   - https://www.youtube.com/watch?v=LzO3y_XaPJ4
   - https://www.youtube.com/watch?v=vlb0gkoWYNM
+  - https://www.youtube.com/watch?v=ivkdrnGLNgE
+  - https://www.youtube.com/watch?v=OrtO-7s_-CA
+  - https://www.youtube.com/watch?v=lIJpOiQ-O3E
