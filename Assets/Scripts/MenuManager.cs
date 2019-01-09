@@ -29,6 +29,7 @@ public class MenuManager : MonoBehaviour {
     void Start ()
     {
         audioManager = FindObjectOfType<AudioManager>();
+        audioManager.pausedMusic = true;
 
         characterName = PlayerPrefs.GetString("last-player", "Mario");
         FindCharacterByName(characterName);
@@ -112,6 +113,7 @@ public class MenuManager : MonoBehaviour {
 
         audioManager.StopTheme();
         audioManager.Loop(false);
+        audioManager.pausedMusic = false;
 
         SceneManager.LoadScene(2);
     }

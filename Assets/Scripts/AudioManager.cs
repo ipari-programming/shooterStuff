@@ -30,10 +30,14 @@ public class AudioManager : MonoBehaviour {
 
     public string[] musicClipLinks;
 
+    [HideInInspector]
+    public bool pausedMusic = false;
+
+
     #region Music
     private void Update()
     {
-        if (FindObjectOfType<Player>() && !sourceMusic.isPlaying)
+        if (FindObjectOfType<Player>() && !sourceMusic.isPlaying && !pausedMusic)
         {
             int selected = Random.Range(0, clipsMusic.Length);
             StartMusic(clipsMusic[selected]);
@@ -65,9 +69,32 @@ public class AudioManager : MonoBehaviour {
         sourceMusic.Stop();
     }
 
+    public void StopMusic()
+    {
+        sourceMusic.Stop();
+    }
+
     public void Loop(bool isOn)
     {
         sourceMusic.loop = isOn;
+    }
+
+    public void PauseMusic()
+    {
+        if (sourceMusic.isPlaying)
+        {
+            pausedMusic = true;
+            sourceMusic.Pause();
+        }  
+    }
+
+    public void ResumeMusic()
+    {
+        if(!sourceMusic.isPlaying)
+        {
+            pausedMusic = false;
+            sourceMusic.Play();
+        }      
     }
 
     #endregion
