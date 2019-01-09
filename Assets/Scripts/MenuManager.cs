@@ -113,7 +113,7 @@ public class MenuManager : MonoBehaviour {
         audioManager.StopTheme();
         audioManager.Loop(false);
 
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 
     public void OpenYoutubeLink()
