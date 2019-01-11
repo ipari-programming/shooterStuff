@@ -1,7 +1,7 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 // using Cinemachine;
 
 public class Player : MonoBehaviour {
@@ -49,8 +49,11 @@ public class Player : MonoBehaviour {
 
     void Die()
     {
+        SceneManager.LoadScene(3);
+        /*
         Destroy(gameObject);
         buttonRespawn.SetActive(true);
+        */
     }
     #endregion
 

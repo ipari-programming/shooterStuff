@@ -28,6 +28,10 @@ public class AudioManager : MonoBehaviour {
 
     [Space]
 
+    public int musicRandomMaxIndex = 6;
+
+    [Space]
+
     public string[] musicClipLinks;
 
     [HideInInspector]
@@ -39,15 +43,31 @@ public class AudioManager : MonoBehaviour {
     {
         if (FindObjectOfType<Player>() && !sourceMusic.isPlaying && !pausedMusic)
         {
-            int selected = Random.Range(0, clipsMusic.Length);
+            int selected = Random.Range(0, musicRandomMaxIndex);
             StartMusic(clipsMusic[selected]);
         }
     }
+
+    public float MusicTime { get => sourceMusic.time; set => sourceMusic.time = value; }
 
     public void StartMusic(AudioClip clip)
     {
         sourceMusic.clip = clip;
         sourceMusic.Play();
+    }
+
+    public void StartMusic(string clipName)
+    {
+        foreach (AudioClip item in clipsMusic)
+        {
+            if (item.name.Contains(clipName.ToLower()))
+            {
+                sourceMusic.clip = item;
+                break;
+            }
+        }
+
+        if (sourceMusic.clip != null) sourceMusic.Play();
     }
 
     public void StartTheme(string clipName)
@@ -94,7 +114,7 @@ public class AudioManager : MonoBehaviour {
         {
             pausedMusic = false;
             sourceMusic.Play();
-        }      
+        }
     }
 
     #endregion

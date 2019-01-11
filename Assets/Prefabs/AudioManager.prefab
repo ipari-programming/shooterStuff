@@ -252,7 +252,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8a356d31347c13d4a942b20eeb8fc8a3, type: 3}
   - {fileID: 8300000, guid: 8c5e91615565ff5488e1673ab7c59d8b, type: 3}
   - {fileID: 8300000, guid: 088c28e4776b4e94d805d81dcef7fba3, type: 3}
+  - {fileID: 8300000, guid: ab941eadf4e343c41b5419c9c3746b6d, type: 3}
   clipsEffect: []
+  musicRandomMaxIndex: 6
   musicClipLinks:
   - https://www.youtube.com/watch?v=8_22B7GNQqs
   - https://www.youtube.com/watch?v=LzO3y_XaPJ4
@@ -260,3 +262,5 @@ MonoBehaviour:
   - https://www.youtube.com/watch?v=ivkdrnGLNgE
   - https://www.youtube.com/watch?v=OrtO-7s_-CA
   - https://www.youtube.com/watch?v=lIJpOiQ-O3E
+  - https://youtu.be/NBTBqvVkw5k
+  pausedMusic: 0
