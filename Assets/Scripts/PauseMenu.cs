@@ -35,6 +35,18 @@ public class PauseMenu : MonoBehaviour {
     {
         Resume();
         FindObjectOfType<AudioManager>().StopMusic();
-        SceneManager.LoadScene(1);
+        FindObjectOfType<AudioManager>().pausedMusic = true;
+        SceneManager.LoadScene(0);
     }
+
+    public void SongOnYoutube()
+    {
+        int i = 0;
+        while(FindObjectOfType<AudioManager>().clipsMusic[i] != FindObjectOfType<AudioManager>().sourceMusic.clip)
+        {
+            i++;
+        }
+        Application.OpenURL(FindObjectOfType<AudioManager>().musicClipLinks[i]);
+    }
+
 }
