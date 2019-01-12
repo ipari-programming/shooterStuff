@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour {
 
     public GameObject pauseMenuUI;
+    public GameObject inventoryButton;
 
     public bool paused = false;
 
@@ -15,6 +16,7 @@ public class PauseMenu : MonoBehaviour {
         Time.timeScale = 1f;
         paused = false;
         FindObjectOfType<AudioManager>().ResumeMusic();
+        inventoryButton.SetActive(true);
     }
 
     void Pause()
@@ -23,6 +25,7 @@ public class PauseMenu : MonoBehaviour {
         Time.timeScale = 0f;
         paused = true;
         FindObjectOfType<AudioManager>().PauseMusic();
+        inventoryButton.SetActive(false);
     }
 
     public void TogglePause()
@@ -36,7 +39,7 @@ public class PauseMenu : MonoBehaviour {
         Resume();
         FindObjectOfType<AudioManager>().StopMusic();
         FindObjectOfType<AudioManager>().pausedMusic = true;
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
     public void SongOnYoutube()

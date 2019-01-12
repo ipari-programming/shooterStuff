@@ -28,9 +28,6 @@ public class MenuManager : MonoBehaviour {
 
     void Start ()
     {
-        audioManager = FindObjectOfType<AudioManager>();
-        audioManager.pausedMusic = true;
-
         characterName = PlayerPrefs.GetString("last-player", "Mario");
         FindCharacterByName(characterName);
 
@@ -83,7 +80,7 @@ public class MenuManager : MonoBehaviour {
     {
         Color darker = new Color(character.mainColor.r / 3, character.mainColor.g / 3, character.mainColor.b / 3);
         cam.backgroundColor = darker;
-
+        
         header.color = character.mainColor;
         buttonLeft.image.color = character.mainColor;
         buttonRight.image.color = character.mainColor;
@@ -97,6 +94,8 @@ public class MenuManager : MonoBehaviour {
 
         yield return null;
 
+        audioManager = FindObjectOfType<AudioManager>();
+        audioManager.pausedMusic = true;
         audioManager.Loop(true);
         audioManager.StartTheme(selectedCharacter.name);
     }
