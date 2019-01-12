@@ -106,6 +106,9 @@ public class MenuManager : MonoBehaviour {
         {
             PlayerPrefs.DeleteKey("checkpoint-x");
             PlayerPrefs.DeleteKey("checkpoint-y");
+            PlayerPrefs.SetInt("first-item", 0);
+            PlayerPrefs.SetInt("second-item", 0);
+            PlayerPrefs.SetInt("third-item", 0);
             PlayerPrefs.SetString("last-player", characterName);
             PlayerPrefs.Save();
         }
