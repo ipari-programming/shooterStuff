@@ -25,33 +25,43 @@ public class GameOver : MonoBehaviour
 
     void Update()
     {
-        if (state < 1) return;
-
-        if (audioManager.MusicTime > 11 && state < 2)
-        {
-            audioManager.MusicTime = 6;
-        }
-
-        if (protestCount > 3)
-        {
-            protestCount = 0;
-            state = 2;
-            audioManager.MusicTime = 41.2f;
-            btn.GetComponent<Image>().color = Color.black;
-            textRandom.text = rdmTexts[Random.Range(0, rdmTexts.Length)];
-            textRandom.gameObject.SetActive(true);
-            StartCoroutine(IRespawn());
-        }
-
         textNo.color = new Color(Random.Range(.5f, 1), Random.Range(.5f, 1), Random.Range(.5f, 1));
         textNo.fontSize = Random.Range(250, 300);
         textRandom.color = new Color(Random.Range(.5f, 1), Random.Range(.5f, 1), Random.Range(.5f, 1));
         textRandom.fontSize = Random.Range(71, 73);
+
+        switch (state)
+        {
+            case 1:
+                if (audioManager.MusicTime > 11)
+                {
+                    audioManager.MusicTime = 6;
+                }
+
+                if (protestCount > 4)
+                {
+                    audioManager.StartEffect("glass-break");
+
+                    protestCount = 0;
+                    state = 2;
+
+                    audioManager.MusicTime = 41.2f;
+
+                    btn.GetComponent<Image>().color = Color.black;
+                    textRandom.text = rdmTexts[Random.Range(0, rdmTexts.Length)];
+                    textRandom.gameObject.SetActive(true);
+
+                    StartCoroutine(IRespawn());
+                }
+                break;
+            default:
+                return;
+        }
     }
 
     public void Protest()
     {
-        if (state < 2)
+        if (state == 1)
         {
             protestCount++;
             StartCoroutine(IProtest());
@@ -105,7 +115,7 @@ public class GameOver : MonoBehaviour
         textRandom.gameObject.SetActive(false);
         audioManager.StopMusic();
 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(.1f);
 
         SceneManager.LoadScene(2);
     }

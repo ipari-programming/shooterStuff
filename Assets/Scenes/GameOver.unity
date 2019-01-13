@@ -762,6 +762,7 @@ MonoBehaviour:
   rdmTexts:
   - LET'S GO!
   - NOT OVER!
+  - YOU CAN DO IT!
 --- !u!4 &937368727
 Transform:
   m_ObjectHideFlags: 0

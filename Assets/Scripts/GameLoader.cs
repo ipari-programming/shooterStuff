@@ -19,14 +19,15 @@ public class GameLoader : MonoBehaviour
 
     IEnumerator LoadAsync(int index)
     {
-        AsyncOperation operation = SceneManager.LoadSceneAsync(index);
+        yield return new WaitForSeconds(.2f);
 
-        while (!operation.isDone)
+        while (progressBar.value < 1)
         {
-            float prog = Mathf.Clamp01(operation.progress / .9f);
-            progressBar.value = prog;
+            progressBar.value += Random.Range(1, 5) / 300f;
 
             yield return null;
         }
+
+        AsyncOperation operation = SceneManager.LoadSceneAsync(index);
     }
 }

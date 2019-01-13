@@ -37,8 +37,7 @@ public class AudioManager : MonoBehaviour {
     [HideInInspector]
     public bool pausedMusic = false;
 
-
-    #region Music
+    // In game music
     private void Update()
     {
         if (FindObjectOfType<Player>() && !sourceMusic.isPlaying && !pausedMusic)
@@ -48,6 +47,7 @@ public class AudioManager : MonoBehaviour {
         }
     }
 
+    #region Music
     public float MusicTime { get => sourceMusic.time; set => sourceMusic.time = value; }
 
     public void StartMusic(AudioClip clip)
@@ -117,5 +117,21 @@ public class AudioManager : MonoBehaviour {
         }
     }
 
+    #endregion
+
+    #region Effect
+    public void StartEffect(string effectName)
+    {
+        foreach (AudioClip clip in clipsEffect)
+        {
+            if (clip.name.ToLower().Contains(effectName))
+            {
+                sourceEffect.clip = clip;
+                break;
+            }
+        }
+
+        if (sourceEffect.clip != null) sourceEffect.Play();
+    }
     #endregion
 }

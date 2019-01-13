@@ -141,13 +141,13 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 129
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -253,7 +253,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8c5e91615565ff5488e1673ab7c59d8b, type: 3}
   - {fileID: 8300000, guid: 088c28e4776b4e94d805d81dcef7fba3, type: 3}
   - {fileID: 8300000, guid: ab941eadf4e343c41b5419c9c3746b6d, type: 3}
-  clipsEffect: []
+  clipsEffect:
+  - {fileID: 8300000, guid: a634a719ebf76624988bb8e65f02f3da, type: 3}
   musicRandomMaxIndex: 6
   musicClipLinks:
   - https://www.youtube.com/watch?v=8_22B7GNQqs
