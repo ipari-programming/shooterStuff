@@ -255,6 +255,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ab941eadf4e343c41b5419c9c3746b6d, type: 3}
   clipsEffect:
   - {fileID: 8300000, guid: a634a719ebf76624988bb8e65f02f3da, type: 3}
+  - {fileID: 8300000, guid: c73ff3ab8c4e59a41a1e3ebbbc4038fa, type: 3}
+  - {fileID: 8300000, guid: f96f4f4ade7a2f74eac4c391c63913be, type: 3}
+  - {fileID: 8300000, guid: 68cce85af025f07489ae7fa5f314be99, type: 3}
+  - {fileID: 8300000, guid: 4c85a30794c0a204a8aa28c77477e34f, type: 3}
   musicRandomMaxIndex: 6
   musicClipLinks:
   - https://www.youtube.com/watch?v=8_22B7GNQqs
