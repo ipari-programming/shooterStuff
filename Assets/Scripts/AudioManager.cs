@@ -53,40 +53,32 @@ public class AudioManager : MonoBehaviour {
     public void StartMusic(AudioClip clip)
     {
         sourceMusic.clip = clip;
+        sourceMusic.time = 0;
         sourceMusic.Play();
     }
 
     public void StartMusic(string clipName)
     {
-        foreach (AudioClip item in clipsMusic)
+        foreach (AudioClip clip in clipsMusic)
         {
-            if (item.name.Contains(clipName.ToLower()))
+            if (clip.name.Contains(clipName.ToLower()))
             {
-                sourceMusic.clip = item;
+                StartMusic(clip);
                 break;
             }
         }
-
-        if (sourceMusic.clip != null) sourceMusic.Play();
     }
 
     public void StartTheme(string clipName)
     {
-        foreach (AudioClip item in clipsTheme)
+        foreach (AudioClip clip in clipsTheme)
         {
-            if (item.name.Contains(clipName.ToLower()))
+            if (clip.name.Contains(clipName.ToLower()))
             {
-                sourceMusic.clip = item;
+                StartMusic(clip);
                 break;
             }
         }
-
-        if (sourceMusic.clip != null) sourceMusic.Play();
-    }
-
-    public void StopTheme()
-    {
-        sourceMusic.Stop();
     }
 
     public void StopMusic()
