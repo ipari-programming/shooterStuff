@@ -113,7 +113,7 @@ public class MenuManager : MonoBehaviour {
             PlayerPrefs.Save();
         }
 
-        audioManager.StopTheme();
+        audioManager.StopMusic();
         audioManager.Loop(false);
         audioManager.pausedMusic = false;
 
