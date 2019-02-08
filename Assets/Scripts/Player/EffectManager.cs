@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EffectManager : MonoBehaviour {
     
@@ -8,11 +10,14 @@ public class EffectManager : MonoBehaviour {
 
     PlayerController playerController;
 
+    EffectDisplay effectDisplay;
+
     float initialSpeed = 0;
 
     void Start()
     {
         playerController = GetComponentInParent<PlayerController>();
+        effectDisplay = FindObjectOfType<EffectDisplay>();
     }
 
     void Update()
@@ -32,6 +37,27 @@ public class EffectManager : MonoBehaviour {
         {
             if (initialSpeed == 0) initialSpeed = playerController.speed;
             playerController.GetComponent<PlayerController>().speed = initialSpeed;
+        }
+
+        UpdateDisplay();
+    }
+
+    void UpdateDisplay()
+    {
+        if (effects != null && effects.Count > 0)
+        {
+            string text = "Effects:\n\r";
+            foreach (Effect eff in effects)
+            {
+                text += eff.name;
+                if (eff.duration < 60 && eff.duration > .5f) text += " (" + Mathf.Round(effects[0].duration * 10) / 10 + ")";
+                text += "\n\r";
+            }
+            effectDisplay.GetComponent<Text>().text = text;
+        }
+        else
+        {
+            effectDisplay.GetComponent<Text>().text = "";
         }
     }
 

@@ -20,7 +20,7 @@ public class Enemy : MonoBehaviour {
 
     AiActivity aiActivity;
 
-    Vector3 destination;
+    Vector3 destination, prevPos;
 
     bool positionReached = false;
     bool crAttack = false;
@@ -37,7 +37,7 @@ public class Enemy : MonoBehaviour {
 
         destination = transform.position;
 
-        StartCoroutine(Go());
+        prevPos = transform.position;
     }
 
     void Update()
@@ -108,37 +108,31 @@ public class Enemy : MonoBehaviour {
                 }
             }
         }
+
+        #region Movement
+
+        rb.velocity = Vector3.Normalize(destination - transform.position) * speed * Time.deltaTime * 10;
+        transform.up = Vector3.Lerp(transform.up, rb.velocity, Time.deltaTime * speed);
+
+        // Debug.Log("Velocity: " + Vector3.Distance(prevPos, rb.velocity));
+
+        if (Vector3.Distance(destination, transform.position) < .1f || rb.velocity.magnitude < .15f)
+        {
+            positionReached = true;
+            rb.velocity = Vector2.zero;
+        }
+        else
+        {
+            positionReached = false;
+            prevPos = rb.velocity;
+        }
+
+        #endregion
     }
 
     void ChangeActivity(AiActivity newActivity, bool force)
     {
         aiActivity = newActivity;
-    }
-
-    IEnumerator Go()
-    {
-        Vector3 prevPos = transform.position;
-
-        while (true)
-        {
-            //Debug.Log("Velocity: " + rb.velocity + " Destination distance: " + (destination - transform.position));
-
-            rb.velocity = Vector3.Normalize(destination - transform.position) * speed * Time.deltaTime * 10;
-            transform.up = Vector3.Lerp(transform.up, rb.velocity, Time.deltaTime * speed);
-
-            yield return null;
-
-            if (Vector3.Distance(destination, transform.position) < .1f || rb.velocity.magnitude < .1f)
-            {
-                positionReached = true;
-                rb.velocity = Vector2.zero;
-            }
-            else
-            {
-                positionReached = false;
-                prevPos = transform.position;
-            }
-        }
     }
 
     IEnumerator Attack()
