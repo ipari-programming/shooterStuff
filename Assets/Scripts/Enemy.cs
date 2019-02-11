@@ -36,8 +36,6 @@ public class Enemy : MonoBehaviour {
         aiActivity = AiActivity.wander;
 
         destination = transform.position;
-
-        prevPos = transform.position;
     }
 
     void Update()
@@ -114,18 +112,16 @@ public class Enemy : MonoBehaviour {
         rb.velocity = Vector3.Normalize(destination - transform.position) * speed * Time.deltaTime * 10;
         transform.up = Vector3.Lerp(transform.up, rb.velocity, Time.deltaTime * speed);
 
-        // Debug.Log("Velocity: " + Vector3.Distance(prevPos, rb.velocity));
-
-        if (Vector3.Distance(destination, transform.position) < .1f || rb.velocity.magnitude < .15f)
+        if (Vector3.Distance(destination, transform.position) < .1f || Vector3.Distance(prevPos, transform.position) < .005f)
         {
             positionReached = true;
-            rb.velocity = Vector2.zero;
         }
         else
         {
             positionReached = false;
-            prevPos = rb.velocity;
         }
+
+        prevPos = transform.position;
 
         #endregion
     }
