@@ -20,7 +20,7 @@ MonoBehaviour:
   menuIcon: {fileID: 21300000, guid: 10aeec0030879b845a12a28447160815, type: 3}
   maxHealth: 10
   health: 7
-  damage: 1
+  damage: 2
   speed: 14
   weaponRange: 2
   bulletSpeed: 120
