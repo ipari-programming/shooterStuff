@@ -10,12 +10,16 @@ public class Trap : MonoBehaviour {
 
     public float cooldown = 0;
 
+    CircleCollider2D collider;
+
     float currentCooldown;
 
     EffectManager effectManager;
 
     void Start()
     {
+        collider = GetComponent<CircleCollider2D>();
+
         currentCooldown = cooldown;
     }
 
@@ -23,7 +27,11 @@ public class Trap : MonoBehaviour {
     {
         currentCooldown -= Time.deltaTime;
 
-        if (currentCooldown < .01f && trapParticle != null) trapParticle.gameObject.SetActive(true);
+        if (currentCooldown > .01f) return;
+
+        if (collider != null) collider.enabled = true;
+
+        if (trapParticle != null) trapParticle.gameObject.SetActive(true);
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -36,6 +44,8 @@ public class Trap : MonoBehaviour {
                 effectManager.ApplyEffect(trapEffect);
 
             currentCooldown = cooldown;
+
+            if (collider != null) collider.enabled = false;
 
             if (trapParticle != null) trapParticle.gameObject.SetActive(false);
         }
