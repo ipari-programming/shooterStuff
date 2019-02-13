@@ -331,6 +331,7 @@ GameObject:
   - component: {fileID: 33384702}
   - component: {fileID: 33384701}
   - component: {fileID: 33384700}
+  - component: {fileID: 33384703}
   m_Layer: 0
   m_Name: Stair1
   m_TagString: Untagged
@@ -353,6 +354,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonObject: {fileID: 721546897}
   destination: {fileID: 1019989680}
+  requireItem: 000000
 --- !u!61 &33384701
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -393,6 +395,20 @@ Transform:
   m_Father: {fileID: 116816515}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &33384703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 33384699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_GeneratorAsset: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 04c9b05e948cdd74482c7f24d4094875, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fluidEffect: {fileID: 11400000, guid: b6849db69ad4dc94a8ffb16161334207, type: 2}
 --- !u!1 &82062875
 GameObject:
   m_ObjectHideFlags: 0
@@ -3893,6 +3909,7 @@ GameObject:
   - component: {fileID: 558944682}
   - component: {fileID: 558944684}
   - component: {fileID: 558944683}
+  - component: {fileID: 558944685}
   m_Layer: 0
   m_Name: Stair6D
   m_TagString: Untagged
@@ -3929,6 +3946,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonObject: {fileID: 721546897}
   destination: {fileID: 1214055324}
+  requireItem: 000000
 --- !u!61 &558944684
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3955,6 +3973,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &558944685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 558944681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_GeneratorAsset: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 04c9b05e948cdd74482c7f24d4094875, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fluidEffect: {fileID: 11400000, guid: b6849db69ad4dc94a8ffb16161334207, type: 2}
 --- !u!4 &566455825 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3622893803606218089, guid: a7bf4bc705d2f664b99ec57111a4897a,
@@ -5158,6 +5190,7 @@ GameObject:
   - component: {fileID: 760466972}
   - component: {fileID: 760466974}
   - component: {fileID: 760466973}
+  - component: {fileID: 760466975}
   m_Layer: 0
   m_Name: Stair4
   m_TagString: Untagged
@@ -5194,6 +5227,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonObject: {fileID: 721546897}
   destination: {fileID: 1512922565}
+  requireItem: 000100
 --- !u!61 &760466974
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5220,6 +5254,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &760466975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 760466971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_GeneratorAsset: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 04c9b05e948cdd74482c7f24d4094875, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fluidEffect: {fileID: 11400000, guid: b6849db69ad4dc94a8ffb16161334207, type: 2}
 --- !u!1001 &764552450
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5308,6 +5356,7 @@ GameObject:
   - component: {fileID: 768926895}
   - component: {fileID: 768926897}
   - component: {fileID: 768926896}
+  - component: {fileID: 768926898}
   m_Layer: 0
   m_Name: Stair5
   m_TagString: Untagged
@@ -5344,6 +5393,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonObject: {fileID: 721546897}
   destination: {fileID: 919331058}
+  requireItem: 000000
 --- !u!61 &768926897
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5370,6 +5420,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &768926898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768926894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_GeneratorAsset: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 04c9b05e948cdd74482c7f24d4094875, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fluidEffect: {fileID: 11400000, guid: b6849db69ad4dc94a8ffb16161334207, type: 2}
 --- !u!1 &799978649
 GameObject:
   m_ObjectHideFlags: 0
@@ -9136,6 +9200,7 @@ GameObject:
   - component: {fileID: 919331058}
   - component: {fileID: 919331060}
   - component: {fileID: 919331059}
+  - component: {fileID: 919331061}
   m_Layer: 0
   m_Name: Stair5D
   m_TagString: Untagged
@@ -9172,6 +9237,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonObject: {fileID: 721546897}
   destination: {fileID: 768926895}
+  requireItem: 000000
 --- !u!61 &919331060
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9198,6 +9264,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &919331061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919331057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_GeneratorAsset: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 04c9b05e948cdd74482c7f24d4094875, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fluidEffect: {fileID: 11400000, guid: b6849db69ad4dc94a8ffb16161334207, type: 2}
 --- !u!1 &938945550
 GameObject:
   m_ObjectHideFlags: 0
@@ -9816,6 +9896,7 @@ GameObject:
   - component: {fileID: 1019989680}
   - component: {fileID: 1019989679}
   - component: {fileID: 1019989678}
+  - component: {fileID: 1019989681}
   m_Layer: 0
   m_Name: Stair1D
   m_TagString: Untagged
@@ -9838,6 +9919,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonObject: {fileID: 721546897}
   destination: {fileID: 33384702}
+  requireItem: 000000
 --- !u!61 &1019989679
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9878,6 +9960,20 @@ Transform:
   m_Father: {fileID: 116816515}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1019989681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1019989677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_GeneratorAsset: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 04c9b05e948cdd74482c7f24d4094875, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fluidEffect: {fileID: 11400000, guid: b6849db69ad4dc94a8ffb16161334207, type: 2}
 --- !u!1 &1036018932
 GameObject:
   m_ObjectHideFlags: 0
@@ -10258,6 +10354,7 @@ GameObject:
   - component: {fileID: 1081929500}
   - component: {fileID: 1081929502}
   - component: {fileID: 1081929501}
+  - component: {fileID: 1081929503}
   m_Layer: 0
   m_Name: Stair3
   m_TagString: Untagged
@@ -10294,6 +10391,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonObject: {fileID: 721546897}
   destination: {fileID: 1796441892}
+  requireItem: 000100
 --- !u!61 &1081929502
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10320,6 +10418,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1081929503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1081929499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_GeneratorAsset: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 04c9b05e948cdd74482c7f24d4094875, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fluidEffect: {fileID: 11400000, guid: b6849db69ad4dc94a8ffb16161334207, type: 2}
 --- !u!1 &1085518647
 GameObject:
   m_ObjectHideFlags: 0
@@ -10411,6 +10523,7 @@ GameObject:
   - component: {fileID: 1095848459}
   - component: {fileID: 1095848461}
   - component: {fileID: 1095848460}
+  - component: {fileID: 1095848462}
   m_Layer: 0
   m_Name: Stair2D
   m_TagString: Untagged
@@ -10447,6 +10560,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonObject: {fileID: 721546897}
   destination: {fileID: 2001904946}
+  requireItem: 000000
 --- !u!61 &1095848461
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10473,6 +10587,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1095848462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1095848458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_GeneratorAsset: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 04c9b05e948cdd74482c7f24d4094875, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fluidEffect: {fileID: 11400000, guid: b6849db69ad4dc94a8ffb16161334207, type: 2}
 --- !u!1 &1112874148
 GameObject:
   m_ObjectHideFlags: 0
@@ -45771,6 +45899,7 @@ GameObject:
   - component: {fileID: 1214055324}
   - component: {fileID: 1214055326}
   - component: {fileID: 1214055325}
+  - component: {fileID: 1214055327}
   m_Layer: 0
   m_Name: Stair6
   m_TagString: Untagged
@@ -45807,6 +45936,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonObject: {fileID: 721546897}
   destination: {fileID: 558944682}
+  requireItem: 000000
 --- !u!61 &1214055326
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -45833,6 +45963,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1214055327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1214055323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_GeneratorAsset: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 04c9b05e948cdd74482c7f24d4094875, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fluidEffect: {fileID: 11400000, guid: b6849db69ad4dc94a8ffb16161334207, type: 2}
 --- !u!1 &1233763156
 GameObject:
   m_ObjectHideFlags: 0
@@ -71245,6 +71389,7 @@ GameObject:
   - component: {fileID: 1512922565}
   - component: {fileID: 1512922567}
   - component: {fileID: 1512922566}
+  - component: {fileID: 1512922568}
   m_Layer: 0
   m_Name: Stair4D
   m_TagString: Untagged
@@ -71281,6 +71426,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonObject: {fileID: 721546897}
   destination: {fileID: 760466972}
+  requireItem: 000000
 --- !u!61 &1512922567
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -71307,6 +71453,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1512922568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1512922564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_GeneratorAsset: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 04c9b05e948cdd74482c7f24d4094875, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fluidEffect: {fileID: 11400000, guid: b6849db69ad4dc94a8ffb16161334207, type: 2}
 --- !u!1 &1550075563
 GameObject:
   m_ObjectHideFlags: 0
@@ -72700,6 +72860,7 @@ GameObject:
   - component: {fileID: 1753742481}
   - component: {fileID: 1753742483}
   - component: {fileID: 1753742482}
+  - component: {fileID: 1753742484}
   m_Layer: 0
   m_Name: Stair7(finish)
   m_TagString: Untagged
@@ -72736,6 +72897,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonObject: {fileID: 721546897}
   destination: {fileID: 1931766176}
+  requireItem: 010101
 --- !u!61 &1753742483
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -72762,6 +72924,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1753742484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1753742480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_GeneratorAsset: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 04c9b05e948cdd74482c7f24d4094875, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fluidEffect: {fileID: 11400000, guid: b6849db69ad4dc94a8ffb16161334207, type: 2}
 --- !u!4 &1754447071 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3622893803606218089, guid: a7bf4bc705d2f664b99ec57111a4897a,
@@ -72978,6 +73154,7 @@ GameObject:
   - component: {fileID: 1796441892}
   - component: {fileID: 1796441894}
   - component: {fileID: 1796441893}
+  - component: {fileID: 1796441895}
   m_Layer: 0
   m_Name: Stair3D
   m_TagString: Untagged
@@ -73014,6 +73191,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonObject: {fileID: 721546897}
   destination: {fileID: 1081929500}
+  requireItem: 000000
 --- !u!61 &1796441894
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -73040,6 +73218,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1796441895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1796441891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_GeneratorAsset: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 04c9b05e948cdd74482c7f24d4094875, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fluidEffect: {fileID: 11400000, guid: b6849db69ad4dc94a8ffb16161334207, type: 2}
 --- !u!1 &1806026386
 GameObject:
   m_ObjectHideFlags: 0
@@ -73775,6 +73967,7 @@ GameObject:
   - component: {fileID: 1931766176}
   - component: {fileID: 1931766178}
   - component: {fileID: 1931766177}
+  - component: {fileID: 1931766179}
   m_Layer: 0
   m_Name: Stair7D
   m_TagString: Untagged
@@ -73811,6 +74004,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonObject: {fileID: 721546897}
   destination: {fileID: 1753742481}
+  requireItem: 000000
 --- !u!61 &1931766178
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -73837,6 +74031,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1931766179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1931766175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_GeneratorAsset: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 04c9b05e948cdd74482c7f24d4094875, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fluidEffect: {fileID: 11400000, guid: b6849db69ad4dc94a8ffb16161334207, type: 2}
 --- !u!4 &1937658058 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3622893803606218089, guid: a7bf4bc705d2f664b99ec57111a4897a,
@@ -74077,6 +74285,7 @@ GameObject:
   - component: {fileID: 2001904946}
   - component: {fileID: 2001904948}
   - component: {fileID: 2001904947}
+  - component: {fileID: 2001904949}
   m_Layer: 0
   m_Name: Stair2
   m_TagString: Untagged
@@ -74113,6 +74322,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonObject: {fileID: 721546897}
   destination: {fileID: 1095848459}
+  requireItem: 000000
 --- !u!61 &2001904948
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -74139,6 +74349,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &2001904949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2001904945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_GeneratorAsset: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 04c9b05e948cdd74482c7f24d4094875, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fluidEffect: {fileID: 11400000, guid: b6849db69ad4dc94a8ffb16161334207, type: 2}
 --- !u!1001 &2006848008
 PrefabInstance:
   m_ObjectHideFlags: 0

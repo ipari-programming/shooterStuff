@@ -49,7 +49,7 @@ public class EffectManager : MonoBehaviour {
     {
         if (effects.Count > 0)
         {
-            string text = "Effects:\n\r";
+            string text = "";
             foreach (Effect eff in effects)
             {
                 text += eff.name;
