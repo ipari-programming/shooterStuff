@@ -18,6 +18,10 @@ public class PauseMenu : MonoBehaviour {
 
     public Sprite[] itemSprite;
 
+    [Space]
+
+    public Button buttonConsole;
+
     void Start()
     {
         StartCoroutine(CheckMute());
@@ -48,10 +52,10 @@ public class PauseMenu : MonoBehaviour {
         paused = true;
         FindObjectOfType<AudioManager>().PauseMusic();
 
-        CheckItem();
+        CheckItems();
     }
 
-    void CheckItem()
+    void CheckItems()
     {
         if (PlayerPrefs.GetInt("first-item") == 1)
         {
@@ -68,6 +72,8 @@ public class PauseMenu : MonoBehaviour {
             itemDisplay[2].GetComponent<Image>().sprite = itemSprite[2];
             itemDisplay[2].GetComponent<Image>().color = new Color(255, 255, 255, 255);
         }
+
+        buttonConsole.gameObject.SetActive(PlayerPrefs.GetInt("fourth-item") == 1);
     }
 
     public void TogglePause()
@@ -99,5 +105,11 @@ public class PauseMenu : MonoBehaviour {
             i++;
         }
         Application.OpenURL(FindObjectOfType<AudioManager>().musicClipLinks[i]);
+    }
+
+    public void Console()
+    {
+        FindObjectOfType<MagicConsole>().transform.position = FindObjectOfType<Player>().transform.position;
+        TogglePause();
     }
 }

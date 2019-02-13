@@ -7,22 +7,17 @@ public class ItemPickup : MonoBehaviour
 
     public string thisItemName;
 
-    string[] allItemName = {"masterball", "chaosemerald", "upmushroom"};
+    string[] allItemName = { "masterball", "chaosemerald", "upmushroom", "magicconsole" };
+    string[] prefsName = { "first-item", "second-item", "third-item", "fourth-item" };
 
 
     void Start()
     {
-        if (PlayerPrefs.GetInt("first-item") == 1 && thisItemName.ToLower() == allItemName[0])
+
+        for (int i = 0; i < prefsName.Length; i++)
         {
-            Destroy(gameObject);
-        }
-        if (PlayerPrefs.GetInt("second-item") == 1 && thisItemName.ToLower() == allItemName[1])
-        {
-            Destroy(gameObject);
-        }
-        if (PlayerPrefs.GetInt("third-item") == 1 && thisItemName.ToLower() == allItemName[2])
-        {
-            Destroy(gameObject);
+            if (PlayerPrefs.GetInt(prefsName[i]) == 1 && thisItemName.ToLower() == allItemName[i])
+                Destroy(gameObject);
         }
     }
 
@@ -30,23 +25,14 @@ public class ItemPickup : MonoBehaviour
     {
         if (collision.GetComponent<Player>())
         {
-            if (thisItemName.ToLower() == allItemName[0])
+            for (int i = 0; i < prefsName.Length; i++)
             {
-                PlayerPrefs.SetInt("first-item", 1);
-                PlayerPrefs.Save();
-                Destroy(gameObject);
-            }
-            else if (thisItemName.ToLower() == allItemName[1])
-            {
-                PlayerPrefs.SetInt("second-item", 1);
-                PlayerPrefs.Save();
-                Destroy(gameObject);
-            }
-            else if (thisItemName.ToLower() == allItemName[2])
-            {
-                PlayerPrefs.SetInt("third-item", 1);
-                PlayerPrefs.Save();
-                Destroy(gameObject);
+                if (thisItemName.ToLower() == allItemName[i])
+                {
+                    PlayerPrefs.SetInt(prefsName[i], 1);
+                    PlayerPrefs.Save();
+                    Destroy(gameObject);
+                }
             }
         }
     }
