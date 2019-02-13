@@ -8,7 +8,6 @@ public class PlayerSpawner : MonoBehaviour
     public GameObject playerPrefab;
     public GameObject healthBar;
     public GameObject healthBarFill;
-    public GameObject buttonRespawn;
 
     public Joystick joystickMove;
     public Joystick joystickShoot;
@@ -30,9 +29,6 @@ public class PlayerSpawner : MonoBehaviour
     {
         Vector2 pos = new Vector2(PlayerPrefs.GetFloat("checkpoint-x", 0), PlayerPrefs.GetFloat("checkpoint-y", 0));
         currentPlayer = Instantiate(playerPrefab, pos, Quaternion.identity);
-
-        currentPlayer.GetComponent<Player>().buttonRespawn = buttonRespawn;
-        buttonRespawn.SetActive(false);
 
         currentPlayer.GetComponent<Player>().healthBar = healthBar;
         currentPlayer.GetComponent<Player>().healthBarFill = healthBarFill;

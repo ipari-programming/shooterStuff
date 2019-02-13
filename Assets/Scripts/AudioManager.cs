@@ -126,4 +126,10 @@ public class AudioManager : MonoBehaviour {
         if (sourceEffect.clip != null) sourceEffect.Play();
     }
     #endregion
+
+    public void ToggleMute()
+    {
+        sourceMusic.mute = !sourceMusic.mute;
+        sourceEffect.mute = !sourceEffect.mute;
+    }
 }

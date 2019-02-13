@@ -13,9 +13,6 @@ public class InventoryMenu : MonoBehaviour
     [Space]
 
     public GameObject[] itemDisplay;
-
-    [Space]
-
     public Sprite[] itemSprite;
 
     void CheckItem()

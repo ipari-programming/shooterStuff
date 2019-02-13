@@ -2,13 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour {
 
     public GameObject pauseMenuUI;
-    public GameObject inventoryButton;
 
     public bool paused = false;
+
+    [Space]
+
+    public GameObject[] itemDisplay;
+
+    public Sprite[] itemSprite;
 
     void Resume()
     {
@@ -16,7 +22,6 @@ public class PauseMenu : MonoBehaviour {
         Time.timeScale = 1f;
         paused = false;
         FindObjectOfType<AudioManager>().ResumeMusic();
-        inventoryButton.SetActive(true);
     }
 
     void Pause()
@@ -25,7 +30,27 @@ public class PauseMenu : MonoBehaviour {
         Time.timeScale = 0f;
         paused = true;
         FindObjectOfType<AudioManager>().PauseMusic();
-        inventoryButton.SetActive(false);
+
+        CheckItem();
+    }
+
+    void CheckItem()
+    {
+        if (PlayerPrefs.GetInt("first-item") == 1)
+        {
+            itemDisplay[0].GetComponent<Image>().sprite = itemSprite[0];
+            itemDisplay[0].GetComponent<Image>().color = new Color(255, 255, 255, 255);
+        }
+        if (PlayerPrefs.GetInt("second-item") == 1)
+        {
+            itemDisplay[1].GetComponent<Image>().sprite = itemSprite[1];
+            itemDisplay[1].GetComponent<Image>().color = new Color(255, 255, 255, 255);
+        }
+        if (PlayerPrefs.GetInt("third-item") == 1)
+        {
+            itemDisplay[2].GetComponent<Image>().sprite = itemSprite[2];
+            itemDisplay[2].GetComponent<Image>().color = new Color(255, 255, 255, 255);
+        }
     }
 
     public void TogglePause()
