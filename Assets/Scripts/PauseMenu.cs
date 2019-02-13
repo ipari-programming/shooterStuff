@@ -73,7 +73,7 @@ public class PauseMenu : MonoBehaviour {
             itemDisplay[2].GetComponent<Image>().color = new Color(255, 255, 255, 255);
         }
 
-        buttonConsole.gameObject.SetActive(PlayerPrefs.GetInt("fourth-item") == 1);
+        buttonConsole.gameObject.SetActive(PlayerPrefs.GetInt("fourth-item", 0) == 1);
     }
 
     public void TogglePause()

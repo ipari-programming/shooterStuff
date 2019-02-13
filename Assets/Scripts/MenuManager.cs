@@ -109,6 +109,7 @@ public class MenuManager : MonoBehaviour {
             PlayerPrefs.SetInt("first-item", 0);
             PlayerPrefs.SetInt("second-item", 0);
             PlayerPrefs.SetInt("third-item", 0);
+            PlayerPrefs.SetInt("fourth-item", 0);
             PlayerPrefs.SetString("last-player", characterName);
             PlayerPrefs.Save();
         }
