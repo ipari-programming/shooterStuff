@@ -11,13 +11,13 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: 11500000, guid: e7908e03a92693c44a78a43a27a35153, type: 3}
-  m_Name: Lava
+  m_Name: Deafness
   m_EditorClassIdentifier: 
-  name: Lava
+  name: Deafness
   minDuration: 99999
   maxDuration: 99999
-  applyRate: 0.05
+  applyRate: 1
   duration: 0
-  heal: -0.2
-  accelerate: 0.3
+  heal: 0
+  accelerate: 1
   enableMultiple: 0

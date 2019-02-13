@@ -12,17 +12,21 @@ public class EffectManager : MonoBehaviour {
 
     EffectDisplay effectDisplay;
 
-    float initialSpeed = 0;
+    float initialSpeed;
 
     void Start()
     {
         playerController = GetComponentInParent<PlayerController>();
         effectDisplay = FindObjectOfType<EffectDisplay>();
+
+        initialSpeed = playerController.speed;
+
+        effects = new List<Effect>();
     }
 
     void Update()
     {
-        if (effects != null && effects.Count > 0)
+        if (effects.Count > 0)
         {
             foreach (Effect effect in effects)
             {
@@ -35,7 +39,6 @@ public class EffectManager : MonoBehaviour {
         }
         else
         {
-            if (initialSpeed == 0) initialSpeed = playerController.speed;
             playerController.GetComponent<PlayerController>().speed = initialSpeed;
         }
 
@@ -44,13 +47,13 @@ public class EffectManager : MonoBehaviour {
 
     void UpdateDisplay()
     {
-        if (effects != null && effects.Count > 0)
+        if (effects.Count > 0)
         {
             string text = "Effects:\n\r";
             foreach (Effect eff in effects)
             {
                 text += eff.name;
-                if (eff.duration < 60 && eff.duration > .5f) text += " (" + Mathf.Round(effects[0].duration * 10) / 10 + ")";
+                if (eff.duration < 60 && eff.duration > .1f) text += " (" + Mathf.Round(eff.duration * 10) / 10 + ")";
                 text += "\n\r";
             }
             effectDisplay.GetComponent<Text>().text = text;
@@ -63,8 +66,6 @@ public class EffectManager : MonoBehaviour {
 
     public void ApplyEffect(Effect effect)
     {
-        if (effects == null) effects = new List<Effect>();
-
         if (effects.Contains(effect) && !effect.enableMultiple)
         {
             effects[effects.IndexOf(effect)].ResetDuration();
@@ -80,6 +81,19 @@ public class EffectManager : MonoBehaviour {
     {
         effect.duration = 0;
         effects.Remove(effect);
+
+        if (effects.Count < 1)
+        {
+            playerController.GetComponent<PlayerController>().speed = initialSpeed;
+            return;
+        }
+
+        foreach (Effect eff in effects)
+        {
+            if (eff.accelerate != 1) return;
+        }
+
+        playerController.GetComponent<PlayerController>().speed = initialSpeed;
     }
 
 }

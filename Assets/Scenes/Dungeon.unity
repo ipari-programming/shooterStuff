@@ -2382,8 +2382,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1628753813}
-        m_MethodName: ToggleMute
+      - m_Target: {fileID: 570630167}
+        m_MethodName: ToggleSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4059,7 +4059,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &570630164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4136,6 +4136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 570630163}
   paused: 0
+  deafness: {fileID: 11400000, guid: a737a2b8a666e524c8a1be86853d9539, type: 2}
   itemDisplay:
   - {fileID: 614886420}
   - {fileID: 260842926}
@@ -48061,7 +48062,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 30, y: -60}
+  m_AnchoredPosition: {x: 30, y: -48}
   m_SizeDelta: {x: 300, y: 120}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1372357272
@@ -71767,19 +71768,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5}
   m_EdgeRadius: 0
---- !u!114 &1628753813 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114513579897502262, guid: 3eac181b37744014685954d52049609c,
-    type: 3}
-  m_PrefabInstance: {fileID: 749137514}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
-  m_Script: {fileID: 11500000, guid: b023282c07a58a944b80d0e306c1b4ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1635048013
 GameObject:
   m_ObjectHideFlags: 0

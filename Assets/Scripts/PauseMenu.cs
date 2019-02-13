@@ -10,11 +10,28 @@ public class PauseMenu : MonoBehaviour {
 
     public bool paused = false;
 
+    public Effect deafness;
+
     [Space]
 
     public GameObject[] itemDisplay;
 
     public Sprite[] itemSprite;
+
+    void Start()
+    {
+        StartCoroutine(CheckMute());
+    }
+
+    IEnumerator CheckMute()
+    {
+        yield return new WaitForEndOfFrame();
+
+        if (FindObjectOfType<AudioManager>().sourceMusic.mute) FindObjectOfType<EffectManager>().ApplyEffect(deafness);
+        else FindObjectOfType<EffectManager>().ClearEffect(deafness);
+
+        gameObject.SetActive(false);
+    }
 
     void Resume()
     {
@@ -67,6 +84,13 @@ public class PauseMenu : MonoBehaviour {
         SceneManager.LoadScene(1);
     }
 
+    public void ToggleSound()
+    {
+        FindObjectOfType<AudioManager>().ToggleMute();
+        if (FindObjectOfType<AudioManager>().sourceMusic.mute) FindObjectOfType<EffectManager>().ApplyEffect(deafness);
+        else FindObjectOfType<EffectManager>().ClearEffect(deafness);
+    }
+
     public void SongOnYoutube()
     {
         int i = 0;
@@ -76,5 +100,4 @@ public class PauseMenu : MonoBehaviour {
         }
         Application.OpenURL(FindObjectOfType<AudioManager>().musicClipLinks[i]);
     }
-
 }

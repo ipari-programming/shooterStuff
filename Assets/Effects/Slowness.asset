@@ -16,7 +16,7 @@ MonoBehaviour:
   name: Slowness
   minDuration: 1
   maxDuration: 10
-  applyRate: 1
+  applyRate: 0.1
   duration: 0
   heal: 0
   accelerate: 0.3
