@@ -16,7 +16,7 @@ public class Notifier : MonoBehaviour
 
     public void Notify(string text)
     {
-        StartCoroutine(Notification(text, 5));
+        StartCoroutine(Notification(text, 3));
     }
 
     public void Notify(string text, float delay)

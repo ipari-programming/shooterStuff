@@ -8,6 +8,8 @@ public class MagicConsole : MonoBehaviour
     public Button buttonEdit;
     public Button buttonRun;
 
+    public InputField input;
+
     public GameObject editUI;
 
     public string command = "";
@@ -15,6 +17,8 @@ public class MagicConsole : MonoBehaviour
     [Space]
 
     public GameObject enemyPrefab;
+
+    public Effect[] effects;
 
     Notifier notifier;
 
@@ -39,6 +43,11 @@ public class MagicConsole : MonoBehaviour
         buttonRun.gameObject.SetActive(false);
     }
 
+    public void InputValueChanged()
+    {
+        command = input.text;
+    }
+
     public void SetCommand(string cmd)
     {
         command = cmd;
@@ -51,31 +60,58 @@ public class MagicConsole : MonoBehaviour
 
     public void RunCommand()
     {
-        switch (command)
+        string[] args = command.Split(' ');
+
+        args[0] = args[0].Replace("/", "");
+
+        // effect <effect name>
+        if (args[0] == "effect")
         {
-            case "spawn":
-                Instantiate(enemyPrefab, transform.position, Quaternion.identity);
-
-                notifier.Notify(">_ spawned " + enemyPrefab.name);
-                break;
-            case "kill":
-                Enemy nearestEnemy = FindObjectsOfType<Enemy>()[0];
-
-                foreach (Enemy enemy in FindObjectsOfType<Enemy>())
+            foreach (Effect eff in effects)
+            {
+                if (eff.name.ToLower() == args[1])
                 {
-                    float nearest = Vector2.Distance(transform.position, nearestEnemy.transform.position);
-                    float current = Vector2.Distance(transform.position, enemy.transform.position);
-
-                    if (current < nearest)
-                    {
-                        nearestEnemy = enemy;
-                    }
+                    FindObjectOfType<EffectManager>().ApplyEffect(eff);
+                    return;
                 }
-
-                nearestEnemy.Die();
-
-                notifier.Notify(">_ killed " + enemyPrefab.name + ", distance: " + Vector2.Distance(transform.position, nearestEnemy.transform.position));
-                break;
+            }
         }
+        // notify <message>
+        else if (args[0] == "notify" && args.Length > 1)
+        {
+            notifier.Notify(command.Substring(7));
+        }
+        // spawn enemy
+        else if (args[0] == "spawn" && args[1] == "enemy")
+        {
+            Instantiate(enemyPrefab, transform.position, Quaternion.identity);
+        }
+        // kill all
+        else if (args[0] == "kill" && args[1] == "all")
+        {
+            Enemy[] enemies = FindObjectsOfType<Enemy>();
+
+            foreach (Enemy enemy in enemies) enemy.Die();
+
+            notifier.Notify("CONSOLE: killed " + enemies.Length + " enemies");
+        }
+        // kill nearest
+        else if (args[0] == "kill" && args[1] == "nearest")
+        {
+            Enemy nearestEnemy = FindObjectsOfType<Enemy>()[0];
+
+            foreach (Enemy enemy in FindObjectsOfType<Enemy>())
+            {
+                float nearest = Vector2.Distance(transform.position, nearestEnemy.transform.position);
+                float current = Vector2.Distance(transform.position, enemy.transform.position);
+
+                if (current < nearest) nearestEnemy = enemy;
+            }
+
+            nearestEnemy.Die();
+
+            notifier.Notify("CONSOLE: killed enemy " + Vector2.Distance(transform.position, nearestEnemy.transform.position) + " units away");
+        }
+        else notifier.Notify("CONSOLE: unknown command");
     }
 }

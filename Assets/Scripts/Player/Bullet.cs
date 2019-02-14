@@ -11,12 +11,15 @@ public class Bullet : MonoBehaviour {
     {
         if(!isRay)
         {
-            Enemy enemy = collision.transform.GetComponent<Enemy>();
+            Enemy enemy = collision.GetComponent<Enemy>();
             if (enemy)
             {
                 enemy.DealDamage(damage);
             }
-            if (!collision.isTrigger && !collision.GetComponent < Player>()) Destroy(transform.gameObject);
+            if (!collision.isTrigger && !collision.GetComponent<Player>()) Destroy(transform.gameObject);
+
+            MagicConsole console = collision.GetComponent<MagicConsole>();
+            if (console) console.RunCommand();
         }
     }
 
