@@ -31,7 +31,7 @@ public class ItemPickup : MonoBehaviour
             {
                 if (thisItemName.ToLower() == allItemName[i])
                 {
-                    notifier.Notify(i == 3 ? "Congratulations! Now you have access to the console!" : "New item in inventory!");
+                    notifier.Notify(i == 3 ? "Congratulations! Now you can access the console!" : "New item in inventory!");
 
                     PlayerPrefs.SetInt(prefsName[i], 1);
                     PlayerPrefs.Save();

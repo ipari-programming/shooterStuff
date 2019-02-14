@@ -6,11 +6,11 @@ public class Checkpoint : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D collision)
     {
+        if (!collision.GetComponent<Player>()) return;
 
-        if (collision.GetComponent<Player>())
-        {
-            PlayerPrefs.SetFloat("checkpoint-x", transform.position.x);
-            PlayerPrefs.SetFloat("checkpoint-y", transform.position.y);
-        }
+        PlayerPrefs.SetFloat("checkpoint-x", transform.position.x);
+        PlayerPrefs.SetFloat("checkpoint-y", transform.position.y);
+
+        FindObjectOfType<Notifier>().Notify("Checkpoint saved");
     }
 }
