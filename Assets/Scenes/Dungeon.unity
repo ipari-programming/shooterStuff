@@ -4002,7 +4002,12 @@ MonoBehaviour:
   command: 
   enemyPrefab: {fileID: 1822984516051322, guid: b196b2ab0361ec54892d753bf54d7dd5,
     type: 3}
-  effects: []
+  effects:
+  - {fileID: 11400000, guid: 1e85bc9439da9314eb79934a36710764, type: 2}
+  - {fileID: 11400000, guid: 7fd985b69ee5d534bb4c23b9d40fe397, type: 2}
+  - {fileID: 11400000, guid: aca22876c633adc4daf900cff7dbedba, type: 2}
+  - {fileID: 11400000, guid: d54c316b3d56fae439722f56690e25f0, type: 2}
+  - {fileID: 11400000, guid: 9161ad8e4158ae54caf6c60cd4ba32e0, type: 2}
 --- !u!58 &501061979
 CircleCollider2D:
   m_ObjectHideFlags: 0

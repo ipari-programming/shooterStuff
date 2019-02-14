@@ -64,9 +64,11 @@ public class MagicConsole : MonoBehaviour
 
         args[0] = args[0].Replace("/", "");
 
-        // effect <effect name>
+        // effect <clear|effect name>
         if (args[0] == "effect")
         {
+            if (args[1] == "clear") FindObjectOfType<EffectManager>().ClearAll();
+
             foreach (Effect eff in effects)
             {
                 if (eff.name.ToLower() == args[1])

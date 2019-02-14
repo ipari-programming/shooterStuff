@@ -96,4 +96,12 @@ public class EffectManager : MonoBehaviour {
         playerController.GetComponent<PlayerController>().speed = initialSpeed;
     }
 
+    public void ClearAll()
+    {
+        foreach (Effect eff in effects) eff.duration = 0;
+
+        effects.Clear();
+
+        playerController.GetComponent<PlayerController>().speed = initialSpeed;
+    }
 }
