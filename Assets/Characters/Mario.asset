@@ -4,10 +4,12 @@
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: 11500000, guid: b3460eb5ebbc6464bab8b8270b98e3ad, type: 3}
   m_Name: Mario
   m_EditorClassIdentifier: 
@@ -21,7 +23,7 @@ MonoBehaviour:
   damage: 2
   speed: 18
   weaponRange: 8
-  bulletSpeed: 30
+  bulletSpeed: 80
   isWeaponRay: 0
   shootingOffset: {x: 0, y: 0.2}
   mainColor: {r: 0.89411765, g: 0, b: 0, a: 1}

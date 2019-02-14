@@ -74942,6 +74942,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b04605c7fa90c1248bac06ed9ffccc9c, type: 2}
   - {fileID: 11400000, guid: 007d705676888144c993c22b6032fc75, type: 2}
   - {fileID: 11400000, guid: 622f9c8e72e67c948b5de331bb9813f6, type: 2}
+  - {fileID: 11400000, guid: f8153a3710fa61d41aeb0835f9d438c3, type: 2}
   cam: {fileID: 519420031}
 --- !u!4 &1795754472
 Transform:
