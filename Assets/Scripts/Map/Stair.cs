@@ -13,6 +13,13 @@ public class Stair : MonoBehaviour {
 
     public bool[] requireItem = new bool[3];
 
+    Notifier notifier;
+
+    void Start()
+    {
+        notifier = FindObjectOfType<Notifier>();
+    }
+
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (!collision.GetComponent<Player>()) return;
@@ -21,11 +28,9 @@ public class Stair : MonoBehaviour {
             (requireItem[1] && PlayerPrefs.GetInt("second-item") == 0) ||
             (requireItem[2] && PlayerPrefs.GetInt("third-item") == 0))
         {
-            GetComponent<Fluid>().fluidEffect.name = "Stair locked";
+            notifier.Notify("Stair locked! You need some items to go here.");
             return;
         }
-
-        GetComponent<Fluid>().fluidEffect.name = "Stair open";
 
         Button button = buttonObject.GetComponent<Button>();
 

@@ -16,6 +16,13 @@ public class MagicConsole : MonoBehaviour
 
     public GameObject enemyPrefab;
 
+    Notifier notifier;
+
+    void Start()
+    {
+        notifier = FindObjectOfType<Notifier>();
+    }
+
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (!collision.GetComponent<Player>()) return;
@@ -48,6 +55,8 @@ public class MagicConsole : MonoBehaviour
         {
             case "spawn":
                 Instantiate(enemyPrefab, transform.position, Quaternion.identity);
+
+                notifier.Notify(">_ spawned " + enemyPrefab.name);
                 break;
             case "kill":
                 Enemy nearestEnemy = FindObjectsOfType<Enemy>()[0];
@@ -64,6 +73,8 @@ public class MagicConsole : MonoBehaviour
                 }
 
                 nearestEnemy.Die();
+
+                notifier.Notify(">_ killed " + enemyPrefab.name + ", distance: " + Vector2.Distance(transform.position, nearestEnemy.transform.position));
                 break;
         }
     }

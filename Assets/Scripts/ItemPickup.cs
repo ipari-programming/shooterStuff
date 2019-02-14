@@ -10,9 +10,11 @@ public class ItemPickup : MonoBehaviour
     string[] allItemName = { "masterball", "chaosemerald", "upmushroom", "magicconsole" };
     string[] prefsName = { "first-item", "second-item", "third-item", "fourth-item" };
 
+    Notifier notifier;
 
     void Start()
     {
+        notifier = FindObjectOfType<Notifier>();
 
         for (int i = 0; i < prefsName.Length; i++)
         {
@@ -29,6 +31,8 @@ public class ItemPickup : MonoBehaviour
             {
                 if (thisItemName.ToLower() == allItemName[i])
                 {
+                    notifier.Notify(i == 3 ? "Congratulations! Now you have access to the console!" : "New item in inventory!");
+
                     PlayerPrefs.SetInt(prefsName[i], 1);
                     PlayerPrefs.Save();
                     Destroy(gameObject);

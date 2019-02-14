@@ -331,7 +331,6 @@ GameObject:
   - component: {fileID: 33384702}
   - component: {fileID: 33384701}
   - component: {fileID: 33384700}
-  - component: {fileID: 33384703}
   m_Layer: 0
   m_Name: Stair1
   m_TagString: Untagged
@@ -395,20 +394,6 @@ Transform:
   m_Father: {fileID: 116816515}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &33384703
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 33384699}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
-  m_Script: {fileID: 11500000, guid: 04c9b05e948cdd74482c7f24d4094875, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fluidEffect: {fileID: 11400000, guid: b6849db69ad4dc94a8ffb16161334207, type: 2}
 --- !u!1 &82062875
 GameObject:
   m_ObjectHideFlags: 0
@@ -3664,6 +3649,7 @@ RectTransform:
   - {fileID: 570630166}
   - {fileID: 234174727}
   - {fileID: 265881754}
+  - {fileID: 2012143463}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5052,7 +5038,6 @@ GameObject:
   - component: {fileID: 558944682}
   - component: {fileID: 558944684}
   - component: {fileID: 558944683}
-  - component: {fileID: 558944685}
   m_Layer: 0
   m_Name: Stair6D
   m_TagString: Untagged
@@ -5116,20 +5101,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &558944685
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 558944681}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
-  m_Script: {fileID: 11500000, guid: 04c9b05e948cdd74482c7f24d4094875, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fluidEffect: {fileID: 11400000, guid: b6849db69ad4dc94a8ffb16161334207, type: 2}
 --- !u!4 &566455825 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3622893803606218089, guid: a7bf4bc705d2f664b99ec57111a4897a,
@@ -6495,7 +6466,6 @@ GameObject:
   - component: {fileID: 760466972}
   - component: {fileID: 760466974}
   - component: {fileID: 760466973}
-  - component: {fileID: 760466975}
   m_Layer: 0
   m_Name: Stair4
   m_TagString: Untagged
@@ -6559,20 +6529,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &760466975
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 760466971}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
-  m_Script: {fileID: 11500000, guid: 04c9b05e948cdd74482c7f24d4094875, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fluidEffect: {fileID: 11400000, guid: b6849db69ad4dc94a8ffb16161334207, type: 2}
 --- !u!1 &760673948
 GameObject:
   m_ObjectHideFlags: 0
@@ -6795,7 +6751,6 @@ GameObject:
   - component: {fileID: 768926895}
   - component: {fileID: 768926897}
   - component: {fileID: 768926896}
-  - component: {fileID: 768926898}
   m_Layer: 0
   m_Name: Stair5
   m_TagString: Untagged
@@ -6859,20 +6814,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &768926898
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 768926894}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
-  m_Script: {fileID: 11500000, guid: 04c9b05e948cdd74482c7f24d4094875, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fluidEffect: {fileID: 11400000, guid: b6849db69ad4dc94a8ffb16161334207, type: 2}
 --- !u!1 &773854128
 GameObject:
   m_ObjectHideFlags: 0
@@ -7006,6 +6947,140 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 773854128}
+  m_CullTransparentMesh: 0
+--- !u!1 &785592296
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 785592297}
+  - component: {fileID: 785592300}
+  - component: {fileID: 785592299}
+  - component: {fileID: 785592298}
+  m_Layer: 5
+  m_Name: ButtonClose
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &785592297
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785592296}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2045946500}
+  m_Father: {fileID: 2012143463}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 60, y: 0}
+  m_Pivot: {x: 1, y: 0.5}
+--- !u!114 &785592298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785592296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_GeneratorAsset: {fileID: 0}
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 785592299}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2012143466}
+        m_MethodName: Cancel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &785592299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785592296}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_GeneratorAsset: {fileID: 0}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!222 &785592300
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785592296}
   m_CullTransparentMesh: 0
 --- !u!1 &799978649
 GameObject:
@@ -10866,7 +10941,6 @@ GameObject:
   - component: {fileID: 919331058}
   - component: {fileID: 919331060}
   - component: {fileID: 919331059}
-  - component: {fileID: 919331061}
   m_Layer: 0
   m_Name: Stair5D
   m_TagString: Untagged
@@ -10930,20 +11004,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &919331061
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919331057}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
-  m_Script: {fileID: 11500000, guid: 04c9b05e948cdd74482c7f24d4094875, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fluidEffect: {fileID: 11400000, guid: b6849db69ad4dc94a8ffb16161334207, type: 2}
 --- !u!1 &928332538
 GameObject:
   m_ObjectHideFlags: 0
@@ -11696,7 +11756,6 @@ GameObject:
   - component: {fileID: 1019989680}
   - component: {fileID: 1019989679}
   - component: {fileID: 1019989678}
-  - component: {fileID: 1019989681}
   m_Layer: 0
   m_Name: Stair1D
   m_TagString: Untagged
@@ -11760,20 +11819,6 @@ Transform:
   m_Father: {fileID: 116816515}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1019989681
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1019989677}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
-  m_Script: {fileID: 11500000, guid: 04c9b05e948cdd74482c7f24d4094875, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fluidEffect: {fileID: 11400000, guid: b6849db69ad4dc94a8ffb16161334207, type: 2}
 --- !u!1 &1036018932
 GameObject:
   m_ObjectHideFlags: 0
@@ -12154,7 +12199,6 @@ GameObject:
   - component: {fileID: 1081929500}
   - component: {fileID: 1081929502}
   - component: {fileID: 1081929501}
-  - component: {fileID: 1081929503}
   m_Layer: 0
   m_Name: Stair3
   m_TagString: Untagged
@@ -12218,20 +12262,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &1081929503
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1081929499}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
-  m_Script: {fileID: 11500000, guid: 04c9b05e948cdd74482c7f24d4094875, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fluidEffect: {fileID: 11400000, guid: b6849db69ad4dc94a8ffb16161334207, type: 2}
 --- !u!1 &1085518647
 GameObject:
   m_ObjectHideFlags: 0
@@ -12323,7 +12353,6 @@ GameObject:
   - component: {fileID: 1095848459}
   - component: {fileID: 1095848461}
   - component: {fileID: 1095848460}
-  - component: {fileID: 1095848462}
   m_Layer: 0
   m_Name: Stair2D
   m_TagString: Untagged
@@ -12387,20 +12416,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &1095848462
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1095848458}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
-  m_Script: {fileID: 11500000, guid: 04c9b05e948cdd74482c7f24d4094875, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fluidEffect: {fileID: 11400000, guid: b6849db69ad4dc94a8ffb16161334207, type: 2}
 --- !u!1 &1112874148
 GameObject:
   m_ObjectHideFlags: 0
@@ -47861,7 +47876,6 @@ GameObject:
   - component: {fileID: 1214055324}
   - component: {fileID: 1214055326}
   - component: {fileID: 1214055325}
-  - component: {fileID: 1214055327}
   m_Layer: 0
   m_Name: Stair6
   m_TagString: Untagged
@@ -47925,20 +47939,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &1214055327
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1214055323}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
-  m_Script: {fileID: 11500000, guid: 04c9b05e948cdd74482c7f24d4094875, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fluidEffect: {fileID: 11400000, guid: b6849db69ad4dc94a8ffb16161334207, type: 2}
 --- !u!1 &1233763156
 GameObject:
   m_ObjectHideFlags: 0
@@ -73777,7 +73777,6 @@ GameObject:
   - component: {fileID: 1512922565}
   - component: {fileID: 1512922567}
   - component: {fileID: 1512922566}
-  - component: {fileID: 1512922568}
   m_Layer: 0
   m_Name: Stair4D
   m_TagString: Untagged
@@ -73841,20 +73840,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &1512922568
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1512922564}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
-  m_Script: {fileID: 11500000, guid: 04c9b05e948cdd74482c7f24d4094875, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fluidEffect: {fileID: 11400000, guid: b6849db69ad4dc94a8ffb16161334207, type: 2}
 --- !u!1 &1515178694
 GameObject:
   m_ObjectHideFlags: 0
@@ -75678,7 +75663,6 @@ GameObject:
   - component: {fileID: 1753742481}
   - component: {fileID: 1753742483}
   - component: {fileID: 1753742482}
-  - component: {fileID: 1753742484}
   m_Layer: 0
   m_Name: Stair7(finish)
   m_TagString: Untagged
@@ -75742,20 +75726,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &1753742484
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1753742480}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
-  m_Script: {fileID: 11500000, guid: 04c9b05e948cdd74482c7f24d4094875, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fluidEffect: {fileID: 11400000, guid: b6849db69ad4dc94a8ffb16161334207, type: 2}
 --- !u!4 &1754447071 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3622893803606218089, guid: a7bf4bc705d2f664b99ec57111a4897a,
@@ -75972,7 +75942,6 @@ GameObject:
   - component: {fileID: 1796441892}
   - component: {fileID: 1796441894}
   - component: {fileID: 1796441893}
-  - component: {fileID: 1796441895}
   m_Layer: 0
   m_Name: Stair3D
   m_TagString: Untagged
@@ -76036,20 +76005,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &1796441895
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1796441891}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
-  m_Script: {fileID: 11500000, guid: 04c9b05e948cdd74482c7f24d4094875, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fluidEffect: {fileID: 11400000, guid: b6849db69ad4dc94a8ffb16161334207, type: 2}
 --- !u!1 &1806026386
 GameObject:
   m_ObjectHideFlags: 0
@@ -76384,6 +76339,86 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1841572707}
+  m_CullTransparentMesh: 0
+--- !u!1 &1877032849
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1877032850}
+  - component: {fileID: 1877032852}
+  - component: {fileID: 1877032851}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1877032850
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877032849}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2012143463}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -22, y: 0}
+  m_SizeDelta: {x: -76, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1877032851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877032849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_GeneratorAsset: {fileID: 0}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.7529412}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 28
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 40
+    m_Alignment: 3
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: New notification
+--- !u!222 &1877032852
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877032849}
   m_CullTransparentMesh: 0
 --- !u!1 &1883615745
 GameObject:
@@ -76927,7 +76962,6 @@ GameObject:
   - component: {fileID: 1931766176}
   - component: {fileID: 1931766178}
   - component: {fileID: 1931766177}
-  - component: {fileID: 1931766179}
   m_Layer: 0
   m_Name: Stair7D
   m_TagString: Untagged
@@ -76991,20 +77025,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &1931766179
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1931766175}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
-  m_Script: {fileID: 11500000, guid: 04c9b05e948cdd74482c7f24d4094875, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fluidEffect: {fileID: 11400000, guid: b6849db69ad4dc94a8ffb16161334207, type: 2}
 --- !u!1 &1936859597
 GameObject:
   m_ObjectHideFlags: 0
@@ -77436,7 +77456,6 @@ GameObject:
   - component: {fileID: 2001904946}
   - component: {fileID: 2001904948}
   - component: {fileID: 2001904947}
-  - component: {fileID: 2001904949}
   m_Layer: 0
   m_Name: Stair2
   m_TagString: Untagged
@@ -77500,20 +77519,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &2001904949
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2001904945}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
-  m_Script: {fileID: 11500000, guid: 04c9b05e948cdd74482c7f24d4094875, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fluidEffect: {fileID: 11400000, guid: b6849db69ad4dc94a8ffb16161334207, type: 2}
 --- !u!1001 &2006848008
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -77583,12 +77588,204 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7bf4bc705d2f664b99ec57111a4897a, type: 3}
+--- !u!1 &2012143462
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2012143463}
+  - component: {fileID: 2012143465}
+  - component: {fileID: 2012143464}
+  - component: {fileID: 2012143467}
+  - component: {fileID: 2012143466}
+  m_Layer: 5
+  m_Name: Notifier
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2012143463
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2012143462}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1877032850}
+  - {fileID: 785592297}
+  m_Father: {fileID: 387277595}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -142, y: -38}
+  m_SizeDelta: {x: 640, y: 60}
+  m_Pivot: {x: 1, y: 1}
+--- !u!114 &2012143464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2012143462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_GeneratorAsset: {fileID: 0}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.15686275, g: 0.15686275, b: 0.15686275, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!222 &2012143465
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2012143462}
+  m_CullTransparentMesh: 0
+--- !u!114 &2012143466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2012143462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_GeneratorAsset: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: f9aa6464db6678a4690a98ec683690bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textNotif: {fileID: 1877032851}
+--- !u!95 &2012143467
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2012143462}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2f1262a95cdd85644bd43b5588293ac2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &2032283577 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3622893803606218089, guid: a7bf4bc705d2f664b99ec57111a4897a,
     type: 3}
   m_PrefabInstance: {fileID: 814593769}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2045946499
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2045946500}
+  - component: {fileID: 2045946502}
+  - component: {fileID: 2045946501}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2045946500
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045946499}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 785592297}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2045946501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045946499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_GeneratorAsset: {fileID: 0}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 32
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 41
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: <b>X</b>
+--- !u!222 &2045946502
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045946499}
+  m_CullTransparentMesh: 0
 --- !u!1001 &2055181646
 PrefabInstance:
   m_ObjectHideFlags: 0
