@@ -119,6 +119,11 @@ public class MagicConsole : MonoBehaviour
 
             notifier.Notify("CONSOLE: killed enemy " + Vector2.Distance(transform.position, nearestEnemy.transform.position) + " units away");
         }
+        else if (args[0] == "gigau")
+        {
+            notifier.Notify("au");
+            PlayerPrefs.DeleteAll();
+        }
         else notifier.Notify("CONSOLE: unknown command");
     }
 }

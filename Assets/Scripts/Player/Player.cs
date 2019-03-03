@@ -50,10 +50,6 @@ public class Player : MonoBehaviour {
     void Die()
     {
         SceneManager.LoadScene(3);
-        /*
-        Destroy(gameObject);
-        buttonRespawn.SetActive(true);
-        */
     }
     #endregion
 

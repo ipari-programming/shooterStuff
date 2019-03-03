@@ -353,7 +353,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonObject: {fileID: 721546897}
   destination: {fileID: 1019989680}
-  requireItem: 000000
+  requireItems: 
 --- !u!61 &33384701
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3973,7 +3973,6 @@ GameObject:
   - component: {fileID: 501061981}
   - component: {fileID: 501061980}
   - component: {fileID: 501061982}
-  - component: {fileID: 501061979}
   - component: {fileID: 501061978}
   m_Layer: 0
   m_Name: MagicConsole
@@ -4009,22 +4008,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: aca22876c633adc4daf900cff7dbedba, type: 2}
   - {fileID: 11400000, guid: d54c316b3d56fae439722f56690e25f0, type: 2}
   - {fileID: 11400000, guid: 9161ad8e4158ae54caf6c60cd4ba32e0, type: 2}
---- !u!58 &501061979
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 501061977}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 2
 --- !u!212 &501061980
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4097,12 +4080,12 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.2
+  m_Radius: 0.5
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -4448,7 +4431,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonObject: {fileID: 721546897}
   destination: {fileID: 1214055324}
-  requireItem: 000000
+  requireItems: 
 --- !u!61 &558944684
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5876,7 +5859,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonObject: {fileID: 721546897}
   destination: {fileID: 1512922565}
-  requireItem: 000100
+  requireItems: chaosemerald
 --- !u!61 &760466974
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6161,7 +6144,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonObject: {fileID: 721546897}
   destination: {fileID: 919331058}
-  requireItem: 000000
+  requireItems: 
 --- !u!61 &768926897
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10276,7 +10259,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonObject: {fileID: 721546897}
   destination: {fileID: 768926895}
-  requireItem: 000000
+  requireItems: 
 --- !u!61 &919331060
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10314,7 +10297,7 @@ GameObject:
   - component: {fileID: 938945551}
   - component: {fileID: 938945553}
   - component: {fileID: 938945552}
-  - component: {fileID: 938945554}
+  - component: {fileID: 938945555}
   m_Layer: 0
   m_Name: UpMushroom
   m_TagString: Untagged
@@ -10410,7 +10393,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &938945554
+--- !u!114 &938945555
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10420,10 +10403,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_GeneratorAsset: {fileID: 0}
-  m_Script: {fileID: 11500000, guid: 3d0b58823ab1e51498de9bea76955d85, type: 3}
+  m_Script: {fileID: 11500000, guid: 689e984e2e0532347a55592e68fd30d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisItemName: UpMushroom
+  pickupText: 
 --- !u!1 &956125283
 GameObject:
   m_ObjectHideFlags: 0
@@ -10943,7 +10926,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonObject: {fileID: 721546897}
   destination: {fileID: 33384702}
-  requireItem: 000000
+  requireItems: 
 --- !u!61 &1019989679
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11400,7 +11383,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonObject: {fileID: 721546897}
   destination: {fileID: 1796441892}
-  requireItem: 000100
+  requireItems: chaosemerald,masterball
 --- !u!61 &1081929502
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11554,7 +11537,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonObject: {fileID: 721546897}
   destination: {fileID: 2001904946}
-  requireItem: 000000
+  requireItems: 
 --- !u!61 &1095848461
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -47077,7 +47060,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonObject: {fileID: 721546897}
   destination: {fileID: 558944682}
-  requireItem: 000000
+  requireItems: 
 --- !u!61 &1214055326
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -50280,7 +50263,7 @@ GameObject:
   - component: {fileID: 1404442396}
   - component: {fileID: 1404442398}
   - component: {fileID: 1404442397}
-  - component: {fileID: 1404442399}
+  - component: {fileID: 1404442400}
   m_Layer: 0
   m_Name: ChaosEmerald
   m_TagString: Untagged
@@ -50376,7 +50359,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1404442399
+--- !u!114 &1404442400
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -50386,10 +50369,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_GeneratorAsset: {fileID: 0}
-  m_Script: {fileID: 11500000, guid: 3d0b58823ab1e51498de9bea76955d85, type: 3}
+  m_Script: {fileID: 11500000, guid: 689e984e2e0532347a55592e68fd30d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisItemName: ChaosEmerald
+  pickupText: 
 --- !u!1001 &1415237668
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -73055,7 +73038,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonObject: {fileID: 721546897}
   destination: {fileID: 760466972}
-  requireItem: 000000
+  requireItems: 
 --- !u!61 &1512922567
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -74093,7 +74076,7 @@ GameObject:
   - component: {fileID: 1635048017}
   - component: {fileID: 1635048016}
   - component: {fileID: 1635048015}
-  - component: {fileID: 1635048014}
+  - component: {fileID: 1635048018}
   m_Layer: 0
   m_Name: MasterBall
   m_TagString: Untagged
@@ -74101,20 +74084,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1635048014
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1635048013}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
-  m_Script: {fileID: 11500000, guid: 3d0b58823ab1e51498de9bea76955d85, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thisItemName: MasterBall
 --- !u!61 &1635048015
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -74203,6 +74172,20 @@ Transform:
   m_Father: {fileID: 1550075564}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1635048018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1635048013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_GeneratorAsset: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 689e984e2e0532347a55592e68fd30d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickupText: 
 --- !u!4 &1639482987 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3622893803606218089, guid: a7bf4bc705d2f664b99ec57111a4897a,
@@ -74726,7 +74709,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonObject: {fileID: 721546897}
   destination: {fileID: 1931766176}
-  requireItem: 010101
+  requireItems: masterball,chaosemerald,upmushroom
 --- !u!61 &1753742483
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -75006,7 +74989,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonObject: {fileID: 721546897}
   destination: {fileID: 1081929500}
-  requireItem: 000000
+  requireItems: 
 --- !u!61 &1796441894
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -75186,13 +75169,10 @@ MonoBehaviour:
 
     /notify <message>
 
-    /spawn enemy
+    /spawn <enemy|boss>
 
 
-    Effects: lava, poison, slowness, spike, water
-
-
-    Shoot the console to run the command inside it.'
+    Effects: lava, poison, slowness, spike, water'
 --- !u!222 &1807326355
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -75325,7 +75305,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1822571236}
   - component: {fileID: 1822571235}
-  - component: {fileID: 1822571234}
+  - component: {fileID: 1822571237}
   m_Layer: 0
   m_Name: MagicConsole
   m_TagString: Untagged
@@ -75333,20 +75313,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1822571234
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1822571233}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
-  m_Script: {fileID: 11500000, guid: 3d0b58823ab1e51498de9bea76955d85, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thisItemName: MagicConsole
 --- !u!58 &1822571235
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -75377,6 +75343,20 @@ Transform:
   m_Father: {fileID: 1550075564}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1822571237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1822571233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_GeneratorAsset: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 689e984e2e0532347a55592e68fd30d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickupText: Congratulations! Now you have access to the console!
 --- !u!4 &1823928360 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3622893803606218089, guid: a7bf4bc705d2f664b99ec57111a4897a,
@@ -76200,7 +76180,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonObject: {fileID: 721546897}
   destination: {fileID: 1753742481}
-  requireItem: 000000
+  requireItems: 
 --- !u!61 &1931766178
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -76503,7 +76483,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonObject: {fileID: 721546897}
   destination: {fileID: 1095848459}
-  requireItem: 000000
+  requireItems: 
 --- !u!61 &2001904948
 BoxCollider2D:
   m_ObjectHideFlags: 0
