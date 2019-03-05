@@ -43,14 +43,11 @@ public class Inventory : MonoBehaviour
 
         PlayerPrefs.SetString("inventory", data);
         PlayerPrefs.Save();
-
-        Debug.Log("Saved: " + data);
     }
 
     string[] Load()
     {
         string data = PlayerPrefs.GetString("inventory", "");
-        Debug.Log("Loaded: " + data);
         return data.Split('|');
     }
 }

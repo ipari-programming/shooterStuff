@@ -4,10 +4,12 @@
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: 11500000, guid: b3460eb5ebbc6464bab8b8270b98e3ad, type: 3}
   m_Name: Sonic
   m_EditorClassIdentifier: 
@@ -16,8 +18,8 @@ MonoBehaviour:
     type: 2}
   bullet: {fileID: 9100000, guid: ab117c0c0ff751f45812a0cd316de49c, type: 2}
   menuIcon: {fileID: 21300000, guid: 7501759bcb7f4154cb5a2c57a869f988, type: 3}
-  maxHealth: 10
-  health: 5
+  maxHealth: 15
+  health: 6
   damage: 3
   speed: 22
   weaponRange: 3
