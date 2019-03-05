@@ -6,27 +6,27 @@ public class Inventory : MonoBehaviour
 {
     Notifier notifier;
 
-    public List<string> items;
+    public List<Item> items;
 
     void Start()
     {
-        items = new List<string>(Load());
+        items = new List<Item>(Load());
     }
 
     public void Give(Item item)
     {
-        if (items == null) items = new List<string>();
+        if (items == null) items = new List<Item>();
 
-        items.Add(item.name);
+        items.Add(item);
 
         Save();
     }
 
     public bool Contains(string itemName)
     {
-        foreach (string item in items)
+        foreach (Item item in items)
         {
-            if (item.ToLower().Contains(itemName)) return true;
+            if (item.Name.ToLower().Contains(itemName)) return true;
         }
 
         return false;
@@ -36,18 +36,32 @@ public class Inventory : MonoBehaviour
     {
         string data = "";
 
-        foreach (string item in items)
+        foreach (Item item in items)
         {
-            data += item + "|";
+            data += item.Name + "|";
         }
 
         PlayerPrefs.SetString("inventory", data);
         PlayerPrefs.Save();
     }
 
-    string[] Load()
+    Item[] Load()
     {
         string data = PlayerPrefs.GetString("inventory", "");
-        return data.Split('|');
+
+        List<Item> onLevel = new List<Item>(FindObjectsOfType<Item>());
+
+        List<Item> saved = new List<Item>();
+
+        foreach (Item item in onLevel)
+        {
+            if (data.Contains(item.Name))
+            {
+                saved.Add(item);
+                item.gameObject.SetActive(false);
+            }
+        }
+
+        return saved.ToArray();
     }
 }

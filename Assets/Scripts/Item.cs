@@ -16,6 +16,6 @@ public class Item : MonoBehaviour
 
         if (pickupText.Length > 0) FindObjectOfType<Notifier>().Notify(pickupText);
 
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }
