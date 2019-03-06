@@ -11,8 +11,7 @@ GameObject:
   - component: {fileID: 7765466370790104587}
   - component: {fileID: 7765466370790104586}
   - component: {fileID: 2554843446429138953}
-  - component: {fileID: 3367730471369929649}
-  - component: {fileID: 5443395382929614450}
+  - component: {fileID: 7765466370790104585}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Untagged
@@ -72,7 +71,7 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1.5, y: 3.8}
   m_Direction: 0
---- !u!114 &3367730471369929649
+--- !u!114 &7765466370790104585
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -82,26 +81,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_GeneratorAsset: {fileID: 0}
-  m_Script: {fileID: 11500000, guid: 707e04ec9b3bd424e8effeb2072b794c, type: 3}
+  m_Script: {fileID: 11500000, guid: 413232789888d8744a6bc511292a35c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: 30
---- !u!114 &5443395382929614450
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7765466370790104590}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
-  m_Script: {fileID: 11500000, guid: fbf55fe493910574bb7dcf7e6f997768, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 3
-  speed: 10
-  range: 2.5
+  damage: 2
+  speed: 8
+  range: 3.5
   attackSpeed: 1
 --- !u!1001 &5743340934499745861
 PrefabInstance:
