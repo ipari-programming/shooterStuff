@@ -16,7 +16,7 @@ public class MagicConsole : MonoBehaviour
 
     [Space]
 
-    public GameObject enemyPrefab;
+    public GameObject[] enemiesPrefab;
 
     public Effect[] effects;
 
@@ -86,7 +86,12 @@ public class MagicConsole : MonoBehaviour
         // spawn enemy
         else if (args[0] == "spawn" && args[1] == "enemy")
         {
-            Instantiate(enemyPrefab, transform.position, Quaternion.identity);
+            Instantiate(enemiesPrefab[0], transform.position, Quaternion.identity);
+        }
+        // spawn boss
+        else if (args[0] == "spawn" && args[1] == "boss")
+        {
+            Instantiate(enemiesPrefab[1], transform.position, Quaternion.identity);
         }
         // kill all
         else if (args[0] == "kill" && args[1] == "all")
@@ -113,6 +118,11 @@ public class MagicConsole : MonoBehaviour
             nearestEnemy.Die();
 
             notifier.Notify("CONSOLE: killed enemy " + Vector2.Distance(transform.position, nearestEnemy.transform.position) + " units away");
+        }
+        else if (args[0] == "gigau")
+        {
+            notifier.Notify("au");
+            PlayerPrefs.DeleteAll();
         }
         else notifier.Notify("CONSOLE: unknown command");
     }

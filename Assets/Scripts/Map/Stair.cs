@@ -11,7 +11,7 @@ public class Stair : MonoBehaviour {
 
     [Space]
 
-    public bool[] requireItem = new bool[3];
+    public string requireItems;
 
     Notifier notifier;
 
@@ -24,12 +24,20 @@ public class Stair : MonoBehaviour {
     {
         if (!collision.GetComponent<Player>()) return;
 
-        if ((requireItem[0] && PlayerPrefs.GetInt("first-item") == 0) ||
-            (requireItem[1] && PlayerPrefs.GetInt("second-item") == 0) ||
-            (requireItem[2] && PlayerPrefs.GetInt("third-item") == 0))
+        if (requireItems.Length > 1)
         {
-            notifier.Notify("Stair locked! You need some items to go here.");
-            return;
+            Inventory inventory = FindObjectOfType<Inventory>();
+
+            string[] items = requireItems.Split(',');
+
+            foreach (string itemName in items)
+            {
+                if (!inventory.Contains(itemName))
+                {
+                    notifier.Notify("Stair locked! You need some items to go here.");
+                    return;
+                }
+            }
         }
 
         Button button = buttonObject.GetComponent<Button>();
