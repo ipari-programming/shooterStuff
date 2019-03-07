@@ -42,11 +42,8 @@ public class Enemy : MonoBehaviour {
     {
         LookForPlayer();
 
-        if (animator != null)
-        {
-            animator.SetFloat("speed", rb.velocity.magnitude);
-            animator.SetBool("attack", crAttack);
-        }
+        animator.SetFloat("speed", rb.velocity.magnitude);
+        animator.SetBool("attack", crAttack);
 
         switch (aiActivity)
         {

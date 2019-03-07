@@ -90,7 +90,7 @@ public class MenuManager : MonoBehaviour {
         characterName = character.name;
         selectedCharacter = character;
 
-        buttonStartNew.gameObject.SetActive(PlayerPrefs.GetString("last-player", "") == characterName);
+        buttonStartNew.gameObject.SetActive(PlayerPrefs.GetString("last-player", "Mario") == characterName);
 
         yield return null;
 
@@ -102,11 +102,14 @@ public class MenuManager : MonoBehaviour {
 
     public void StartGame(bool isNew)
     {
-        if (PlayerPrefs.GetString("last-player", "") != characterName || isNew)
+        if (PlayerPrefs.GetString("last-player", "Mario") != characterName || isNew)
         {
             PlayerPrefs.DeleteKey("checkpoint-x");
             PlayerPrefs.DeleteKey("checkpoint-y");
-            PlayerPrefs.SetString("inventory", "");
+            PlayerPrefs.SetInt("first-item", 0);
+            PlayerPrefs.SetInt("second-item", 0);
+            PlayerPrefs.SetInt("third-item", 0);
+            PlayerPrefs.SetInt("fourth-item", 0);
             PlayerPrefs.SetString("last-player", characterName);
             PlayerPrefs.Save();
         }
