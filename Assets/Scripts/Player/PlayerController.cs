@@ -25,11 +25,15 @@ public class PlayerController : MonoBehaviour {
 
     Animator animator;
 
+    Inventory inventory;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
 
         animator = GetComponent<Animator>();
+
+        inventory = FindObjectOfType<Inventory>();
 
         Physics2D.queriesStartInColliders = false;
     }
@@ -53,7 +57,7 @@ public class PlayerController : MonoBehaviour {
         aim.y = joystickShoot.Vertical;
         bool isAiming = aim != Vector2.zero;
 
-        if (isAiming && (Mathf.Abs(aim.x) > .5f || Mathf.Abs(aim.y) > .5f)) StartCoroutine(Shoot());
+        if (isAiming && (Mathf.Abs(aim.x) > .5f || Mathf.Abs(aim.y) > .5f) && inventory.Contains("chaosemerald")) StartCoroutine(Shoot());
 
         // Rotation
         if (move != Vector2.zero || isAiming) transform.rotation = Quaternion.LookRotation(isAiming ? aim : move, Vector3.forward);

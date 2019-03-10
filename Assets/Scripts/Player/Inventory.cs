@@ -18,8 +18,6 @@ public class Inventory : MonoBehaviour
         if (items == null) items = new List<Item>();
 
         items.Add(item);
-
-        Save();
     }
 
     public bool Contains(string itemName)
@@ -32,7 +30,7 @@ public class Inventory : MonoBehaviour
         return false;
     }
 
-    void Save()
+    public void Save()
     {
         string data = "";
 
