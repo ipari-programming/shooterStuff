@@ -3601,7 +3601,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a99f869fd6b02024cb22bd5168fa00dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickupText: Lava kill you ehen go into it
+  pickupText: Lava will kill you when go into it.
 --- !u!61 &424987053
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4032,7 +4032,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a99f869fd6b02024cb22bd5168fa00dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickupText: The gray X is spike, give a huge damage.
+  pickupText: The gray X is a spike, deals huge damage.
 --- !u!61 &448787903
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5451,7 +5451,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a99f869fd6b02024cb22bd5168fa00dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickupText: The yellow X give slowness effect.
+  pickupText: The yellow X slows you down.
 --- !u!61 &625266756
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12563,7 +12563,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a99f869fd6b02024cb22bd5168fa00dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickupText: You can move whit the left joystick.
+  pickupText: You can move with the left joystick.
 --- !u!61 &1042750812
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -54627,7 +54627,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a99f869fd6b02024cb22bd5168fa00dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickupText: You can pick up item, just go there.
+  pickupText: You can pick up items, just go there.
 --- !u!61 &1142226771
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -56446,7 +56446,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a99f869fd6b02024cb22bd5168fa00dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickupText: The purple X give poision effect.
+  pickupText: The purple X poisons you.
 --- !u!61 &1314093669
 BoxCollider2D:
   m_ObjectHideFlags: 0
