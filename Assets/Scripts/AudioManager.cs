@@ -125,6 +125,20 @@ public class AudioManager : MonoBehaviour {
 
         if (sourceEffect.clip != null) sourceEffect.Play();
     }
+
+    public void StartEffect(string effectName, float delay)
+    {
+        foreach (AudioClip clip in clipsEffect)
+        {
+            if (clip.name.ToLower().Contains(effectName))
+            {
+                sourceEffect.clip = clip;
+                break;
+            }
+        }
+
+        if (sourceEffect.clip != null) sourceEffect.PlayDelayed(delay);
+    }
     #endregion
 
     public void ToggleMute()
