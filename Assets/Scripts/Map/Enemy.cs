@@ -7,9 +7,9 @@ public class Enemy : MonoBehaviour {
     public float health;
     public float damageOnCollide = 0;
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!collision.gameObject.GetComponent<Player>()) return;
+        if (!collision.GetComponent<Player>()) return;
 
         Player player = collision.gameObject.GetComponent<Player>();
 
