@@ -9,15 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: 11500000, guid: e7908e03a92693c44a78a43a27a35153, type: 3}
   m_Name: Lava
   m_EditorClassIdentifier: 
-  name: Lava
+  name: Burn
   minDuration: 99999
   maxDuration: 99999
   applyRate: 0.05
-  duration: 0
+  duration: -0.05
   heal: -0.2
   accelerate: 0.3
   enableMultiple: 0

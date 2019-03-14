@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: 11500000, guid: e7908e03a92693c44a78a43a27a35153, type: 3}
   m_Name: Water
   m_EditorClassIdentifier: 
-  name: Water
+  name: Heal
   minDuration: 1
   maxDuration: 1
   applyRate: 0.05
