@@ -18,6 +18,7 @@ public class Character : ScriptableObject {
     public float speed;
     public float weaponRange;
     public float bulletSpeed;
+    public float attackSoundDelay;
 
     public bool isWeaponRay;
 

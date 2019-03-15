@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour {
     public float damage;
     public float weaponRange;
     public float bulletSpeed;
+    public float attackSoundDelay;
 
     public RuntimeAnimatorController bullet;
 
@@ -27,6 +28,8 @@ public class PlayerController : MonoBehaviour {
 
     Inventory inventory;
 
+    AudioManager audioManager;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -35,7 +38,14 @@ public class PlayerController : MonoBehaviour {
 
         inventory = FindObjectOfType<Inventory>();
 
+        attackSoundDelay = 0;
+
         Physics2D.queriesStartInColliders = false;
+    }
+
+    private void Update()
+    {
+        audioManager = FindObjectOfType<AudioManager>();
     }
 
     void FixedUpdate()
@@ -73,6 +83,8 @@ public class PlayerController : MonoBehaviour {
         if (!isBulletOut)
         {
             animator.SetBool("attack", true);
+
+            audioManager.StartEffect(gameObject.name.ToLower(), attackSoundDelay);
 
             GameObject bulletEffect = Instantiate(bulletPrefab, transform.position + shootingOffset, Quaternion.identity);
 

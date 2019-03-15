@@ -234,7 +234,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1382044322184852}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: 11500000, guid: b023282c07a58a944b80d0e306c1b4ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -260,6 +259,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: f96f4f4ade7a2f74eac4c391c63913be, type: 3}
   - {fileID: 8300000, guid: 68cce85af025f07489ae7fa5f314be99, type: 3}
   - {fileID: 8300000, guid: 4c85a30794c0a204a8aa28c77477e34f, type: 3}
+  - {fileID: 8300000, guid: eca4d431c1873c64c8285a7f0ed3486f, type: 3}
   musicRandomMaxIndex: 6
   musicClipLinks:
   - https://www.youtube.com/watch?v=8_22B7GNQqs

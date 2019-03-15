@@ -36,6 +36,7 @@ public class CharacterDisplay : MonoBehaviour {
             pc.damage = character.damage;
             pc.bulletSpeed = character.bulletSpeed;
             pc.weaponRange = character.weaponRange;
+            pc.attackSoundDelay = character.attackSoundDelay;
 
             pc.bullet = character.bullet;
 
