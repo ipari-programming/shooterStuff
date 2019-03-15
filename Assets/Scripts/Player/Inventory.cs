@@ -8,11 +8,15 @@ public class Inventory : MonoBehaviour
 
     public List<Item> items;
 
-    public bool ready = false;
+    bool ready = false;
 
     void Start()
     {
+        ready = false;
+
         items = new List<Item>(Load());
+
+        ready = true;
     }
 
     public void Give(Item item)
@@ -45,8 +49,6 @@ public class Inventory : MonoBehaviour
 
         PlayerPrefs.SetString("inventory", data);
         PlayerPrefs.Save();
-
-        Debug.Log("SAVE: " + PlayerPrefs.GetString("inventory", ""));
     }
 
     Item[] Load()
@@ -65,8 +67,6 @@ public class Inventory : MonoBehaviour
                 item.gameObject.SetActive(false);
             }
         }
-
-        Debug.Log("LOAD: " + data);
 
         return saved.ToArray();
     }

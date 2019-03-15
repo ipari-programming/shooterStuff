@@ -31,14 +31,8 @@ public class MenuManager : MonoBehaviour {
         characterName = PlayerPrefs.GetString("last-player", "Mario");
         FindCharacterByName(characterName);
 
-        buttonRight.onClick.AddListener(() =>
-        {
-            FindNextCharacter();
-        });
-        buttonLeft.onClick.AddListener(() =>
-        {
-            FindPrevCharacter();
-        });
+        buttonRight.onClick.AddListener(FindNextCharacter);
+        buttonLeft.onClick.AddListener(FindPrevCharacter);
     }
 
     #region Find character
@@ -90,7 +84,7 @@ public class MenuManager : MonoBehaviour {
         characterName = character.name;
         selectedCharacter = character;
 
-        buttonStartNew.gameObject.SetActive(PlayerPrefs.GetString("last-player", "") == characterName);
+        buttonStartNew.gameObject.SetActive(PlayerPrefs.GetString("last-player", "") != "");
 
         yield return null;
 
@@ -102,14 +96,10 @@ public class MenuManager : MonoBehaviour {
 
     public void StartGame(bool isNew)
     {
-        if (PlayerPrefs.GetString("last-player", "") != characterName || isNew)
-        {
-            PlayerPrefs.DeleteKey("checkpoint-x");
-            PlayerPrefs.DeleteKey("checkpoint-y");
-            PlayerPrefs.SetString("inventory", "");
-            PlayerPrefs.SetString("last-player", characterName);
-            PlayerPrefs.Save();
-        }
+        if (isNew) PlayerPrefs.DeleteAll();
+        // checkpoint-x, checkpoint-y, inventory
+        PlayerPrefs.SetString("last-player", characterName);
+        PlayerPrefs.Save();
 
         audioManager.StopMusic();
         audioManager.Loop(false);

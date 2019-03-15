@@ -56,6 +56,7 @@ public class MagicConsole : MonoBehaviour
     public void EditCommand()
     {
         editUI.SetActive(!editUI.gameObject.activeSelf);
+        input.text = command;
     }
 
     public void RunCommand()

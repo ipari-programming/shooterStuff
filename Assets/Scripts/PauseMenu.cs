@@ -22,6 +22,8 @@ public class PauseMenu : MonoBehaviour {
 
     public Button buttonConsole;
 
+    public GameObject console;
+
     void Start()
     {
         StartCoroutine(CheckMute());
@@ -115,7 +117,7 @@ public class PauseMenu : MonoBehaviour {
 
     public void Console()
     {
-        FindObjectOfType<MagicConsole>().transform.position = FindObjectOfType<Player>().transform.position;
+        Instantiate(console, FindObjectOfType<Player>().transform.position, Quaternion.identity);
         TogglePause();
     }
 }
