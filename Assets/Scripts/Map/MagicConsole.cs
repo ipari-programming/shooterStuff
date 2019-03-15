@@ -26,7 +26,7 @@ public class MagicConsole : MonoBehaviour
 
     void Start()
     {
-        playerSpawner = playerSpawner;
+        playerSpawner = FindObjectOfType<PlayerSpawner>();
         notifier = FindObjectOfType<Notifier>();
     }
 
