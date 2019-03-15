@@ -38,8 +38,6 @@ public class PlayerController : MonoBehaviour {
 
         inventory = FindObjectOfType<Inventory>();
 
-        attackSoundDelay = 0;
-
         Physics2D.queriesStartInColliders = false;
     }
 

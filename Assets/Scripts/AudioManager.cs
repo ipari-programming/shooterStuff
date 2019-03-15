@@ -128,14 +128,10 @@ public class AudioManager : MonoBehaviour {
 
     public void StartEffect(string effectName, float delay)
     {
-        Debug.Log(effectName);
-        Debug.Log(delay);
-
         foreach (AudioClip clip in clipsEffect)
         {
             if (clip.name.ToLower().Contains(effectName))
             {
-                Debug.Log("Find");
                 sourceEffect.clip = clip;
                 break;
             }
