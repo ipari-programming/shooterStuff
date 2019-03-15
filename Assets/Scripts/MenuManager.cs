@@ -8,18 +8,27 @@ using UnityEngine.SceneManagement;
 public class MenuManager : MonoBehaviour {
 
     public Camera cam;
-
+    [Space]
     public Image header;
+    public Image footer;
     public Text title;
-
+    [Space]
     public SpriteRenderer characterDisplay;
 
     public Button buttonRight;
     public Button buttonLeft;
     public Button buttonStartNew;
-
+    [Space]
     public Character[] characters;
     public Character selectedCharacter;
+    [Space]
+    public GameObject infoPanel;
+    [Space]
+    public Text randomText;
+    public float randomTextChangeTime = 5000;
+    public string[] randomTexts;
+
+    float randomTextChange;
 
     string characterName;
     int characterID = 0;
@@ -28,11 +37,31 @@ public class MenuManager : MonoBehaviour {
 
     void Start ()
     {
+        randomTextChange = randomTextChangeTime;
+
         characterName = PlayerPrefs.GetString("last-player", "Mario");
         FindCharacterByName(characterName);
 
         buttonRight.onClick.AddListener(FindNextCharacter);
         buttonLeft.onClick.AddListener(FindPrevCharacter);
+    }
+
+    void Update()
+    {
+        randomTextChange -= Time.deltaTime;
+
+        if (randomTextChange <= 0)
+        {
+            randomText.text = randomTexts[Random.Range(0, randomTexts.Length)];
+
+            randomTextChange = randomTextChangeTime;
+        }
+    }
+
+    public void SetText(string text)
+    {
+        randomText.text = text;
+        randomTextChange = randomTextChangeTime;
     }
 
     #region Find character
@@ -68,7 +97,6 @@ public class MenuManager : MonoBehaviour {
             StartCoroutine(SelectCharacter(characters[characterID]));
         }
     }
-    #endregion
 
     IEnumerator SelectCharacter(Character character)
     {
@@ -76,6 +104,7 @@ public class MenuManager : MonoBehaviour {
         cam.backgroundColor = darker;
         
         header.color = character.mainColor;
+        footer.color = character.mainColor;
         buttonLeft.image.color = character.mainColor;
         buttonRight.image.color = character.mainColor;
 
@@ -93,6 +122,7 @@ public class MenuManager : MonoBehaviour {
         audioManager.Loop(true);
         audioManager.StartTheme(selectedCharacter.name);
     }
+    #endregion
 
     public void StartGame(bool isNew)
     {
@@ -106,6 +136,14 @@ public class MenuManager : MonoBehaviour {
         audioManager.pausedMusic = false;
 
         SceneManager.LoadScene(2);
+    }
+
+    public void ToggleInfo()
+    {
+        infoPanel.SetActive(!infoPanel.activeSelf);
+
+        characterDisplay.transform.localPosition = infoPanel.activeSelf ? new Vector3(500, 300, 0) : new Vector3(0, 100, 0);
+        characterDisplay.transform.localScale = infoPanel.activeSelf ? new Vector3(20, 20, 1) : new Vector3(80, 80, 1);
     }
 
     public void OpenYoutubeLink()
