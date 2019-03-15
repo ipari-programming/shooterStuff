@@ -18,6 +18,8 @@ public class PlayerSpawner : MonoBehaviour
 
     public Camera cam;
 
+    public bool debugMode = false;
+
     GameObject currentPlayer;
 
     void Start()

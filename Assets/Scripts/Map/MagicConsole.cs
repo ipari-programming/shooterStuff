@@ -20,10 +20,13 @@ public class MagicConsole : MonoBehaviour
 
     public Effect[] effects;
 
+    PlayerSpawner playerSpawner;
+
     Notifier notifier;
 
     void Start()
     {
+        playerSpawner = playerSpawner;
         notifier = FindObjectOfType<Notifier>();
     }
 
@@ -53,6 +56,11 @@ public class MagicConsole : MonoBehaviour
         command = cmd;
     }
 
+    public void PickUp()
+    {
+        Destroy(gameObject);
+    }
+
     public void EditCommand()
     {
         editUI.SetActive(!editUI.gameObject.activeSelf);
@@ -65,34 +73,69 @@ public class MagicConsole : MonoBehaviour
 
         args[0] = args[0].Replace("/", "");
 
+        // debug <on|off|toggle>
+        if (args[0] == "debug")
+        {
+            switch (args[1])
+            {
+                case "on":
+                    playerSpawner.debugMode = true;
+                    break;
+                case "off":
+                    playerSpawner.debugMode = false;
+                    break;
+                case "toggle":
+                    playerSpawner.debugMode = !playerSpawner.debugMode;
+                    break;
+            }
+            
+            if (playerSpawner.debugMode) notifier.Notify("CONSOLE> DEBUG MODE ON! SAVING DISABLED!");
+            else notifier.Notify("CONSOLE> DEBUG MODE OFF! SAVING ENABLED!");
+        }
         // effect <clear|effect name>
-        if (args[0] == "effect")
+        else if (args[0] == "effect")
         {
             if (args[1] == "clear") FindObjectOfType<EffectManager>().ClearAll();
-
-            foreach (Effect eff in effects)
+            else if (args[1] == "give")
             {
-                if (eff.name.ToLower() == args[1])
+                foreach (Effect eff in effects)
                 {
-                    FindObjectOfType<EffectManager>().ApplyEffect(eff);
-                    return;
+                    if (eff.name.ToLower() == args[2])
+                    {
+                        FindObjectOfType<EffectManager>().ApplyEffect(eff);
+                        return;
+                    }
                 }
             }
         }
-        // notify <message>
+        // notify <time> <message>
         else if (args[0] == "notify" && args.Length > 1)
         {
-            notifier.Notify(command.Substring(7));
+            string message = args[2];
+
+            if (args.Length > 3) for (int i = 3; i < args.Length; i++) message += " " + args[i];
+
+            notifier.Notify(message, float.Parse(args[1]));
         }
-        // spawn enemy
-        else if (args[0] == "spawn" && args[1] == "enemy")
+        // spawn <enemy|boss|player>
+        else if (args[0] == "spawn")
         {
-            Instantiate(enemiesPrefab[0], transform.position, Quaternion.identity);
-        }
-        // spawn boss
-        else if (args[0] == "spawn" && args[1] == "boss")
-        {
-            Instantiate(enemiesPrefab[1], transform.position, Quaternion.identity);
+            switch (args[1])
+            {
+                case "beetle":
+                    Instantiate(enemiesPrefab[0], transform.position, Quaternion.identity);
+                    notifier.Notify("CONSOLE> Spawned a beetle.");
+                    break;
+                case "boss":
+                    Instantiate(enemiesPrefab[1], transform.position, Quaternion.identity);
+                    notifier.Notify("CONSOLE> Spawned boss.");
+                    break;
+                case "player":
+                    playerSpawner.Spawn();
+                    notifier.Notify("CONSOLE> WARNING!!! THIS CAN LEAD TO HUGE ERRORS! SAVING WILL BE DISABLED!", 10);
+                    playerSpawner.debugMode = true;
+                    break;
+            }
         }
         // kill all
         else if (args[0] == "kill" && args[1] == "all")
@@ -101,7 +144,7 @@ public class MagicConsole : MonoBehaviour
 
             foreach (Enemy enemy in enemies) enemy.Die();
 
-            notifier.Notify("CONSOLE: killed " + enemies.Length + " enemies");
+            notifier.Notify("CONSOLE> Killed " + enemies.Length + " enemies.");
         }
         // kill nearest
         else if (args[0] == "kill" && args[1] == "nearest")
@@ -118,13 +161,19 @@ public class MagicConsole : MonoBehaviour
 
             nearestEnemy.Die();
 
-            notifier.Notify("CONSOLE: killed enemy " + Vector2.Distance(transform.position, nearestEnemy.transform.position) + " units away");
+            notifier.Notify("CONSOLE> Killed enemy " + Vector2.Distance(transform.position, nearestEnemy.transform.position) + " units away.");
         }
+        // kill player
+        else if (args[0] == "kill" && args[1] == "player")
+        {
+            notifier.Notify("CONSOLE> Suicide is not a solution!");
+        }
+        // Easter egg
         else if (args[0] == "gigau")
         {
             notifier.Notify("au");
             PlayerPrefs.DeleteAll();
         }
-        else notifier.Notify("CONSOLE: unknown command");
+        else notifier.Notify("CONSOLE> Unknown command ¯\\_(ツ)_/¯");
     }
 }

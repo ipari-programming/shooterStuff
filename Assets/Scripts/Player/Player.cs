@@ -47,13 +47,9 @@ public class Player : MonoBehaviour {
         return false;
     }
 
-    void Die()
+    public void Die()
     {
         SceneManager.LoadScene(3);
-        /*
-        Destroy(gameObject);
-        buttonRespawn.SetActive(true);
-        */
     }
     #endregion
 

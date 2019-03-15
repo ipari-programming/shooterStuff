@@ -12,7 +12,5 @@ public class Checkpoint : MonoBehaviour {
         PlayerPrefs.SetFloat("checkpoint-y", transform.position.y);
 
         FindObjectOfType<Inventory>().Save();
-
-        FindObjectOfType<Notifier>().Notify("Checkpoint and items saved");
     }
 }

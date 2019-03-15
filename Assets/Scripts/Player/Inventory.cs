@@ -38,7 +38,7 @@ public class Inventory : MonoBehaviour
 
     public void Save()
     {
-        if (!ready) return;
+        if (!ready || FindObjectOfType<PlayerSpawner>().debugMode) return;
 
         string data = "";
 
@@ -49,6 +49,8 @@ public class Inventory : MonoBehaviour
 
         PlayerPrefs.SetString("inventory", data);
         PlayerPrefs.Save();
+
+        FindObjectOfType<Notifier>().Notify("Checkpoint and items saved");
     }
 
     Item[] Load()
