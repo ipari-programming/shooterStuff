@@ -6,7 +6,10 @@ public class Item : MonoBehaviour
 {
     public string Name { get => gameObject.name; }
 
+    [TextArea]
     public string pickupText;
+    [Min(2)]
+    public float pickupTextDelay = 3;
 
     void OnTriggerEnter2D(Collider2D collision)
     {

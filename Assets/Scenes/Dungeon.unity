@@ -3309,7 +3309,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 501061978}
+      - m_Target: {fileID: 6262924841105864570, guid: 6a990c60851381147b14bd8eabc9e01b,
+          type: 3}
         m_MethodName: RunCommand
         m_Mode: 1
         m_Arguments:
@@ -3670,7 +3671,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a99f869fd6b02024cb22bd5168fa00dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickupText: Lava will kill you when go into it.
+  pickupText: Lava will burn you!
+  pickupTextDelay: 5
 --- !u!61 &424987053
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4101,7 +4103,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a99f869fd6b02024cb22bd5168fa00dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickupText: The gray X is a spike, deals huge damage.
+  pickupText: The gray trap is a spike, deals huge damage.
+  pickupTextDelay: 3
 --- !u!61 &448787903
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4426,144 +4429,6 @@ MonoBehaviour:
   trapEffect: {fileID: 11400000, guid: d54c316b3d56fae439722f56690e25f0, type: 2}
   trapParticle: {fileID: 0}
   cooldown: 0
---- !u!1 &501061977
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 501061981}
-  - component: {fileID: 501061980}
-  - component: {fileID: 501061982}
-  - component: {fileID: 501061979}
-  - component: {fileID: 501061978}
-  m_Layer: 0
-  m_Name: MagicConsole
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &501061978
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 501061977}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53ce13470c4b74b4dbe33e64cf38faaf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttonEdit: {fileID: 1515178696}
-  buttonRun: {fileID: 385448495}
-  input: {fileID: 1364434658}
-  editUI: {fileID: 265881753}
-  command: 
-  enemiesPrefab: []
-  effects:
-  - {fileID: 11400000, guid: 1e85bc9439da9314eb79934a36710764, type: 2}
-  - {fileID: 11400000, guid: 7fd985b69ee5d534bb4c23b9d40fe397, type: 2}
-  - {fileID: 11400000, guid: aca22876c633adc4daf900cff7dbedba, type: 2}
-  - {fileID: 11400000, guid: d54c316b3d56fae439722f56690e25f0, type: 2}
-  - {fileID: 11400000, guid: 9161ad8e4158ae54caf6c60cd4ba32e0, type: 2}
---- !u!58 &501061979
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 501061977}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 2
---- !u!212 &501061980
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 501061977}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b0252e0a171ad05479bd7e7917a2e31a, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 5.12, y: 5.12}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!4 &501061981
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 501061977}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -10, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &501061982
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 501061977}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.2
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -5520,7 +5385,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a99f869fd6b02024cb22bd5168fa00dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickupText: The yellow X slows you down.
+  pickupText: The yellow trap slows you down.
+  pickupTextDelay: 3
 --- !u!61 &625266756
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6474,6 +6340,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickupText: To go to the next room, stay on the stair and tap the Enter button.
+  pickupTextDelay: 5
 --- !u!61 &759685966
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6937,7 +6804,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 501061978}
+      - m_Target: {fileID: 0}
         m_MethodName: EditCommand
         m_Mode: 1
         m_Arguments:
@@ -7991,6 +7858,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickupText: The particle effect in the water heals you.
+  pickupTextDelay: 5
 --- !u!61 &847471905
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11738,6 +11606,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickupText: 
+  pickupTextDelay: 3
 --- !u!1 &943076896
 GameObject:
   m_ObjectHideFlags: 0
@@ -12640,6 +12509,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickupText: You can move with the left joystick.
+  pickupTextDelay: 99999
 --- !u!61 &1042750812
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -54704,6 +54574,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickupText: You can pick up items, just go there.
+  pickupTextDelay: 3
 --- !u!61 &1142226771
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -55519,6 +55390,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickupText: 
+  pickupTextDelay: 3
 --- !u!61 &1268961768
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -56522,7 +56394,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a99f869fd6b02024cb22bd5168fa00dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickupText: The purple X poisons you.
+  pickupText: The purple trap poisons you.
+  pickupTextDelay: 3
 --- !u!61 &1314093669
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -58254,7 +58127,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 501061978}
+      - m_Target: {fileID: 0}
         m_MethodName: InputValueChanged
         m_Mode: 1
         m_Arguments:
@@ -58634,6 +58507,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickupText: Now you can shoot with the right joystick.
+  pickupTextDelay: 3
 --- !u!1001 &1415237668
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -84634,7 +84508,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 501061978}
+      - m_Target: {fileID: 6262924841105864570, guid: 6a990c60851381147b14bd8eabc9e01b,
+          type: 3}
         m_MethodName: EditCommand
         m_Mode: 1
         m_Arguments:
@@ -85651,6 +85526,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickupText: 
+  pickupTextDelay: 3
 --- !u!61 &1635048015
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -86871,6 +86747,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickupText: Now you have access to the console.
+  pickupTextDelay: 3
 --- !u!58 &1822571235
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -88821,6 +88698,95 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5}
   m_EdgeRadius: 0
+--- !u!1001 &2102545159
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6262924841105864569, guid: 6a990c60851381147b14bd8eabc9e01b,
+        type: 3}
+      propertyPath: m_Name
+      value: MagicConsole
+      objectReference: {fileID: 0}
+    - target: {fileID: 6262924841105864573, guid: 6a990c60851381147b14bd8eabc9e01b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6262924841105864573, guid: 6a990c60851381147b14bd8eabc9e01b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6262924841105864573, guid: 6a990c60851381147b14bd8eabc9e01b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6262924841105864573, guid: 6a990c60851381147b14bd8eabc9e01b,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6262924841105864573, guid: 6a990c60851381147b14bd8eabc9e01b,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6262924841105864573, guid: 6a990c60851381147b14bd8eabc9e01b,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6262924841105864573, guid: 6a990c60851381147b14bd8eabc9e01b,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6262924841105864573, guid: 6a990c60851381147b14bd8eabc9e01b,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6262924841105864573, guid: 6a990c60851381147b14bd8eabc9e01b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6262924841105864573, guid: 6a990c60851381147b14bd8eabc9e01b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6262924841105864573, guid: 6a990c60851381147b14bd8eabc9e01b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6262924841105864570, guid: 6a990c60851381147b14bd8eabc9e01b,
+        type: 3}
+      propertyPath: buttonEdit
+      value: 
+      objectReference: {fileID: 1515178696}
+    - target: {fileID: 6262924841105864570, guid: 6a990c60851381147b14bd8eabc9e01b,
+        type: 3}
+      propertyPath: buttonRun
+      value: 
+      objectReference: {fileID: 385448495}
+    - target: {fileID: 6262924841105864570, guid: 6a990c60851381147b14bd8eabc9e01b,
+        type: 3}
+      propertyPath: editUI
+      value: 
+      objectReference: {fileID: 265881753}
+    - target: {fileID: 6262924841105864570, guid: 6a990c60851381147b14bd8eabc9e01b,
+        type: 3}
+      propertyPath: input
+      value: 
+      objectReference: {fileID: 1364434658}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6a990c60851381147b14bd8eabc9e01b, type: 3}
 --- !u!1 &2112186195
 GameObject:
   m_ObjectHideFlags: 0

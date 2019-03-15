@@ -9,6 +9,8 @@ public class Notifier : MonoBehaviour
 
     Animator animator;
 
+    float time;
+
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -23,13 +25,19 @@ public class Notifier : MonoBehaviour
     {
         StartCoroutine(Notification(text, delay));
     }
-
+    
     IEnumerator Notification(string text, float delay)
     {
+        time = delay;
+
         textNotif.text = text;
         animator.SetBool("open", true);
 
-        yield return new WaitForSeconds(delay);
+        while (time > 0)
+        {
+            yield return new WaitForFixedUpdate();
+            time -= Time.fixedDeltaTime;
+        }
 
         animator.SetBool("open", false);
     }

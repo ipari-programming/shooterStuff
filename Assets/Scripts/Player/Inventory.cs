@@ -8,6 +8,8 @@ public class Inventory : MonoBehaviour
 
     public List<Item> items;
 
+    public bool ready = false;
+
     void Start()
     {
         items = new List<Item>(Load());
@@ -32,6 +34,8 @@ public class Inventory : MonoBehaviour
 
     public void Save()
     {
+        if (!ready) return;
+
         string data = "";
 
         foreach (Item item in items)
@@ -41,6 +45,8 @@ public class Inventory : MonoBehaviour
 
         PlayerPrefs.SetString("inventory", data);
         PlayerPrefs.Save();
+
+        Debug.Log("SAVE: " + PlayerPrefs.GetString("inventory", ""));
     }
 
     Item[] Load()
@@ -59,6 +65,8 @@ public class Inventory : MonoBehaviour
                 item.gameObject.SetActive(false);
             }
         }
+
+        Debug.Log("LOAD: " + data);
 
         return saved.ToArray();
     }
