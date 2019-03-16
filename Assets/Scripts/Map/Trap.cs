@@ -20,7 +20,7 @@ public class Trap : MonoBehaviour {
     {
         collider = GetComponent<CircleCollider2D>();
 
-        currentCooldown = cooldown;
+        currentCooldown = 0;
     }
 
     void Update()
