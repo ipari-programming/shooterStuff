@@ -81,6 +81,11 @@ public class PauseMenu : MonoBehaviour {
             itemDisplay[3].GetComponent<Image>().sprite = itemSprite[3];
             itemDisplay[3].GetComponent<Image>().color = new Color(255, 255, 255, 255);
         }
+        if (inventory.Contains("wumpafruit"))
+        {
+            itemDisplay[4].GetComponent<Image>().sprite = itemSprite[4];
+            itemDisplay[4].GetComponent<Image>().color = new Color(255, 255, 255, 255);
+        }
         buttonConsole.gameObject.SetActive(inventory.Contains("magicconsole"));
     }
 
