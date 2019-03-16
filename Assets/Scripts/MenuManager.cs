@@ -73,10 +73,9 @@ public class MenuManager : MonoBehaviour {
             if (name == item.name)
             {
                 characterID = id;
-                StartCoroutine(SelectCharacter(characters[characterID]));
+                StartCoroutine(SelectCharacter(characterID));
             }
-            else
-                id++;
+            else id++;
         }
     }
 
@@ -85,7 +84,7 @@ public class MenuManager : MonoBehaviour {
         if (characterID > 0)
         {
             characterID--;
-            StartCoroutine(SelectCharacter(characters[characterID]));
+            StartCoroutine(SelectCharacter(characterID));
         }
     }
 
@@ -94,19 +93,19 @@ public class MenuManager : MonoBehaviour {
         if (characterID < characters.Length - 1)
         {
             characterID++;
-            StartCoroutine(SelectCharacter(characters[characterID]));
+            StartCoroutine(SelectCharacter(characterID));
         }
     }
 
-    IEnumerator SelectCharacter(Character character)
+    IEnumerator SelectCharacter(int id)
     {
+        Character character = characters[id];
+
         Color darker = new Color(character.mainColor.r / 3, character.mainColor.g / 3, character.mainColor.b / 3);
         cam.backgroundColor = darker;
         
         header.color = character.mainColor;
         footer.color = character.mainColor;
-        buttonLeft.image.color = character.mainColor;
-        buttonRight.image.color = character.mainColor;
 
         title.text = character.name;
         characterDisplay.sprite = character.menuIcon;
@@ -114,6 +113,9 @@ public class MenuManager : MonoBehaviour {
         selectedCharacter = character;
 
         buttonStartNew.gameObject.SetActive(PlayerPrefs.GetString("last-player", "") != "");
+
+        buttonLeft.gameObject.SetActive(id != 0);
+        buttonRight.gameObject.SetActive(id != characters.Length - 1);
 
         yield return null;
 
