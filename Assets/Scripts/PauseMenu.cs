@@ -61,12 +61,12 @@ public class PauseMenu : MonoBehaviour {
     {
         Inventory inventory = FindObjectOfType<Inventory>();
 
-        if (inventory.Contains("masterball"))
+        if (inventory.Contains("chaosemerald"))
         {
             itemDisplay[0].GetComponent<Image>().sprite = itemSprite[0];
             itemDisplay[0].GetComponent<Image>().color = new Color(255, 255, 255, 255);
         }
-        if (inventory.Contains("chaosemerald"))
+        if (inventory.Contains("masterball"))
         {
             itemDisplay[1].GetComponent<Image>().sprite = itemSprite[1];
             itemDisplay[1].GetComponent<Image>().color = new Color(255, 255, 255, 255);
