@@ -18,7 +18,7 @@ MonoBehaviour:
   bullet: {fileID: 0}
   menuIcon: {fileID: 21300000, guid: 7501759bcb7f4154cb5a2c57a869f988, type: 3}
   maxHealth: 10
-  health: 6
+  health: 7
   damage: 4
   speed: 22
   weaponRange: 1
