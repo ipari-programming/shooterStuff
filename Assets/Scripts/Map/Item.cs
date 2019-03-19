@@ -9,7 +9,7 @@ public class Item : MonoBehaviour
     [TextArea]
     public string pickupText;
     [Min(2)]
-    public float pickupTextDelay = 3;
+    public float pickupTextDelay = -1;
 
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -17,7 +17,8 @@ public class Item : MonoBehaviour
 
         FindObjectOfType<Inventory>().Give(this);
 
-        if (pickupText.Length > 0) FindObjectOfType<Notifier>().Notify(pickupText);
+        if (pickupText.Length >= 0) FindObjectOfType<Notifier>().Notify(pickupText, pickupTextDelay);
+        else FindObjectOfType<Notifier>().Notify(pickupText);
 
         gameObject.SetActive(false);
     }

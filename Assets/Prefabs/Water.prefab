@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3622893803606218089}
   - component: {fileID: 3622893803606218088}
   - component: {fileID: 3622893803606218087}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Water
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 3622893803606218086}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: 11500000, guid: cca2c8a07fe4ac642aad144b88dea64e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -76,7 +75,7 @@ GameObject:
   - component: {fileID: 3622893803733444427}
   - component: {fileID: 3622893803733444429}
   - component: {fileID: 3622893803733444428}
-  m_Layer: 4
+  m_Layer: 2
   m_Name: WaterParticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4705,7 +4704,7 @@ ParticleSystem:
 --- !u!199 &3622893803733444428
 ParticleSystemRenderer:
   serializedVersion: 6
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}

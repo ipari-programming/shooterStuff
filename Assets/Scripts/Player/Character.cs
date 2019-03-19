@@ -20,7 +20,8 @@ public class Character : ScriptableObject {
     public float bulletSpeed;
     public float attackSoundDelay;
 
-    public bool isWeaponRay;
+    public bool isMelee;
+    public bool oneJoystick;
 
     public Vector2 shootingOffset;
 

@@ -18,7 +18,8 @@ public class PlayerController : MonoBehaviour {
 
     public GameObject bulletPrefab;
 
-    public bool isWeaponRay;
+    public bool isMelee;
+    public bool oneJoystick;
 
     public Vector3 shootingOffset;
 
@@ -39,6 +40,8 @@ public class PlayerController : MonoBehaviour {
         inventory = FindObjectOfType<Inventory>();
 
         Physics2D.queriesStartInColliders = false;
+
+        joystickShoot.gameObject.SetActive(!oneJoystick);
     }
 
     private void Update()
@@ -59,79 +62,76 @@ public class PlayerController : MonoBehaviour {
 
         animator.SetFloat("speed", move.magnitude);
 
-        // Aiming and shooting
+        // Melee combat
+
+        if (isMelee && oneJoystick && rb.velocity.magnitude > 0 && inventory.Contains("chaosemerald"))
+        {
+            StartCoroutine(Attack(true));
+        }
+
+        // Shooting
         Vector2 aim;
         aim.x = joystickShoot.Horizontal;
         aim.y = joystickShoot.Vertical;
         bool isAiming = aim != Vector2.zero;
 
-        if (isAiming && (Mathf.Abs(aim.x) > .5f || Mathf.Abs(aim.y) > .5f) && inventory.Contains("chaosemerald")) StartCoroutine(Shoot());
+        if (isAiming && (Mathf.Abs(aim.x) > .5f || Mathf.Abs(aim.y) > .5f) && inventory.Contains("chaosemerald")) StartCoroutine(Attack(false));
 
         // Rotation
         if (move != Vector2.zero || isAiming) transform.rotation = Quaternion.LookRotation(isAiming ? aim : move, Vector3.forward);
 
         transform.rotation = new Quaternion(transform.rotation.x, transform.rotation.y, 0, 0);
+
+        // Stop attack animation
+
+        if ((rb.velocity.magnitude == 0 && oneJoystick) || !isAiming) animator.SetBool("attack", false);
     }
 
-    #region Shooting
+    #region Combat
     bool isBulletOut = false;
-    IEnumerator Shoot()
+    IEnumerator Attack(bool disableSound)
     {
-
         if (!isBulletOut)
         {
             animator.SetBool("attack", true);
 
-            audioManager.StartEffect(gameObject.name.ToLower(), attackSoundDelay);
-
-            GameObject bulletEffect = Instantiate(bulletPrefab, transform.position + shootingOffset, Quaternion.identity);
-
-            bulletEffect.transform.RotateAround(transform.position, Vector3.forward, -transform.rotation.eulerAngles.z);
-
-            bulletEffect.GetComponent<Animator>().runtimeAnimatorController = bullet;
-            bulletEffect.GetComponent<Bullet>().isRay = isWeaponRay;
-            bulletEffect.GetComponent<Bullet>().damage = damage;
-
-            if (isWeaponRay)
+            if (!disableSound) audioManager.StartEffect(gameObject.name.ToLower(), attackSoundDelay);
+            
+            if (isMelee)
             {
-                RaycastHit2D hit = Physics2D.Raycast(bulletEffect.transform.position, transform.up, weaponRange);
-
-                if (hit)
-                {
-                    Enemy enemy = hit.transform.GetComponent<Enemy>();
-                    if (enemy)
-                    {
-                        enemy.DealDamage(damage);
-                    }
-                }
-
                 isBulletOut = true;
-                bulletEffect.GetComponent<Rigidbody2D>().AddForce(bulletEffect.transform.up * bulletSpeed);
+                Collider2D target = Physics2D.OverlapCircle(transform.position, weaponRange, LayerMask.GetMask("Enemy"));
 
-                yield return new WaitForSeconds(1 / weaponRange / 2);
+                if (target != null) target.GetComponent<Enemy>().DealDamage(damage);
 
-                bulletEffect.GetComponent<Rigidbody2D>().AddForce(-bulletEffect.transform.up * bulletSpeed * 2);
-
-                yield return new WaitForSeconds(1 / weaponRange / 2);
-
-                Destroy(bulletEffect);
-                isBulletOut = false;
-
-                animator.SetBool("attack", false);
+                yield return new WaitForSeconds(1 / bulletSpeed);
             }
             else
             {
+                GameObject bulletEffect = Instantiate(bulletPrefab, transform.position + shootingOffset, Quaternion.identity);
+
+                bulletEffect.transform.RotateAround(transform.position, Vector3.forward, -transform.rotation.eulerAngles.z);
+
+                bulletEffect.GetComponent<Animator>().runtimeAnimatorController = bullet;
+                bulletEffect.GetComponent<Bullet>().damage = damage;
+
                 isBulletOut = true;
                 bulletEffect.GetComponent<Rigidbody2D>().AddForce(((Vector2)bulletEffect.transform.up + rb.velocity.normalized / 3) * bulletSpeed);
 
                 yield return new WaitForSeconds(weaponRange / 10f);
 
                 Destroy(bulletEffect);
-                isBulletOut = false;
-
-                animator.SetBool("attack", false);
             }
             
+            isBulletOut = false;
+        }
+    }
+
+    void OnDrawGizmos()
+    {
+        if (isMelee)
+        {
+            Gizmos.DrawWireSphere(transform.position, weaponRange);
         }
     }
     #endregion

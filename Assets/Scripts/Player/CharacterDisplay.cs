@@ -40,7 +40,8 @@ public class CharacterDisplay : MonoBehaviour {
 
             pc.bullet = character.bullet;
 
-            pc.isWeaponRay = character.isWeaponRay;
+            pc.isMelee = character.isMelee;
+            pc.oneJoystick = character.oneJoystick;
 
             pc.shootingOffset = character.shootingOffset;
 
