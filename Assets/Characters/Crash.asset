@@ -9,22 +9,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: 11500000, guid: b3460eb5ebbc6464bab8b8270b98e3ad, type: 3}
   m_Name: Crash
   m_EditorClassIdentifier: 
-  name: Crash Bandicoot
-  RTAnimatorController: {fileID: 0}
-  bullet: {fileID: 0}
-  menuIcon: {fileID: 0}
-  maxHealth: 0
-  health: 0
-  damage: 0
-  speed: 0
-  weaponRange: 0
-  bulletSpeed: 0
-  isWeaponRay: 0
+  name: CrashBandicoot
+  RTAnimatorController: {fileID: 9100000, guid: 2bc4fd2cbc4fdf3428e026ffb26b62f0,
+    type: 2}
+  bullet: {fileID: 9100000, guid: 8221b93b6c446e640b1742fba2c0cacf, type: 2}
+  menuIcon: {fileID: 21300000, guid: aefcda2014efc7b47b896d5ccf737e79, type: 3}
+  maxHealth: 10
+  health: 8
+  damage: 2
+  speed: 20
+  weaponRange: 6
+  bulletSpeed: 100
+  attackSoundDelay: 0
+  isWeaponRay: 1
   shootingOffset: {x: 0, y: 0}
-  mainColor: {r: 0, g: 0, b: 0, a: 0}
-  theme: {fileID: 0}
-  themeLink: 
+  mainColor: {r: 0.91764706, g: 0.41568628, b: 0, a: 1}
+  theme: {fileID: 8300000, guid: 08523def32bce134cb32e010f5ee2898, type: 3}
+  themeLink: https://youtu.be/11py_AgNTXM

@@ -2319,6 +2319,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 007d705676888144c993c22b6032fc75, type: 2}
   - {fileID: 11400000, guid: 622f9c8e72e67c948b5de331bb9813f6, type: 2}
   - {fileID: 11400000, guid: f8153a3710fa61d41aeb0835f9d438c3, type: 2}
+  - {fileID: 11400000, guid: 5b227a58e65463a4d904dcdffb965766, type: 2}
   selectedCharacter: {fileID: 0}
   infoPanel: {fileID: 1614260954}
   randomText: {fileID: 1858279499}

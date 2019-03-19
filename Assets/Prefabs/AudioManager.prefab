@@ -245,6 +245,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 86cc73a780e76f741b54372060d43060, type: 3}
   - {fileID: 8300000, guid: 2bfb8666a738d824d99236856b60ad05, type: 3}
   - {fileID: 8300000, guid: 202d1881470e18f45943e3d3df5baaf1, type: 3}
+  - {fileID: 8300000, guid: 08523def32bce134cb32e010f5ee2898, type: 3}
   clipsMusic:
   - {fileID: 8300000, guid: 4061ed0000f2f884a9a637fc37aa28b9, type: 3}
   - {fileID: 8300000, guid: 187c46f976ee881478527db35f7c558b, type: 3}
@@ -269,4 +270,5 @@ MonoBehaviour:
   - https://www.youtube.com/watch?v=OrtO-7s_-CA
   - https://www.youtube.com/watch?v=lIJpOiQ-O3E
   - https://youtu.be/NBTBqvVkw5k
+  - https://youtu.be/11py_AgNTXM
   pausedMusic: 0
