@@ -73,7 +73,7 @@ public class AudioManager : MonoBehaviour {
     {
         foreach (AudioClip clip in clipsTheme)
         {
-            if (clip.name.Contains(clipName.ToLower()))
+            if (clip.name.ToLower().Contains(clipName.ToLower()))
             {
                 StartMusic(clip);
                 break;

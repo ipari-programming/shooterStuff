@@ -122,7 +122,7 @@ public class MenuManager : MonoBehaviour {
         audioManager = FindObjectOfType<AudioManager>();
         audioManager.pausedMusic = true;
         audioManager.Loop(true);
-        audioManager.StartTheme(selectedCharacter.name);
+        audioManager.StartTheme(selectedCharacter.name.ToLower());
     }
     #endregion
 

@@ -26,6 +26,6 @@ MonoBehaviour:
   isMelee: 1
   oneJoystick: 0
   shootingOffset: {x: 0, y: 0}
-  mainColor: {r: 0, g: 0, b: 0, a: 0}
-  theme: {fileID: 0}
-  themeLink: 
+  mainColor: {r: 0.91764706, g: 0.41568628, b: 0, a: 1}
+  theme: {fileID: 8300000, guid: 08523def32bce134cb32e010f5ee2898, type: 3}
+  themeLink: https://youtu.be/11py_AgNTXM
