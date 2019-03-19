@@ -152,6 +152,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 413232789888d8744a6bc511292a35c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageParticle: {fileID: 2432221405052379887, guid: aec8ea900f8849f48811ab75d2ce32e2,
+    type: 3}
   health: 10
   damageOnCollide: 0
 --- !u!114 &7433015588276512382

@@ -28,7 +28,7 @@ public class Notifier : MonoBehaviour
     
     IEnumerator Notification(string text, float delay)
     {
-        time = delay;
+        time = text.Length > 0 ? delay : 0;
 
         textNotif.text = text;
         animator.SetBool("open", true);
