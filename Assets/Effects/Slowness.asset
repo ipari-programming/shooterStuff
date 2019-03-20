@@ -9,13 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: 11500000, guid: e7908e03a92693c44a78a43a27a35153, type: 3}
   m_Name: Slowness
   m_EditorClassIdentifier: 
   name: Slowness
-  minDuration: 1
-  maxDuration: 10
+  minDuration: 4
+  maxDuration: 12
   applyRate: 0.1
   duration: 0
   heal: 0
