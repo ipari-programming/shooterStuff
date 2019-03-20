@@ -13,6 +13,7 @@ public class EffectManager : MonoBehaviour {
     EffectDisplay effectDisplay;
 
     float initialSpeed;
+    float initialDamage;
 
     void Start()
     {
@@ -20,6 +21,7 @@ public class EffectManager : MonoBehaviour {
         effectDisplay = FindObjectOfType<EffectDisplay>();
 
         initialSpeed = playerController.speed;
+        initialDamage = playerController.damage;
 
         effects = new List<Effect>();
     }
@@ -39,7 +41,7 @@ public class EffectManager : MonoBehaviour {
         }
         else
         {
-            playerController.GetComponent<PlayerController>().speed = initialSpeed;
+            ResetPlayer();
         }
 
         UpdateDisplay();
@@ -84,7 +86,7 @@ public class EffectManager : MonoBehaviour {
 
         if (effects.Count < 1)
         {
-            playerController.GetComponent<PlayerController>().speed = initialSpeed;
+            ResetPlayer();
             return;
         }
 
@@ -93,7 +95,7 @@ public class EffectManager : MonoBehaviour {
             if (eff.accelerate != 1) return;
         }
 
-        playerController.GetComponent<PlayerController>().speed = initialSpeed;
+        ResetPlayer();
     }
 
     public void ClearAll()
@@ -102,6 +104,12 @@ public class EffectManager : MonoBehaviour {
 
         effects.Clear();
 
-        playerController.GetComponent<PlayerController>().speed = initialSpeed;
+        ResetPlayer();
+    }
+
+    void ResetPlayer()
+    {
+        if (initialSpeed > 0) playerController.GetComponent<PlayerController>().speed = initialSpeed;
+        if (initialDamage > 0) playerController.GetComponent<PlayerController>().damage = initialDamage;
     }
 }

@@ -10,13 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e7908e03a92693c44a78a43a27a35153, type: 3}
-  m_Name: Water
+  m_Name: DoubleDamage
   m_EditorClassIdentifier: 
-  name: Heal
-  minDuration: 1
-  maxDuration: 1
-  applyRate: 0.05
+  name: Double damage
+  minDuration: 10
+  maxDuration: 10
+  applyRate: 1
   duration: 0
-  heal: 0.1
-  accelerate: 0.9
-  enableMultiple: 1
+  heal: 0
+  accelerate: 1
+  damageMultiplier: 2
+  enableMultiple: 0

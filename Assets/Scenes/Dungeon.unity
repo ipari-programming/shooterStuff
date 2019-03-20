@@ -2702,6 +2702,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupText: 
   pickupTextDelay: 3
+  effect: {fileID: 11400000, guid: 9161ad8e4158ae54caf6c60cd4ba32e0, type: 2}
 --- !u!61 &304850617
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3654,6 +3655,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupText: Lava will burn you!
   pickupTextDelay: 999
+  effect: {fileID: 0}
 --- !u!61 &424987053
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4086,6 +4088,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupText: The gray trap is a spike, deals huge damage.
   pickupTextDelay: 999
+  effect: {fileID: 0}
 --- !u!61 &448787903
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5451,6 +5454,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupText: The yellow trap slows you down.
   pickupTextDelay: 999
+  effect: {fileID: 0}
 --- !u!61 &625266756
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6409,6 +6413,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupText: To go to the next room, stay on the stair and tap the Enter button.
   pickupTextDelay: 999
+  effect: {fileID: 0}
 --- !u!61 &759685966
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7795,6 +7800,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupText: The particle effect in the water heals you.
   pickupTextDelay: 999
+  effect: {fileID: 0}
 --- !u!61 &847471905
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11975,6 +11981,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupText: 
   pickupTextDelay: 3
+  effect: {fileID: 11400000, guid: f8329b9161540d644a42dd0d8cdd01a7, type: 2}
 --- !u!1 &943076896
 GameObject:
   m_ObjectHideFlags: 0
@@ -12873,6 +12880,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupText: You can move with the left joystick.
   pickupTextDelay: 999
+  effect: {fileID: 0}
 --- !u!61 &1042750812
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -57324,6 +57332,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupText: You can pick up items, just go there.
   pickupTextDelay: 999
+  effect: {fileID: 0}
 --- !u!61 &1142226771
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -58140,6 +58149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupText: 
   pickupTextDelay: 3
+  effect: {fileID: 0}
 --- !u!61 &1268961768
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -59145,6 +59155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupText: The purple trap poisons you.
   pickupTextDelay: 999
+  effect: {fileID: 0}
 --- !u!61 &1314093669
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -61012,7 +61023,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1550075564}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1404442397
 BoxCollider2D:
@@ -61103,6 +61114,7 @@ MonoBehaviour:
   pickupText: Now you can attack with the right joystick. (Sonic attacks with his
     speed.)
   pickupTextDelay: 999
+  effect: {fileID: 11400000, guid: f8329b9161540d644a42dd0d8cdd01a7, type: 2}
 --- !u!1001 &1415237668
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -88417,8 +88429,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1635048017}
   - {fileID: 1404442396}
+  - {fileID: 1635048017}
   - {fileID: 938945551}
   - {fileID: 1268961766}
   - {fileID: 304850615}
@@ -89424,6 +89436,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupText: 
   pickupTextDelay: 3
+  effect: {fileID: 0}
 --- !u!61 &1635048015
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -89510,7 +89523,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1550075564}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1639482987 stripped
 Transform:
@@ -89648,6 +89661,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupText: Tutorial end.
   pickupTextDelay: 0
+  effect: {fileID: 0}
 --- !u!61 &1681678659
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -90855,6 +90869,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupText: Now you have access to the console.
   pickupTextDelay: 3
+  effect: {fileID: 0}
 --- !u!58 &1822571235
 CircleCollider2D:
   m_ObjectHideFlags: 0

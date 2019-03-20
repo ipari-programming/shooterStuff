@@ -11,9 +11,10 @@ public class Effect : ScriptableObject {
     public float maxDuration;
     public float applyRate;
     public float duration;
-
+    [Space]
     public float heal = 0;
     public float accelerate = 1;
+    public float damageMultiplier = 1;
 
     public bool enableMultiple = false;
 
@@ -22,6 +23,7 @@ public class Effect : ScriptableObject {
         duration = Random.Range(minDuration, maxDuration);
         
         player.GetComponent<PlayerController>().speed *= accelerate;
+        player.GetComponent<PlayerController>().damage *= damageMultiplier;
 
         do
         {
