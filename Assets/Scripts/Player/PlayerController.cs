@@ -94,7 +94,6 @@ public class PlayerController : MonoBehaviour {
         if (!isBulletOut)
         {
             animator.SetBool("attack", true);
-
             if (!disableSound) audioManager.StartEffect(gameObject.name.ToLower(), attackSoundDelay);
             
             if (isMelee)
@@ -121,9 +120,11 @@ public class PlayerController : MonoBehaviour {
                 yield return new WaitForSeconds(weaponRange / 10f);
 
                 Destroy(bulletEffect);
+                animator.SetBool("attack", false);
             }
             
             isBulletOut = false;
+            if (!disableSound) audioManager.StopEffect();
         }
     }
 

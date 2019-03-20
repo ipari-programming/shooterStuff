@@ -23,8 +23,9 @@ MonoBehaviour:
   speed: 14
   weaponRange: 8
   bulletSpeed: 60
-  attackSoundDelay: 0
+  attackSoundDelay: 0.4
   isMelee: 0
+  oneJoystick: 0
   shootingOffset: {x: -0.15, y: 0.4}
   mainColor: {r: 0, g: 0.8, b: 0.8, a: 1}
   theme: {fileID: 8300000, guid: 202d1881470e18f45943e3d3df5baaf1, type: 3}

@@ -61,7 +61,7 @@ public class AudioManager : MonoBehaviour {
     {
         foreach (AudioClip clip in clipsMusic)
         {
-            if (clip.name.Contains(clipName.ToLower()))
+            if (clip.name.ToLower().Contains(clipName.ToLower()))
             {
                 StartMusic(clip);
                 break;
@@ -139,6 +139,12 @@ public class AudioManager : MonoBehaviour {
         
         if (sourceEffect.clip != null) sourceEffect.PlayDelayed(delay);
     }
+
+    public void StopEffect()
+    {
+        sourceEffect.Stop();
+    }
+
     #endregion
 
     public void ToggleMute()
