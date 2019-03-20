@@ -1510,7 +1510,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -1563,7 +1563,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 3
   speed: 10
-  range: 2
+  range: 2.5
   attackSpeed: 2
 --- !u!1 &1625748155572762553
 GameObject:

@@ -167,6 +167,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1640945420283282, guid: b1019758bbe93984e805c41a57eed842,
     type: 3}
   isMelee: 0
+  oneJoystick: 0
   shootingOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &3470820935904717576
 MonoBehaviour:
@@ -180,6 +181,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7794ed8548b5cda439c2b881407cc9da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageParticle: {fileID: 2432221405052379887, guid: aec8ea900f8849f48811ab75d2ce32e2,
+    type: 3}
   healthBar: {fileID: 0}
   healthBarFill: {fileID: 0}
   buttonRespawn: {fileID: 0}
