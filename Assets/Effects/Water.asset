@@ -18,5 +18,5 @@ MonoBehaviour:
   applyRate: 0.05
   duration: 0
   heal: 0.1
-  accelerate: 0.8
+  accelerate: 0.9
   enableMultiple: 1

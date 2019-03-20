@@ -6,8 +6,15 @@ public class Enemy : MonoBehaviour {
 
     public ParticleSystem damageParticle;
 
+    public Color color;
+
     public float health;
     public float damageOnCollide = 0;
+
+    void Start()
+    {
+        damageParticle.startColor = color;
+    }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
