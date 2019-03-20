@@ -126,8 +126,12 @@ public class MagicConsole : MonoBehaviour
                     Instantiate(enemiesPrefab[0], transform.position, Quaternion.identity);
                     notifier.Notify("CONSOLE> Spawned a beetle.");
                     break;
-                case "boss":
+                case "frog":
                     Instantiate(enemiesPrefab[1], transform.position, Quaternion.identity);
+                    notifier.Notify("CONSOLE> Spawned a frog.");
+                    break;
+                case "boss":
+                    Instantiate(enemiesPrefab[2], transform.position, Quaternion.identity);
                     notifier.Notify("CONSOLE> Spawned boss.");
                     break;
                 case "player":

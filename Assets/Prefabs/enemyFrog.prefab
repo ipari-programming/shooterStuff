@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1015589496707669895}
   - component: {fileID: 5280294985753647422}
   - component: {fileID: 5749690734793665909}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: enemyFrog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -159,5 +159,5 @@ MonoBehaviour:
   damageParticle: {fileID: 2432221405052379887, guid: aec8ea900f8849f48811ab75d2ce32e2,
     type: 3}
   color: {r: 0.36078432, g: 0.5019608, b: 0, a: 1}
-  health: 99999
+  health: 80
   damageOnCollide: 2

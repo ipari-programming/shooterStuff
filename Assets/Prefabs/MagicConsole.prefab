@@ -1119,7 +1119,8 @@ MonoBehaviour:
   command: notify Hello World!
   enemiesPrefab:
   - {fileID: 1822984516051322, guid: b196b2ab0361ec54892d753bf54d7dd5, type: 3}
-  - {fileID: 3124286702446926022, guid: 23623be317f74964cad96c24a341fcd0, type: 3}
+  - {fileID: 7685709167339500233, guid: cb04ee9b3b4d40845a7c6f848c639166, type: 3}
+  - {fileID: 1625748155465120365, guid: e5632b68c0e0b7e4ab4548fc8695e57a, type: 3}
   effects:
   - {fileID: 11400000, guid: 1e85bc9439da9314eb79934a36710764, type: 2}
   - {fileID: 11400000, guid: 7fd985b69ee5d534bb4c23b9d40fe397, type: 2}

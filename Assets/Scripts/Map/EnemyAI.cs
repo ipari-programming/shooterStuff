@@ -21,6 +21,7 @@ public class EnemyAI : MonoBehaviour
 
     Vector3 destination, prevPos;
 
+    bool activeAI = false;
     bool positionReached = false;
     bool crAttack = false;
 
@@ -39,6 +40,14 @@ public class EnemyAI : MonoBehaviour
 
     void Update()
     {
+        if (player == null) player = FindObjectOfType<Player>();
+
+        if (!activeAI)
+        {
+            activeAI = Vector2.Distance(player.transform.position, transform.position) < 12;
+            return;
+        }
+
         LookForPlayer();
 
         if (animator != null)
@@ -78,33 +87,29 @@ public class EnemyAI : MonoBehaviour
     // TODO need to optimize
     void LookForPlayer()
     {
-        if (player == null) player = FindObjectOfType<Player>();
-        else
+        for (float i = 0; i < Mathf.PI; i += Mathf.PI / 16)
         {
-            for (float i = 0; i < Mathf.PI; i += Mathf.PI / 16)
+            float angle = i - (Mathf.PI / 2) - (transform.eulerAngles.z / 180 * Mathf.PI);
+
+            Vector2 dir = new Vector2(Mathf.Sin(angle), Mathf.Cos(angle));
+
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, dir);
+
+            if (hit)
             {
-                float angle = i - (Mathf.PI / 2) - (transform.eulerAngles.z / 180 * Mathf.PI);
-
-                Vector2 dir = new Vector2(Mathf.Sin(angle), Mathf.Cos(angle));
-
-                RaycastHit2D hit = Physics2D.Raycast(transform.position, dir);
-
-                if (hit)
+                if (hit.transform == player.transform)
                 {
-                    if (hit.transform == player.transform)
-                    {
-                        Debug.DrawLine(transform.position, hit.point, Color.red);
+                    Debug.DrawLine(transform.position, hit.point, Color.red);
 
-                        ChangeActivity(AiActivity.attack, true);
+                    ChangeActivity(AiActivity.attack, true);
 
-                        break;
-                    }
-                    else
-                    {
-                        Debug.DrawLine(transform.position, hit.point, Color.green);
+                    break;
+                }
+                else
+                {
+                    Debug.DrawLine(transform.position, hit.point, Color.green);
 
-                        ChangeActivity(AiActivity.wander, false);
-                    }
+                    ChangeActivity(AiActivity.wander, false);
                 }
             }
         }

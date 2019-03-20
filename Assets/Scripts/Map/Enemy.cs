@@ -11,11 +11,6 @@ public class Enemy : MonoBehaviour {
     public float health;
     public float damageOnCollide = 0;
 
-    void Start()
-    {
-        damageParticle.startColor = color;
-    }
-
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (!collision.GetComponent<Player>()) return;
@@ -27,7 +22,8 @@ public class Enemy : MonoBehaviour {
 
     public bool DealDamage(float amount)
     {
-        if (damageParticle != null) StartCoroutine(PlayParticle(damageParticle));
+        damageParticle.startColor = color;
+        Instantiate(damageParticle, transform.position, Quaternion.identity);
 
         health -= amount;
         if (health <= 0)
@@ -41,14 +37,5 @@ public class Enemy : MonoBehaviour {
     public void Die()
     {
         Destroy(gameObject);
-    }
-
-    IEnumerator PlayParticle(ParticleSystem particle)
-    {
-        ParticleSystem p = Instantiate(particle, transform.position, Quaternion.identity);
-
-        yield return new WaitForSeconds(.1f);
-
-        Destroy(p);
     }
 }

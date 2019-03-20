@@ -8,6 +8,8 @@ public class Player : MonoBehaviour {
 
     // public CinemachineVirtualCamera cam;
 
+    public ParticleSystem damageParticle;
+
     public GameObject healthBar;
     public GameObject healthBarFill;
 
@@ -35,6 +37,9 @@ public class Player : MonoBehaviour {
 
     public bool DealDamage(float amount)
     {
+        damageParticle.startColor = mainColor;
+        Instantiate(damageParticle, transform.position, Quaternion.identity);
+
         health -= amount;
 
         healthBarFill.GetComponent<RectTransform>().SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, health / maxHealth * healthBar.GetComponent<RectTransform>().sizeDelta.x);
