@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2216867705307268746}
   - component: {fileID: 2432221405052379887}
   - component: {fileID: 4492016216641785317}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SmallDamageParticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -222,7 +222,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.36078432, g: 0.5019608, b: 0, a: 1}
+      maxColor: {r: 0, g: 1, b: 0, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -4673,8 +4673,8 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 2134966175
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_RenderMode: 0
   m_SortMode: 0

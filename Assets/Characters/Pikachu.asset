@@ -17,7 +17,7 @@ MonoBehaviour:
     type: 2}
   bullet: {fileID: 9100000, guid: 7755b96416cb24a44b55a3881edc58f8, type: 2}
   menuIcon: {fileID: 21300000, guid: 10aeec0030879b845a12a28447160815, type: 3}
-  maxHealth: 10
+  maxHealth: 8
   health: 6
   damage: 2
   speed: 13
@@ -25,6 +25,7 @@ MonoBehaviour:
   bulletSpeed: 120
   attackSoundDelay: 0
   isMelee: 0
+  oneJoystick: 0
   shootingOffset: {x: 0, y: 0.2}
   mainColor: {r: 1, g: 0.9490196, b: 0.4, a: 1}
   theme: {fileID: 8300000, guid: 86cc73a780e76f741b54372060d43060, type: 3}

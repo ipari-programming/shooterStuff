@@ -12,6 +12,7 @@ public class MenuManager : MonoBehaviour {
     public Image header;
     public Image footer;
     public Text title;
+    public Text description;
     [Space]
     public SpriteRenderer characterDisplay;
 
@@ -112,6 +113,8 @@ public class MenuManager : MonoBehaviour {
         characterName = character.name;
         selectedCharacter = character;
 
+        SetDescription(character);
+
         buttonStartNew.gameObject.SetActive(PlayerPrefs.GetString("last-player", "") != "");
 
         buttonLeft.gameObject.SetActive(id != 0);
@@ -123,6 +126,12 @@ public class MenuManager : MonoBehaviour {
         audioManager.pausedMusic = true;
         audioManager.Loop(true);
         audioManager.StartTheme(selectedCharacter.name.ToLower());
+    }
+
+    void SetDescription(Character character)
+    {
+        string isMelee = character.isMelee ? "melee" : "ranged";
+        description.text = $"Max HP: { character.maxHealth }\n\rDamage: { character.damage } ({ isMelee })\n\rSpeed: { character.speed }";
     }
     #endregion
 
