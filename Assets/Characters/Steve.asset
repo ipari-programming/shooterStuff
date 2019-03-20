@@ -23,7 +23,7 @@ MonoBehaviour:
   speed: 14
   weaponRange: 8
   bulletSpeed: 60
-  attackSoundDelay: 0.4
+  attackSoundDelay: 0
   isMelee: 0
   oneJoystick: 0
   shootingOffset: {x: -0.15, y: 0.4}

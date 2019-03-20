@@ -66,7 +66,7 @@ public class PlayerController : MonoBehaviour {
 
         if (isMelee && oneJoystick && rb.velocity.magnitude > 0 && inventory.Contains("chaosemerald"))
         {
-            StartCoroutine(Attack(true));
+            StartCoroutine(Attack());
         }
 
         // Shooting
@@ -75,7 +75,7 @@ public class PlayerController : MonoBehaviour {
         aim.y = joystickShoot.Vertical;
         bool isAiming = aim != Vector2.zero;
 
-        if (isAiming && (Mathf.Abs(aim.x) > .5f || Mathf.Abs(aim.y) > .5f) && inventory.Contains("chaosemerald")) StartCoroutine(Attack(false));
+        if (isAiming && (Mathf.Abs(aim.x) > .5f || Mathf.Abs(aim.y) > .5f) && inventory.Contains("chaosemerald")) StartCoroutine(Attack());
 
         // Rotation
         if (move != Vector2.zero || isAiming) transform.rotation = Quaternion.LookRotation(isAiming ? aim : move, Vector3.forward);
@@ -89,13 +89,14 @@ public class PlayerController : MonoBehaviour {
 
     #region Combat
     bool isBulletOut = false;
-    IEnumerator Attack(bool disableSound)
+    IEnumerator Attack()
     {
         if (!isBulletOut)
         {
             animator.SetBool("attack", true);
-            if (!disableSound) audioManager.StartEffect(gameObject.name.ToLower(), attackSoundDelay);
-            
+
+            if (!audioManager.sourceEffect.isPlaying) audioManager.StartEffect(gameObject.name.ToLower(), attackSoundDelay);
+
             if (isMelee)
             {
                 isBulletOut = true;
@@ -121,10 +122,11 @@ public class PlayerController : MonoBehaviour {
 
                 Destroy(bulletEffect);
                 animator.SetBool("attack", false);
+
+                audioManager.StopEffect();
             }
             
             isBulletOut = false;
-            if (!disableSound) audioManager.StopEffect();
         }
     }
 
