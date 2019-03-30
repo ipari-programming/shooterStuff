@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Item : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class Item : MonoBehaviour
     [Min(2)]
     public float pickupTextDelay = -1;
     public Effect effect;
+    [Space]
+    public bool save;
+    public int sceneIndex = -1;
 
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -24,5 +28,18 @@ public class Item : MonoBehaviour
         else FindObjectOfType<Notifier>().Notify(pickupText);
 
         gameObject.SetActive(false);
+
+        // Save
+
+        if (!save) return;
+
+        PlayerPrefs.SetFloat("checkpoint-x", transform.position.x);
+        PlayerPrefs.SetFloat("checkpoint-y", transform.position.y + 1);
+
+        FindObjectOfType<Inventory>().Save();
+
+        if (sceneIndex < 0) return;
+
+        SceneManager.LoadScene(sceneIndex);
     }
 }
