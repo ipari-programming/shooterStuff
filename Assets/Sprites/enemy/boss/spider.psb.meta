@@ -3457,6 +3457,7 @@ ScriptedImporter:
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     androidETC2FallbackOverride: 0
@@ -3467,6 +3468,10 @@ ScriptedImporter:
   importedTextureWidth: 128
   importedTextureHeight: 256
   documentSize: {x: 168, y: 137}
+  paperDollMode: 0
+  keepDupilcateSpriteName: 0
+  spriteCategoryList:
+    categories: []
   textureActualWidth: 128
   textureActualHeight: 256
   spritePackingTag: 
@@ -3604,6 +3609,8 @@ ScriptedImporter:
         height: 74
       spriteId: 9282ca8f448ba9348a6a718a353cf404
       bones: 00000000
+      parentGroup: 0
+      order: 0
     - spritePosition:
         x: 52
         y: 2
@@ -3611,6 +3618,8 @@ ScriptedImporter:
         height: 65
       spriteId: c95bbee98ad92a849a1d0a9da18c4fab
       bones: 01000000
+      parentGroup: 0
+      order: 0
     - spritePosition:
         x: 4
         y: 32
@@ -3618,6 +3627,8 @@ ScriptedImporter:
         height: 26
       spriteId: 6a805a907d9827743ac57cb5b032b1e5
       bones: 05000000
+      parentGroup: 0
+      order: 0
     - spritePosition:
         x: 0
         y: 51
@@ -3625,6 +3636,8 @@ ScriptedImporter:
         height: 16
       spriteId: 6a8432fdf08aa3c45982edffec55c438
       bones: 06000000
+      parentGroup: 0
+      order: 0
     - spritePosition:
         x: 4
         y: 66
@@ -3632,6 +3645,8 @@ ScriptedImporter:
         height: 31
       spriteId: e55aa5f4bb65c8941b6fdcf201395f5f
       bones: 07000000
+      parentGroup: 0
+      order: 0
     - spritePosition:
         x: 110
         y: 32
@@ -3639,6 +3654,8 @@ ScriptedImporter:
         height: 27
       spriteId: 4e5d10fcc0bfb05418e8509a96622ac8
       bones: 04000000
+      parentGroup: 0
+      order: 0
     - spritePosition:
         x: 115
         y: 51
@@ -3646,6 +3663,8 @@ ScriptedImporter:
         height: 16
       spriteId: 749596da30904b54dbe8dccf868ff482
       bones: 03000000
+      parentGroup: 0
+      order: 0
     - spritePosition:
         x: 112
         y: 65
@@ -3653,6 +3672,8 @@ ScriptedImporter:
         height: 32
       spriteId: 6e57ee4b33fee124081de361c9d97d48
       bones: 02000000
+      parentGroup: 0
+      order: 0
     - spritePosition:
         x: 91
         y: 111
@@ -3660,6 +3681,8 @@ ScriptedImporter:
         height: 26
       spriteId: 53a01e38b54a4e44aaaa4387e5daabee
       bones: 09000000
+      parentGroup: 0
+      order: 0
     - spritePosition:
         x: 60
         y: 111
@@ -3667,26 +3690,32 @@ ScriptedImporter:
         height: 26
       spriteId: 2a279a19743b73e44ab2b13cbca44378
       bones: 08000000
+      parentGroup: 0
+      order: 0
     dimension: {x: 0, y: 0}
+    characterGroups: []
   boneGOs:
-  - go: {fileID: 6887488038287442439, guid: ded544c9d3dbdc945904d689e413920e, type: 3}
+  - go: {fileID: -3065220887672375173, guid: ded544c9d3dbdc945904d689e413920e, type: 3}
     index: 0
-  - go: {fileID: -593871437053275029, guid: ded544c9d3dbdc945904d689e413920e, type: 3}
+  - go: {fileID: 3392231968016618313, guid: ded544c9d3dbdc945904d689e413920e, type: 3}
     index: 1
-  - go: {fileID: -120301592578875428, guid: ded544c9d3dbdc945904d689e413920e, type: 3}
+  - go: {fileID: 7403533536059527097, guid: ded544c9d3dbdc945904d689e413920e, type: 3}
     index: 2
-  - go: {fileID: -1423775313389659068, guid: ded544c9d3dbdc945904d689e413920e, type: 3}
+  - go: {fileID: -1435883560086720902, guid: ded544c9d3dbdc945904d689e413920e, type: 3}
     index: 3
-  - go: {fileID: -6146568202638200644, guid: ded544c9d3dbdc945904d689e413920e, type: 3}
+  - go: {fileID: -5865447631977735036, guid: ded544c9d3dbdc945904d689e413920e, type: 3}
     index: 4
-  - go: {fileID: 5006260915827631085, guid: ded544c9d3dbdc945904d689e413920e, type: 3}
+  - go: {fileID: 6494940224773653045, guid: ded544c9d3dbdc945904d689e413920e, type: 3}
     index: 5
-  - go: {fileID: 4655264446104585367, guid: ded544c9d3dbdc945904d689e413920e, type: 3}
+  - go: {fileID: 4013589163646818178, guid: ded544c9d3dbdc945904d689e413920e, type: 3}
     index: 6
-  - go: {fileID: -6785695652471015082, guid: ded544c9d3dbdc945904d689e413920e, type: 3}
+  - go: {fileID: -3955856068866187557, guid: ded544c9d3dbdc945904d689e413920e, type: 3}
     index: 7
-  - go: {fileID: -7601893564978421064, guid: ded544c9d3dbdc945904d689e413920e, type: 3}
+  - go: {fileID: -9137713800752061171, guid: ded544c9d3dbdc945904d689e413920e, type: 3}
     index: 8
-  - go: {fileID: -111450032888561006, guid: ded544c9d3dbdc945904d689e413920e, type: 3}
+  - go: {fileID: -3483911379989183161, guid: ded544c9d3dbdc945904d689e413920e, type: 3}
     index: 9
   generateGOHierarchy: 0
+  textureAssetName: spider Texture
+  prefabAssetName: spider Prefab
+  spriteLibAssetName: spider Sprite Lib
